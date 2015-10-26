@@ -34,7 +34,7 @@ public class UserApi_get_Test extends AbstractTestCase {
 		
 		try {
 			
-			User user = api.userGet(new Long(4));
+			User user = api.userGet(new Long(1));
 			assertNotNull(user);
 			System.out.println ("response: " + user.toString());
 			

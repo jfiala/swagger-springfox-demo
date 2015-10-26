@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * User object
  **/
 @ApiModel(description = "User object")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-10-26T18:47:09.460+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-10-26T18:33:06.784+01:00")
 public class User   {
   
   private String firstname = null;

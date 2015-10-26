@@ -10,7 +10,7 @@ import io.swagger.client.model.User;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-10-26T18:47:09.460+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-10-26T18:33:06.784+01:00")
 public class UsercrudApi {
   private ApiClient apiClient;
 
