@@ -1,0 +1,105 @@
+package {{package}};
+
+import {{invokerPackage}}.ApiException;
+import {{invokerPackage}}.ApiClient;
+import {{invokerPackage}}.Configuration;
+import {{invokerPackage}}.Pair;
+import {{invokerPackage}}.TypeRef;
+
+{{#imports}}import {{import}};
+{{/imports}}
+
+{{^fullJavaUtil}}
+import java.util.*;
+{{/fullJavaUtil}}
+
+{{>generatedAnnotation}}
+{{#operations}}
+public class {{classname}} {
+  private ApiClient {{localVariablePrefix}}apiClient;
+
+  public {{classname}}() {
+    this(Configuration.getDefaultApiClient());
+  }
+
+  public {{classname}}(ApiClient apiClient) {
+    this.{{localVariablePrefix}}apiClient = apiClient;
+  }
+
+  public ApiClient getApiClient() {
+    return {{localVariablePrefix}}apiClient;
+  }
+
+  public void setApiClient(ApiClient apiClient) {
+    this.{{localVariablePrefix}}apiClient = apiClient;
+  }
+
+  {{#operation}}
+  /**
+   * {{summary}}
+   * {{notes}}
+{{#allParams}}   * @param {{paramName}} {{description}}
+{{/allParams}}   * @return {{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}void{{/returnType}}
+   */
+  public {{#returnType}}{{{returnType}}} {{/returnType}}{{^returnType}}void {{/returnType}}{{nickname}} ({{#allParams}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) throws ApiException {
+    Object {{localVariablePrefix}}postBody = {{#bodyParam}}{{^isBinary}}{{paramName}}{{/isBinary}}{{#isBinary}}null{{/isBinary}}{{/bodyParam}}{{^bodyParam}}null{{/bodyParam}};
+    byte[] {{localVariablePrefix}}postBinaryBody = {{#bodyParam}}{{#isBinary}}{{paramName}}{{/isBinary}}{{^isBinary}}null{{/isBinary}}{{/bodyParam}}{{^bodyParam}}null{{/bodyParam}};
+    {{#allParams}}{{#required}}
+     // verify the required parameter '{{paramName}}' is set
+     if ({{paramName}} == null) {
+        throw new ApiException(400, "Missing the required parameter '{{paramName}}' when calling {{nickname}}");
+     }
+     {{/required}}{{/allParams}}
+    // create path and map variables
+    String {{localVariablePrefix}}path = "{{{path}}}".replaceAll("\\{format\\}","json"){{#pathParams}}
+      .replaceAll("\\{" + "{{baseName}}" + "\\}", {{localVariablePrefix}}apiClient.escapeString({{{paramName}}}.toString())){{/pathParams}};
+
+    // query params
+    {{javaUtilPrefix}}List<Pair> {{localVariablePrefix}}queryParams = new {{javaUtilPrefix}}ArrayList<Pair>();
+    {{javaUtilPrefix}}Map<String, String> {{localVariablePrefix}}headerParams = new {{javaUtilPrefix}}HashMap<String, String>();
+    {{javaUtilPrefix}}Map<String, Object> {{localVariablePrefix}}formParams = new {{javaUtilPrefix}}HashMap<String, Object>();
+
+    {{#queryParams}}
+    {{localVariablePrefix}}queryParams.addAll({{localVariablePrefix}}apiClient.parameterToPairs("{{#collectionFormat}}{{{collectionFormat}}}{{/collectionFormat}}", "{{baseName}}", {{paramName}}));
+    {{/queryParams}}
+
+    {{#headerParams}}if ({{paramName}} != null)
+    {{localVariablePrefix}}headerParams.put("{{baseName}}", {{localVariablePrefix}}apiClient.parameterToString({{paramName}}));
+    {{/headerParams}}
+
+    {{#formParams}}if ({{paramName}} != null)
+      {{localVariablePrefix}}formParams.put("{{baseName}}", {{paramName}});
+    {{/formParams}}
+
+    final String[] {{localVariablePrefix}}accepts = {
+      {{#produces}}"{{mediaType}}"{{#hasMore}}, {{/hasMore}}{{/produces}}
+    };
+    final String {{localVariablePrefix}}accept = {{localVariablePrefix}}apiClient.selectHeaderAccept({{localVariablePrefix}}accepts);
+
+    final String[] {{localVariablePrefix}}contentTypes = {
+      {{#consumes}}"{{mediaType}}"{{#hasMore}}, {{/hasMore}}{{/consumes}}
+    };
+    final String {{localVariablePrefix}}contentType = {{localVariablePrefix}}apiClient.selectHeaderContentType({{localVariablePrefix}}contentTypes);
+
+    String[] {{localVariablePrefix}}authNames = new String[] { {{#authMethods}}"{{name}}"{{#hasMore}}, {{/hasMore}}{{/authMethods}} };
+
+    {{#isResponseBinary}}
+    byte[] {{localVariablePrefix}}response = null;
+    {{localVariablePrefix}}response = {{localVariablePrefix}}apiClient.invokeBinaryAPI({{localVariablePrefix}}path, "{{httpMethod}}", {{localVariablePrefix}}queryParams,{{localVariablePrefix}} postBody, {{localVariablePrefix}}postBinaryBody, {{localVariablePrefix}}headerParams, {{localVariablePrefix}}formParams, {{localVariablePrefix}}accept, {{localVariablePrefix}}contentType, {{localVariablePrefix}}authNames);
+    return {{localVariablePrefix}}response;
+    {{/isResponseBinary}}
+
+    {{^isResponseBinary}}
+    {{#returnType}}
+    TypeRef {{localVariablePrefix}}returnType = new TypeRef<{{{returnType}}}>() {};
+    return {{localVariablePrefix}}apiClient.invokeAPI({{localVariablePrefix}}path, "{{httpMethod}}", {{localVariablePrefix}}queryParams, {{localVariablePrefix}}postBody, {{localVariablePrefix}}postBinaryBody, {{localVariablePrefix}}headerParams, {{localVariablePrefix}}formParams, {{localVariablePrefix}}accept, {{localVariablePrefix}}contentType, {{localVariablePrefix}}authNames, {{localVariablePrefix}}returnType);
+    {{/returnType}}{{^returnType}}
+    {{localVariablePrefix}}apiClient.invokeAPI({{localVariablePrefix}}path, "{{httpMethod}}", {{localVariablePrefix}}queryParams, {{localVariablePrefix}}postBody, {{localVariablePrefix}}postBinaryBody, {{localVariablePrefix}}headerParams, {{localVariablePrefix}}formParams, {{localVariablePrefix}}accept, {{localVariablePrefix}}contentType, {{localVariablePrefix}}authNames, null);
+    {{/returnType}}
+    {{/isResponseBinary}}
+
+
+  }
+  {{/operation}}
+}
+{{/operations}}

@@ -153,6 +153,7 @@ public class Codegen extends DefaultGenerator {
         StringBuilder sb = new StringBuilder();
 
         for (CodegenConfig config : extensions) {
+        	System.out.println("loading extension: " + config.getName());
             if (sb.toString().length() != 0) {
                 sb.append(", ");
             }
