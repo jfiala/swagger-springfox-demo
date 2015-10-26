@@ -15,6 +15,10 @@ import at.fwd.swagger.spring.demo.user.system.SpringSwaggerController;
 import com.google.common.base.Predicate;
 //replaces: @ComponentScan @EnableAutoConfiguration @Configuration
 
+
+import static com.google.common.base.Predicates.*;
+import static com.google.common.collect.Lists.*;
+import static springfox.documentation.builders.PathSelectors.*;
 /**
  * Spring Boot Root Configuration
  *  
@@ -42,7 +46,7 @@ public class Application {
               .select() 
                  //Ignores controllers annotated with @CustomIgnore
                 //.apis(not(withClassAnnotation(CustomIgnore.class)) //Selection by RequestHandler
-                //.paths(paths()) // and by paths
+                .paths(paths()) // and by paths
                 .build()
               .apiInfo(apiInfo())
               .directModelSubstitute(java.util.Calendar.class, Long.class);
@@ -63,7 +67,8 @@ public class Application {
 
     //Here is an example where we select any api that matches one of these paths
     private Predicate<String> paths() {
-    	return null;
+    	return not(regex("/error.*"));
+    	
        /* return  or(regex("/business.*"),
           regex("/some.*"),
           regex("/contacts.*"),
