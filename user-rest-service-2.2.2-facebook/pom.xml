@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>at.fwd.swagger-spring-demo</groupId>
+    <artifactId>user-rest-service-2.0.0</artifactId>
+    <version>0.1.0</version>
+    <packaging>war</packaging>
+
+	<properties>
+        <java.version>1.7</java.version>
+        <start-class>at.fwd.swagger.spring.demo.user.Application</start-class>
+    </properties>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.2.7.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency -->
+         <dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-tomcat</artifactId>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
+
+
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.2.2</version>
+</dependency>
+<!-- for swagger spec 1.2 optionally -->
+<!-- dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger1</artifactId>
+    <version>2.0.0-SNAPSHOT</version>
+</dependency -->
+<!-- dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.2.2</version>
+</dependency -->
+
+
+		<!--  dependencies of jhipster loaded -->
+		<!-- dependency>
+			<groupId>io.github.jhipster.loaded</groupId>
+			<artifactId>core</artifactId>
+			<version>0.12</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-commons</artifactId>
+			<version>1.9.2.RELEASE</version>
+		</dependency>
+        <dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency -->
+		<!--  /dependencies of jhipster loaded -->
+
+
+    </dependencies>
+
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+
+                <dependencies>
+			        <dependency>
+			            <groupId>org.springframework</groupId>
+			            <artifactId>springloaded</artifactId>
+			            <version>1.2.0.RELEASE</version>
+			        </dependency>
+			    </dependencies>
+            </plugin>
+
+
+			<!-- plugin>
+        		<groupId>org.apache.maven.plugins</groupId>
+        		<artifactId>maven-war-plugin</artifactId>
+        		<version>2.0</version>
+        		<configuration>
+           	          <webResources>
+			            <resource>
+			              <directory>${project.basedir}/src/main/webapp</directory>
+			              <excludes>
+				              <exclude>**/WEB-INF/lib/**</exclude>
+				              <exclude>**/WEB-INF/classes/**</exclude>
+				            </excludes>
+			            </resource>
+			          </webResources>
+
+        		</configuration>
+      		</plugin -->
+
+
+        </plugins>
+    </build>
+
+    <repositories>
+        <!-- repository>
+            <id>spring-releases</id>
+            <url>http://repo.spring.io/libs-release</url>
+        </repository -->
+        <repository>
+	      <id>jcenter-release</id>
+	      <name>jcenter</name>
+	      <url>http://oss.jfrog.org/artifactory/oss-release-local/</url>
+	    </repository>
+	    <repository>
+	      <id>jcenter-snapshots</id>
+	      <name>jcenter</name>
+	      <url>http://oss.jfrog.org/artifactory/oss-snapshot-local/</url>
+	      <snapshots>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+          <releases>
+            <updatePolicy>always</updatePolicy>
+          </releases>
+	    </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <url>http://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
+</project>
