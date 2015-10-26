@@ -1,5 +1,5 @@
 
-## user-rest-service-2.0.0 / Swagger 2.0.0-SNAPSHOT
+## user-rest-service-2.2.2-all
 This demo uses the stable version 2.2.2 of Swagger-Springfox integration
 This is the original demo, simple/facebook are the active versions.
 

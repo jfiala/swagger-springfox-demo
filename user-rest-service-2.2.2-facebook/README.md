@@ -1,5 +1,5 @@
 
-## user-rest-service-2.0.0 / Swagger 2.0.0-SNAPSHOT
+## user-rest-service-2.2.2-facebook
 This demo uses the stable version 2.2.2 of Springfox integration
 
 ### IDE
