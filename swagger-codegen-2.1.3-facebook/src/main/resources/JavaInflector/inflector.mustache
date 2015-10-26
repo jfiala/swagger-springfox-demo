@@ -1,0 +1,10 @@
+controllerPackage: {{invokerPackage}}
+modelPackage:  {{modelPackage}}
+swaggerUrl: ./src/main/swagger/swagger.json
+modelMappings:
+  {{#models}}{{#model}}{{classname}} : {{modelPackage}}.{{classname}}{{/model}}
+  {{/models}}
+entityProcessors:
+  - json
+  - xml
+  - yaml

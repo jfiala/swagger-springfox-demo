@@ -1,5 +1,5 @@
 
-## user-rest-service-2.0.0 / Swagger Springfox 2.2.2
+## user-rest-service-2.2.2-simple
 This demo uses the stable version 2.2.2 of the Swagger-Springfox integration.
 
 ### IDE
