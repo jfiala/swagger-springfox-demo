@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import springfox.documentation.annotations.ApiIgnore;
 import at.fwd.swagger.spring.demo.user.exception.ObjectNotFoundException;
 import at.fwd.swagger.spring.demo.user.model.User;
 
@@ -32,16 +33,14 @@ import com.wordnik.swagger.annotations.ApiResponses;
  *
  */
 @RestController
-@Api(value="user-crud", description ="User CRUD services")
-public class UserController {
+@ApiIgnore
+public class MinimumController {
 	/**
 	 * Logger for this class
 	 */
-	private static final Logger log = Logger.getLogger(UserController.class);
+	private static final Logger log = Logger.getLogger(MinimumController.class);
 
 	private static final String MESSAGE_NOT_FOUND = "User not found";
-	
-	private static final String MESSAGE_POST_SUCCESS = "User has been updated";
 	
 	
 	private ConcurrentMap<Long, User> userMap = new ConcurrentHashMap<Long, User>();
@@ -54,12 +53,8 @@ public class UserController {
 		
 	}
 	 
-    @RequestMapping(method=RequestMethod.GET, value="/user")
+    @RequestMapping(method=RequestMethod.GET, value="/minimum_user")
     @ResponseBody
-    @ApiOperation(value="read User by ID", notes="pass ID to read user", position = 2)
-    @ApiResponses(value = {
-    	    @ApiResponse(code = 200, message = "Successful retrieval of user detail", response = User.class),
-    	    @ApiResponse(code = 404, message = "User not found") })
     public User getUser(@RequestParam(value="id", required=true) Long id) {
 		log.debug("getUser"); 
 		User user = userMap.get(id); 
@@ -72,46 +67,7 @@ public class UserController {
     }
     
     
-    @RequestMapping(method = RequestMethod.GET, value = "/search")
-	@ResponseBody
-	@ApiOperation(value = "search for users by name-part", notes = "search for users")
-	@ApiResponses(value = {
-			@ApiResponse(code = 200, message = "Successful retrieval of user list"),
-			@ApiResponse(code = 404, message = "User not found") })
-	public List<User> searchUsers(@RequestParam(value = "query", required = true) String query) {
-		log.debug("searchUsers");
-		List<User> resultList = new ArrayList<User>();
-
-		for (User user : this.getUserMap().values()) {
-			if (user.getLastname().indexOf(query) >= 0) {
-				resultList.add(user);
-			}
-		}
-
-		return resultList;
-	}
-    
-    @RequestMapping(method = RequestMethod.GET, value = "/search2")
-	@ResponseBody
-	public List<User> searchUsers2(@RequestParam(value = "query", required = true) String query) {
-		log.debug("searchUsers2");
-		List<User> resultList = new ArrayList<User>();
-
-		for (User user : this.getUserMap().values()) {
-			if (user.getLastname().indexOf(query) >= 0) {
-				resultList.add(user);
-			}
-		}
-
-		return resultList;
-	}
-    
-    
-    
-    @RequestMapping(method=RequestMethod.POST, value="/user")
-    @ApiOperation(value="create or update a user name by id", position = 1)
-    @ApiResponses(value = {
-    	    @ApiResponse(code = 200, message = MESSAGE_POST_SUCCESS, response = User.class) })
+    @RequestMapping(method=RequestMethod.POST, value="/minimum_user")
     public User saveUserComplete(@RequestBody(required=true) User user) {
     	
     	if (user!=null) {
