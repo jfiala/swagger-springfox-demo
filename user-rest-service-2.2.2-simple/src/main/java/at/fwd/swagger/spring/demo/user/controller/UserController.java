@@ -79,7 +79,7 @@ public class UserController {
 			@ApiResponse(code = 200, message = "Successful retrieval of user list"),
 			@ApiResponse(code = 404, message = "User not found") })
 	public List<User> searchUsers(@RequestParam(value = "query", required = true) String query) {
-		log.debug("searchUsers12");
+		log.debug("searchUsers");
 		List<User> resultList = new ArrayList<User>();
 
 		for (User user : this.getUserMap().values()) {
@@ -90,6 +90,22 @@ public class UserController {
 
 		return resultList;
 	}
+    
+    @RequestMapping(method = RequestMethod.GET, value = "/search2")
+	@ResponseBody
+	public List<User> searchUsers2(@RequestParam(value = "query", required = true) String query) {
+		log.debug("searchUsers2");
+		List<User> resultList = new ArrayList<User>();
+
+		for (User user : this.getUserMap().values()) {
+			if (user.getLastname().indexOf(query) >= 0) {
+				resultList.add(user);
+			}
+		}
+
+		return resultList;
+	}
+    
     
     
     @RequestMapping(method=RequestMethod.POST, value="/user")

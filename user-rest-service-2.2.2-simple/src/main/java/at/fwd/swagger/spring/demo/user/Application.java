@@ -11,8 +11,6 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import at.fwd.swagger.spring.demo.user.controller.UserController;
 
-import com.google.common.base.Predicate;
-
 /**
  * Simple Spring Boot - Springfox Sample Application
  *  
@@ -21,13 +19,16 @@ import com.google.common.base.Predicate;
  */
 @SpringBootApplication
 @EnableSwagger2
+@ComponentScan(basePackageClasses = {
+        UserController.class
+})
 public class Application {
 	
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }  
 
-    
+   
     @Bean
     public Docket swaggerSpringMvcPlugin() {
       return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo());
