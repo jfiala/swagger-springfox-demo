@@ -1,13 +1,12 @@
 package at.fwd.swagger.spring.demo.user.model;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.wordnik.swagger.annotations.ApiModel;
-import com.wordnik.swagger.annotations.ApiModelProperty;
 
 /**
  * User object (shows long, String, enum, Byte[])
@@ -24,8 +23,12 @@ public class User {
     private String firstname;
     
     @ApiModelProperty(notes = "Name of the user", required = true, position = 1)
-	private String lastname;
+    private String lastname;
    
+    @ApiModelProperty(notes = "Current state")
+    private State state;
+    
+    
     @JsonIgnore
 	private String hiddenString;
     
@@ -62,6 +65,14 @@ public class User {
 
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
+	}
+
+	public State getState() {
+		return state;
+	}
+
+	public void setState(State state) {
+		this.state = state;
 	}
 	
 
