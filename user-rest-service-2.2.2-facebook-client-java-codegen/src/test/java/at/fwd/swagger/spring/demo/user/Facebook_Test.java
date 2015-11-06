@@ -13,6 +13,8 @@ import java.util.logging.Logger;
 import org.junit.Before;
 import org.junit.Test;
 
+import at.fwd.swagger.spring.demo.user.util.AssembleFieldsUtil;
+
 public class Facebook_Test extends AbstractTestCase {
 	/**
 	 * Logger for this class
@@ -33,9 +35,11 @@ public class Facebook_Test extends AbstractTestCase {
 		
 		try {
 			
-			String name = "microsoft";
-			String accessToken = "CAACEdEose0cBAMLtLLM83RZBQSsjGQA0lhr8VQoOGcHxK9ixiY0PSK77pbG7dbjvCmvZAwjrd8eOpsXMrSmz9ur0FqNQlNqmYasZArgyxc1wW6g2qoHRp5puPd4X0vpAZA7vpPO3rdyLRsFWyhMYQZBjBhyNn2dHs9GF8shMw6VgQh0iH2IumF3uofLI6SWFJjZBir4rmuGKNWHn7jOjsy";
-			String fieldlist = "name,about,mission";
+			String name = "Microsoft";
+			String accessToken = "CAACEdEose0cBAEOMv7CkpU2WH2luH2Xv0Bpyvu74Le0LDiWri5teDQ7JGzdQ9AWKvCDneezJxjuQpjMg43ssg5XzyRZA4bjyiZAJ5IRailgevTZB6uVl8ot7y31poZCgrywGQpOzfUC2rZBphEZCB2ZBEq9BsopuyDDuA36VQiVfgoZBYfBswvZAHxyTBdaHitASnwlMWvMyzlXDAioh0SJ8S";
+			//String fieldlist = "name,about,mission";
+			
+			String fieldlist = AssembleFieldsUtil.assembleFieldsForFacebookUser();
 			FacebookUser user = api.findByNameUsingGET(name, accessToken, fieldlist);
 			assertNotNull(user);
 			System.out.println ("user.name: " + user.getName());
@@ -43,6 +47,7 @@ public class Facebook_Test extends AbstractTestCase {
 			
 			System.out.println ("user.mission: " + user.getMission());
 			
+			System.out.println("user: " + user.toString());
 						
 			assertEquals(name, user.getName());
 			
