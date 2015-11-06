@@ -1,8 +1,6 @@
 package at.fwd.swagger.spring.demo.user.controller;
 
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -16,14 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import springfox.documentation.annotations.ApiIgnore;
 import at.fwd.swagger.spring.demo.user.exception.ObjectNotFoundException;
 import at.fwd.swagger.spring.demo.user.model.User;
-
-import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
-import com.wordnik.swagger.annotations.ApiResponse;
-import com.wordnik.swagger.annotations.ApiResponses;
 
 /**
  * Basic User CRUD Controller
@@ -33,7 +25,6 @@ import com.wordnik.swagger.annotations.ApiResponses;
  *
  */
 @RestController
-@ApiIgnore
 public class MinimumController {
 	/**
 	 * Logger for this class

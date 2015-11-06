@@ -1,5 +1,10 @@
 package at.fwd.swagger.spring.demo.user.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 import javax.annotation.PostConstruct;
+import javax.validation.constraints.Min;
 
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,12 +23,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import at.fwd.swagger.spring.demo.user.exception.ObjectNotFoundException;
+import at.fwd.swagger.spring.demo.user.model.State;
 import at.fwd.swagger.spring.demo.user.model.User;
-
-import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
-import com.wordnik.swagger.annotations.ApiResponse;
-import com.wordnik.swagger.annotations.ApiResponses;
 
 /**
  * Basic User CRUD Controller
@@ -60,7 +62,7 @@ public class UserController {
     @ApiResponses(value = {
     	    @ApiResponse(code = 200, message = "Successful retrieval of user detail", response = User.class),
     	    @ApiResponse(code = 404, message = "User not found") })
-    public User getUser(@RequestParam(value="id", required=true) Long id) {
+    public User getUser(@RequestParam(value="id", required=true) @Min(value=1) Long id) {
 		log.debug("getUser"); 
 		User user = userMap.get(id); 
 		
@@ -86,6 +88,30 @@ public class UserController {
 			if (user.getLastname().indexOf(query) >= 0) {
 				resultList.add(user);
 			}
+		}
+
+		return resultList;
+	}
+    
+
+    @RequestMapping(method = RequestMethod.GET, value = "/search_by_state")
+	@ResponseBody
+	@ApiOperation(value = "search for users by state", notes = "search for users")
+	@ApiResponses(value = {
+			@ApiResponse(code = 200, message = "Successful retrieval of user list"),
+			@ApiResponse(code = 404, message = "User not found") })
+	public List<User> searchUsers(@RequestParam(value = "query", required = true) State query) {
+		log.debug("searchUsers");
+		List<User> resultList = new ArrayList<User>();
+
+		for (User user : this.getUserMap().values()) {
+			if (user.getState().equals(query) ) {
+				resultList.add(user);
+			}
+		}
+		
+		if (resultList.isEmpty()) {
+			throw new ObjectNotFoundException("");
 		}
 
 		return resultList;

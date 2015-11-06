@@ -55,7 +55,7 @@ public class FacebookController {
     	if (fieldlist==null || fieldlist.length()==0) {
     		fieldlist = AssembleFieldsUtil.assembleFieldsForFacebookUser();
     	}
-    	
+    		
     	String url = apiUrl + name + "?access_token=" + access_token + "&fields=" + fieldlist;
     	System.out.println("url: " + url);
     	

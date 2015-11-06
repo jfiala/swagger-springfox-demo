@@ -3,7 +3,7 @@
     <parent>
         <groupId>io.swagger</groupId>
         <artifactId>swagger-codegen-project</artifactId>
-        <version>2.1.4-SNAPSHOT</version>
+        <version>2.1.5-SNAPSHOT</version>
         <relativePath>../..</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -258,14 +258,6 @@
             <version>${jmockit-version}</version>
             <scope>test</scope>
         </dependency>
-        
-        <!-- Jackson for REST API calls -->
-        <!-- dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.6.0</version>
-		</dependency -->
-        
     </dependencies>
     <repositories>
         <repository>
