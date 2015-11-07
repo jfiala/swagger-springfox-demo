@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import at.fwd.swagger.spring.demo.simple.minimum.MinimumState;
 import at.fwd.swagger.spring.demo.user.exception.ObjectNotFoundException;
 
 /**
@@ -99,12 +98,17 @@ public class UserController {
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "Successful retrieval of user list"),
 			@ApiResponse(code = 404, message = "User not found") })
-	public List<User> searchUsersByState(@RequestParam(value = "query", required = true) MinimumState query) {
+	public List<User> searchUsersByState(@RequestParam(value = "query", required = true) State query) {
 		log.debug("searchUsers");
 		List<User> resultList = new ArrayList<User>();
 
+		log.debug("query: " + query);
+		
 		for (User user : this.getUserMap().values()) {
+			log.debug("user.state: " + user.getState());
+			
 			if (user.getState().equals(query) ) {
+				log.debug("adding user!");
 				resultList.add(user);
 			}
 		}
@@ -132,6 +136,7 @@ public class UserController {
     	return user;
     }
     
+
 	public ConcurrentMap<Long, User> getUserMap() {
 		return userMap;
 	}
