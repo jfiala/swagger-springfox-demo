@@ -1,4 +1,4 @@
-package at.fwd.swagger.spring.demo.user.controller;
+package at.fwd.swagger.spring.demo.simple.minimum;
 
 import java.text.ParseException;
 import java.util.concurrent.ConcurrentHashMap;
@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import at.fwd.swagger.spring.demo.user.exception.ObjectNotFoundException;
-import at.fwd.swagger.spring.demo.user.model.User;
 
 /**
  * Basic User CRUD Controller
@@ -33,22 +32,13 @@ public class MinimumController {
 
 	private static final String MESSAGE_NOT_FOUND = "User not found";
 	
-	
-	private ConcurrentMap<Long, User> userMap = new ConcurrentHashMap<Long, User>();
-	 
-	@PostConstruct
-	public void init() throws ParseException {
-		log.debug("setting up usercontroller");
-		
-		
-		
-	}
+	private ConcurrentMap<Long, MinimumUser> userMap = new ConcurrentHashMap<Long, MinimumUser>();
 	 
     @RequestMapping(method=RequestMethod.GET, value="/minimum_user")
     @ResponseBody
-    public User getUser(@RequestParam(value="id", required=true) Long id) {
+    public MinimumUser getUser(@RequestParam(value="id", required=true) Long id) {
 		log.debug("getUser"); 
-		User user = userMap.get(id); 
+		MinimumUser user = userMap.get(id); 
 		
     	if (user!=null) {
     		return user;	
@@ -57,9 +47,8 @@ public class MinimumController {
     	}
     }
     
-    
     @RequestMapping(method=RequestMethod.POST, value="/minimum_user")
-    public User saveUserComplete(@RequestBody(required=true) User user) {
+    public MinimumUser saveUserComplete(@RequestBody(required=true) MinimumUser user) {
     	
     	if (user!=null) {
     		this.getUserMap().put(user.getId(),  user);
@@ -71,13 +60,12 @@ public class MinimumController {
     	return user;
     }
     
-	public ConcurrentMap<Long, User> getUserMap() {
+	public ConcurrentMap<Long, MinimumUser> getUserMap() {
 		return userMap;
 	}
 
-	public void setUserMap(ConcurrentMap<Long, User> userMap) {
+	public void setUserMap(ConcurrentMap<Long, MinimumUser> userMap) {
 		this.userMap = userMap;
 	}
-    
     
 }

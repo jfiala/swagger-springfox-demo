@@ -1,4 +1,4 @@
-package at.fwd.swagger.spring.demo.user.model;
+package at.fwd.swagger.spring.demo.simple.minimum;
 
 /**
  * Demo for enum State
@@ -6,6 +6,6 @@ package at.fwd.swagger.spring.demo.user.model;
  * @author johannes.fiala@fwd.at
  *
  */
-public enum State {
+public enum MinimumState {
 	ACTIVE, DISABLED;
 }

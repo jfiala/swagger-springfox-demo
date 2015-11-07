@@ -35,6 +35,7 @@
             <scope>test</scope>
         </dependency>
         
+        <!-- Enable Swagger - STEP 1: Add springfox-swagger2 -->
 		<dependency>
 		    <groupId>io.springfox</groupId>
 		    <artifactId>springfox-swagger2</artifactId>

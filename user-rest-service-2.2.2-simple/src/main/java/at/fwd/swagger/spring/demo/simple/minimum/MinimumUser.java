@@ -1,4 +1,4 @@
-package at.fwd.swagger.spring.demo.user.model;
+package at.fwd.swagger.spring.demo.simple.minimum;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -11,26 +11,18 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * @author johannes.fiala@fwd.at
  *
  */
-@ApiModel(description="User object")
-public class User {
+public class MinimumUser {
 
-	@ApiModelProperty(notes = "ID of the user", required = true, position = 2)
-    private long id;
+	 private long id;
     
     private String firstname;
     
-    @ApiModelProperty(notes = "Name of the user", required = true, position = 1)
     private String lastname;
    
-    @ApiModelProperty(notes = "Current state")
-    private State state;
+    private MinimumState state;
     
     
-    @JsonIgnore
-	private String hiddenString;
-    
-
-    public User() {
+    public MinimumUser() {
     	
     }
     
@@ -41,13 +33,6 @@ public class User {
 		this.id = id;
 	}
 	
-	public String getHiddenString() {
-		return hiddenString;
-	}
-	public void setHiddenString(String hiddenString) {
-		this.hiddenString = hiddenString;
-	}
-
 	public String getFirstname() {
 		return firstname;
 	}
@@ -64,11 +49,11 @@ public class User {
 		this.lastname = lastname;
 	}
 
-	public State getState() {
+	public MinimumState getState() {
 		return state;
 	}
 
-	public void setState(State state) {
+	public void setState(MinimumState state) {
 		this.state = state;
 	}
 	
