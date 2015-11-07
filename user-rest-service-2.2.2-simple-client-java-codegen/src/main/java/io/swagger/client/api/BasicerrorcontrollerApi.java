@@ -10,7 +10,7 @@ import io.swagger.client.model.ModelAndView;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-10-26T18:47:09.460+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-07T12:33:00.957+01:00")
 public class BasicerrorcontrollerApi {
   private ApiClient apiClient;
 
@@ -33,10 +33,10 @@ public class BasicerrorcontrollerApi {
   
   /**
    * errorHtml
-   * errorHtml
+   * 
    * @return ModelAndView
    */
-  public ModelAndView errorGet () throws ApiException {
+  public ModelAndView errorHtmlUsingGET () throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     
@@ -80,10 +80,57 @@ public class BasicerrorcontrollerApi {
   
   /**
    * errorHtml
-   * errorHtml
+   * 
    * @return ModelAndView
    */
-  public ModelAndView errorPut () throws ApiException {
+  public ModelAndView errorHtmlUsingHEAD () throws ApiException {
+    Object postBody = null;
+    byte[] postBinaryBody = null;
+    
+    // create path and map variables
+    String path = "/error".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "text/html"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+
+    
+    
+    TypeRef returnType = new TypeRef<ModelAndView>() {};
+    return apiClient.invokeAPI(path, "HEAD", queryParams, postBody, postBinaryBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+    
+
+
+  }
+  
+  /**
+   * errorHtml
+   * 
+   * @return ModelAndView
+   */
+  public ModelAndView errorHtmlUsingPUT () throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     
@@ -127,10 +174,10 @@ public class BasicerrorcontrollerApi {
   
   /**
    * errorHtml
-   * errorHtml
+   * 
    * @return ModelAndView
    */
-  public ModelAndView errorPost () throws ApiException {
+  public ModelAndView errorHtmlUsingPOST () throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     
@@ -174,10 +221,10 @@ public class BasicerrorcontrollerApi {
   
   /**
    * errorHtml
-   * errorHtml
+   * 
    * @return ModelAndView
    */
-  public ModelAndView errorDelete () throws ApiException {
+  public ModelAndView errorHtmlUsingDELETE () throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     
@@ -221,10 +268,10 @@ public class BasicerrorcontrollerApi {
   
   /**
    * errorHtml
-   * errorHtml
+   * 
    * @return ModelAndView
    */
-  public ModelAndView errorPatch () throws ApiException {
+  public ModelAndView errorHtmlUsingPATCH () throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     
@@ -268,10 +315,10 @@ public class BasicerrorcontrollerApi {
   
   /**
    * errorHtml
-   * errorHtml
+   * 
    * @return ModelAndView
    */
-  public ModelAndView errorOptions () throws ApiException {
+  public ModelAndView errorHtmlUsingOPTIONS () throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     

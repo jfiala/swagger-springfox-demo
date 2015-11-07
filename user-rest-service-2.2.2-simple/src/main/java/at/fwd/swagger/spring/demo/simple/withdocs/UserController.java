@@ -1,4 +1,4 @@
-package at.fwd.swagger.spring.demo.user.controller;
+package at.fwd.swagger.spring.demo.simple.withdocs;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -22,9 +22,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import at.fwd.swagger.spring.demo.simple.minimum.MinimumState;
 import at.fwd.swagger.spring.demo.user.exception.ObjectNotFoundException;
-import at.fwd.swagger.spring.demo.user.model.State;
-import at.fwd.swagger.spring.demo.user.model.User;
 
 /**
  * Basic User CRUD Controller
@@ -34,7 +33,7 @@ import at.fwd.swagger.spring.demo.user.model.User;
  *
  */
 @RestController
-@Api(value="user-crud", description ="User CRUD services")
+@Api(value="user-crud")
 public class UserController {
 	/**
 	 * Logger for this class
@@ -58,7 +57,7 @@ public class UserController {
 	 
     @RequestMapping(method=RequestMethod.GET, value="/user")
     @ResponseBody
-    @ApiOperation(value="read User by ID", notes="pass ID to read user", position = 2)
+    @ApiOperation(value="read User by ID", notes="pass ID to read user")
     @ApiResponses(value = {
     	    @ApiResponse(code = 200, message = "Successful retrieval of user detail", response = User.class),
     	    @ApiResponse(code = 404, message = "User not found") })
@@ -100,7 +99,7 @@ public class UserController {
 	@ApiResponses(value = {
 			@ApiResponse(code = 200, message = "Successful retrieval of user list"),
 			@ApiResponse(code = 404, message = "User not found") })
-	public List<User> searchUsers(@RequestParam(value = "query", required = true) State query) {
+	public List<User> searchUsersByState(@RequestParam(value = "query", required = true) MinimumState query) {
 		log.debug("searchUsers");
 		List<User> resultList = new ArrayList<User>();
 
@@ -118,7 +117,7 @@ public class UserController {
 	}
     
     @RequestMapping(method=RequestMethod.POST, value="/user")
-    @ApiOperation(value="create or update a user name by id", position = 1)
+    @ApiOperation(value="create or update a user name by id")
     @ApiResponses(value = {
     	    @ApiResponse(code = 200, message = MESSAGE_POST_SUCCESS, response = User.class) })
     public User saveUserComplete(@RequestBody(required=true) User user) {

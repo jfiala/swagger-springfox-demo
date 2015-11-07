@@ -10,7 +10,7 @@ import io.swagger.client.model.User;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-10-26T18:47:09.460+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-07T12:33:00.957+01:00")
 public class UsercrudApi {
   private ApiClient apiClient;
 
@@ -37,13 +37,13 @@ public class UsercrudApi {
    * @param query query
    * @return List<User>
    */
-  public List<User> searchGet (String query) throws ApiException {
+  public List<User> searchUsersUsingGET (String query) throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     
      // verify the required parameter 'query' is set
      if (query == null) {
-        throw new ApiException(400, "Missing the required parameter 'query' when calling searchGet");
+        throw new ApiException(400, "Missing the required parameter 'query' when calling searchUsersUsingGET");
      }
      
     // create path and map variables
@@ -87,22 +87,22 @@ public class UsercrudApi {
   }
   
   /**
-   * searchUsers2
-   * searchUsers2
+   * search for users by state
+   * search for users
    * @param query query
    * @return List<User>
    */
-  public List<User> search2Get (String query) throws ApiException {
+  public List<User> searchUsersByStateUsingGET (String query) throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     
      // verify the required parameter 'query' is set
      if (query == null) {
-        throw new ApiException(400, "Missing the required parameter 'query' when calling search2Get");
+        throw new ApiException(400, "Missing the required parameter 'query' when calling searchUsersByStateUsingGET");
      }
      
     // create path and map variables
-    String path = "/search2".replaceAll("\\{format\\}","json");
+    String path = "/search_by_state".replaceAll("\\{format\\}","json");
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
@@ -147,13 +147,13 @@ public class UsercrudApi {
    * @param id id
    * @return User
    */
-  public User userGet (Long id) throws ApiException {
+  public User getUserUsingGET1 (Long id) throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     
      // verify the required parameter 'id' is set
      if (id == null) {
-        throw new ApiException(400, "Missing the required parameter 'id' when calling userGet");
+        throw new ApiException(400, "Missing the required parameter 'id' when calling getUserUsingGET1");
      }
      
     // create path and map variables
@@ -198,14 +198,19 @@ public class UsercrudApi {
   
   /**
    * create or update a user name by id
-   * saveUserComplete
-   * @param body user
+   * 
+   * @param user user
    * @return User
    */
-  public User userPost (User body) throws ApiException {
-    Object postBody = body;
+  public User saveUserCompleteUsingPOST1 (User user) throws ApiException {
+    Object postBody = user;
     byte[] postBinaryBody = null;
     
+     // verify the required parameter 'user' is set
+     if (user == null) {
+        throw new ApiException(400, "Missing the required parameter 'user' when calling saveUserCompleteUsingPOST1");
+     }
+     
     // create path and map variables
     String path = "/user".replaceAll("\\{format\\}","json");
 

@@ -19,7 +19,7 @@ public class SearchApiTest extends AbstractTestCase {
 			UsercrudApi api = new UsercrudApi();
 			api.getApiClient().setBasePath("http://localhost:8080/");
 			
-			List<User> users = api.searchGet("T");
+			List<User> users = api.searchUsersUsingGET("T");
 			System.out.println ("response: " + users.toString());
 			
 			assertTrue(users.size()>0);

@@ -27,7 +27,7 @@ public class UserApi_post_Test extends AbstractTestCase {
 			user.setFirstname("test");
 			user.setLastname(newName);
 			
-			user = api.userPost( user);
+			user = api.saveUserCompleteUsingPOST1( user);
 			
 			assertEquals(newName, user.getLastname());
 			
