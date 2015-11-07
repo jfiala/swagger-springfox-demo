@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
+import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -15,6 +16,8 @@ import at.fwd.swagger.spring.demo.user.system.SpringSwaggerController;
 import com.google.common.base.Predicate;
 //replaces: @ComponentScan @EnableAutoConfiguration @Configuration
 
+
+import com.google.common.base.Predicates;
 
 import static com.google.common.base.Predicates.*;
 import static com.google.common.collect.Lists.*;
@@ -46,6 +49,7 @@ public class Application {
               .select() 
                  //Ignores controllers annotated with @CustomIgnore
                 //.apis(not(withClassAnnotation(CustomIgnore.class)) //Selection by RequestHandler
+              .apis(Predicates.not(RequestHandlerSelectors.basePackage("org.springframework.boot")))
                 .paths(paths()) // and by paths
                 .build()
               .apiInfo(apiInfo())
