@@ -15,6 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 import javax.annotation.PostConstruct;
+import javax.validation.constraints.NotNull;
 
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -122,7 +123,7 @@ public class UserController {
     @ApiResponses(value = {
     	    @ApiResponse(code = 200, message = "Successful retrieval of user detail", response = User.class),
     	    @ApiResponse(code = 404, message = "User not found") })
-    public User getUser(@RequestParam(value="id", required=true) Long id) {
+    public User getUser(@RequestParam(value="id") Long id) {
 		log.debug("getUser"); 
 		User user = userMap.get(id); 
 		

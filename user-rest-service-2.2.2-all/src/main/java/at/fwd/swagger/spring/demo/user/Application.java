@@ -11,6 +11,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import at.fwd.swagger.spring.demo.user.controller.UserController;
+import at.fwd.swagger.spring.demo.user.plugins.MyModelPropertyBuilderPlugin;
 import at.fwd.swagger.spring.demo.user.system.SpringSwaggerController;
 
 import com.google.common.base.Predicate;
@@ -31,7 +32,8 @@ import static springfox.documentation.builders.PathSelectors.*;
 @SpringBootApplication
 @EnableSwagger2
 @ComponentScan(basePackageClasses = {
-        UserController.class, 
+        UserController.class,
+        MyModelPropertyBuilderPlugin.class,
         //HotReloadConfiguration.class, 
         SpringSwaggerController.class
 })
