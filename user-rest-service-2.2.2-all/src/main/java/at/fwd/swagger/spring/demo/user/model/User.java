@@ -8,6 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.constraints.NotNull;
+
 import at.fwd.swagger.spring.demo.user.model.showcase.ShowcaseDatatypeDate;
 import at.fwd.swagger.spring.demo.user.model.showcase.ShowcaseDatatypeMath;
 import at.fwd.swagger.spring.demo.user.model.showcase.ShowcaseDatatypePrimitives;
@@ -23,7 +25,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @ApiModel(description="User object")
 public class User {
 
-	@ApiModelProperty(notes = "ID of the user", required = true, position = 2)
+	@ApiModelProperty(notes = "ID of the user", position = 2, allowableValues= "range[1, 100]") // infinity
+	@NotNull
     private long id;
     
     @ApiModelProperty(notes = "Name of the user", required = true, position = 1)
