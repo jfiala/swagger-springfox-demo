@@ -2,7 +2,6 @@ package io.swagger.codegen;
 
 import static org.apache.commons.lang3.StringUtils.capitalize;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
-import io.swagger.codegen.converters.FacebookGraphApiConverter;
 import io.swagger.models.ComposedModel;
 import io.swagger.models.Contact;
 import io.swagger.models.Info;
@@ -47,6 +46,7 @@ import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import at.fwd.swagger.spring.demo.converters.FacebookGraphApiConverter;
 import at.fwd.swagger.spring.demo.model.FacebookField;
 import at.fwd.swagger.spring.demo.model.FacebookUser;
 

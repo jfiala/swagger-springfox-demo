@@ -1,4 +1,4 @@
-package io.swagger.codegen.converters;
+package at.fwd.swagger.spring.demo.converters;
 
 import io.swagger.models.Model;
 import io.swagger.models.properties.ArrayProperty;
