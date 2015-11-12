@@ -28,6 +28,6 @@ After: [see Swagger API doc](xdocs/api_before_after/facebook_graph_api_after_imp
 
 * add JSR-303 annotations to client code
   * @NotNull can be added to all required fields
-  * @Min/@Max can be added to integers
+  * // @Min/@Max can be added to integers (currently with .0, this has to be improved - see AbstractNumericProperty
   
   
