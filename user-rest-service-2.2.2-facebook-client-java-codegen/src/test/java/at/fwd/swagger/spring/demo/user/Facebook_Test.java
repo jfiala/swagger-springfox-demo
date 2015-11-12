@@ -7,7 +7,9 @@ import io.swagger.client.ApiException;
 import io.swagger.client.api.ConnectorfacebookApi;
 import io.swagger.client.model.FacebookUser;
 
+import java.io.IOException;
 import java.text.ParseException;
+import java.util.Properties;
 import java.util.logging.Logger;
 
 import org.junit.Before;
@@ -23,13 +25,22 @@ public class Facebook_Test extends AbstractTestCase {
 	
 	ConnectorfacebookApi api;
 	
+	String facebookUrl;
+	String accessToken;
+
+	
 	@Before
-	public void setup() {
+	public void setup() throws IOException {
 		api = new ConnectorfacebookApi();
-		//api.getApiClient().setBasePath("http://localhost:8080/");
-		api.getApiClient().setBasePath("https://graph.facebook.com/v2.5/");
-	    
+		Properties props = new Properties();
+		props.load(this.getClass().getResourceAsStream("/config.properties"));
+
+		facebookUrl = props.getProperty("FB_URL");
+		accessToken = props.getProperty("FB_ACCESS_TOKEN");
 		
+		//api.getApiClient().setBasePath("http://localhost:8080/");
+		api.getApiClient().setBasePath(facebookUrl);
+	    
 	}
 	
 	@Test
@@ -38,7 +49,6 @@ public class Facebook_Test extends AbstractTestCase {
 		try {
 			
 			String name = "Microsoft";
-			String accessToken = "CAACEdEose0cBAMxzHIfk2tZB1nSzUc6a8ZAoXPtCAc2RhxoadtfuynBYcQZBQ7ZC8H7SXE64ukHtINtYMWKN8iLLGQZANXk73QNUZBVIDsF2w4BMXiCgADPPzZAK2QcydjGdMGysccwREEcYZBfoY04KVXUYo06zK74VV42My89XghFYca2JV47KhGYNH37McA5qZCZC4eayqMUmQA77wMHk6H";
 			//String fieldlist = "name,about,mission";
 			
 			String fields = AssembleFieldsUtil.assembleFieldsForFacebookUser();
