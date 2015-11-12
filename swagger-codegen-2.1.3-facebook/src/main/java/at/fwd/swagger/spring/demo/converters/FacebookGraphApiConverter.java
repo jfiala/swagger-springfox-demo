@@ -12,6 +12,7 @@ import io.swagger.models.properties.StringProperty;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -22,21 +23,18 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 
 public class FacebookGraphApiConverter {
 	
-	private static String ACCESS_TOKEN ="CAACEdEose0cBAF17jxPsNZBAQjJltqgBDXnu7Oe7TXsJ1DuHV6X24woYoCNkg2Q4XUcIePSBdeny0piIPrKvG8TLVCFoEc5b8w2TAaZA6zKjBwIEGTRi0ZAUS4PGCzeZAte4oKbwX4tR2d9shYZCZCDNPM7Hpt0QrrGjYJFk0Xx8nottTUZBZAkbkRmN2ID9Gj1WOGbakRiBkTuMcGm8ZBF5P"; 
-	
-	// specific api version: https://graph.facebook.com/v2.5/pivotalsoftware?access_token=CAACEdEose0cBAKhO7dPXDpZCELYncZAlZCOSWElLkhooVrP7dNYZCjg6CKS1RibzLSe9M0zfl9WKAWqGcVZAxUdaCyvrv0rujFgtM6YqbVuZANWi2Q8yWOA03CpTeB3FXiADrXDMfRMbZCJtZC7fm72S6k7xyNoxYqvSzjCE0D2Tl705DJFcHZB9DDbfZC6fhwrz5iaWvhZC3uCbf3zXSWtDedX&fields=name,about&metadata=1
-	// company
-	//private static String FACEBOOK_URL = "https://graph.facebook.com/microsoft";
-	
-	// person
-	private static String FACEBOOK_URL = "https://graph.facebook.com/me";
-	
 	private static boolean CONVERTER_ACTIVE = true;
 	
 	private static boolean ENHANCE_FIELDS_ACTIVE = false;
 	
 	public static void injectFieldsIntoModels(String name, Model model)
 			throws IOException {
+		
+		Properties props = new Properties();
+		props.load(FacebookGraphApiConverter.class.getResourceAsStream("/config.properties"));
+		
+		String facebookUrl = props.getProperty("FB_URL");
+		String accessToken = props.getProperty("FB_ACCESS_TOKEN");
 		
 		// read dynamic fields from Facebook
 		if (name.equals("FacebookUser")) {
@@ -57,7 +55,7 @@ public class FacebookGraphApiConverter {
 				String propName = null;
 				Property virtualProperty = null;
 				
-				String url = FACEBOOK_URL + "?access_token=" + ACCESS_TOKEN + "&metadata=1";
+				String url = facebookUrl + "?access_token=" + accessToken + "&metadata=1";
 				FacebookUser user = readJsonFromUrl(url);
 				for (FacebookField field : user.getMetadata().getFields()) {
 					propName = field.getName();
