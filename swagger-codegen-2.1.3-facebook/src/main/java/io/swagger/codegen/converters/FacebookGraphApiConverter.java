@@ -1,15 +1,17 @@
 package io.swagger.codegen.converters;
 
 import io.swagger.models.Model;
+import io.swagger.models.properties.ArrayProperty;
 import io.swagger.models.properties.BooleanProperty;
+import io.swagger.models.properties.DoubleProperty;
+import io.swagger.models.properties.FloatProperty;
 import io.swagger.models.properties.IntegerProperty;
+import io.swagger.models.properties.LongProperty;
 import io.swagger.models.properties.Property;
 import io.swagger.models.properties.StringProperty;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -183,6 +185,14 @@ public class FacebookGraphApiConverter {
 			virtualProperty = new BooleanProperty();
 		} else if ("unsigned int32".equals(field.getType())){
 			virtualProperty = new IntegerProperty();
+		} else if ("long".equals(field.getType())) {
+			virtualProperty = new LongProperty();
+		} else if ("float".equals(field.getType())) {
+			virtualProperty = new FloatProperty();
+		} else if ("double".equals(field.getType())) {
+			virtualProperty = new DoubleProperty();
+		} else if ("list<string>".equals(field.getType())) {
+			virtualProperty = new ArrayProperty();
 		} else {
 			virtualProperty = new StringProperty();
 		}
