@@ -10,7 +10,7 @@ public class JavaFacebookClientCodegen extends JavaClientCodegen implements Code
 
     public JavaFacebookClientCodegen() {
         super();
-        templateDir = "Java_Facebook";
+        templateDir = "JavaFacebook";
        
     }
     
