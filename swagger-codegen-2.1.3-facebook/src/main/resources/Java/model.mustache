@@ -6,7 +6,8 @@ import {{invokerPackage}}.StringUtil;
 
 {{#serializableModel}}
 import java.io.Serializable;{{/serializableModel}}
-
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import io.swagger.annotations.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 {{#models}}
@@ -23,6 +24,7 @@ public class {{classname}} {{#parent}}extends {{{parent}}}{{/parent}} {{#seriali
 {{>enumClass}}{{/isEnum}}{{#items.isEnum}}{{#items}}
 
 {{>enumClass}}{{/items}}{{/items.isEnum}}
+{{#minimum}} // TODO: @Min(value= {{minimum}}){{/minimum}}
   private {{{datatypeWithEnum}}} {{name}} = {{{defaultValue}}};{{/vars}}
 
   {{#vars}}
@@ -33,6 +35,7 @@ public class {{classname}} {{#parent}}extends {{{parent}}}{{/parent}} {{#seriali
    **/
   @ApiModelProperty({{#required}}required = {{required}}, {{/required}}value = "{{{description}}}")
   @JsonProperty("{{baseName}}")
+  {{#required}}@NotNull{{/required}}
   public {{{datatypeWithEnum}}} {{getter}}() {
     return {{name}};
   }

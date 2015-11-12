@@ -1,11 +1,20 @@
 package at.fwd.swagger.spring.demo.user.model.facebook;
 
+import io.swagger.annotations.ApiModelProperty;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 
 
 public class FacebookUser   {
 
+	@NotNull
 	Long id;
 	
+	@NotNull
+	@Size(min=5, max=100)
+	@ApiModelProperty(notes="...")
 	String name;
 
 	Location location;

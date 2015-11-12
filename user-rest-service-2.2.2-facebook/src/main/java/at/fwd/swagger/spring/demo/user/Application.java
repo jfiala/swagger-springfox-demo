@@ -10,6 +10,7 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import at.fwd.swagger.spring.demo.plugins.MyModelPropertyBuilderPlugin;
 import at.fwd.swagger.spring.demo.user.controller.connectors.FacebookController;
 //replaces: @ComponentScan @EnableAutoConfiguration @Configuration
 
@@ -24,7 +25,7 @@ import com.google.common.base.Predicates;
 @SpringBootApplication
 @EnableSwagger2
 @ComponentScan(basePackageClasses = {
-        FacebookController.class
+        FacebookController.class, MyModelPropertyBuilderPlugin.class
 })
 public class Application {
 	

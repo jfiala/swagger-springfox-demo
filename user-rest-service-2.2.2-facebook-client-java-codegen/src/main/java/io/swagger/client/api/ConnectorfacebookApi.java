@@ -10,7 +10,7 @@ import io.swagger.client.model.FacebookUser;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T10:23:44.281+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T12:42:47.529+01:00")
 public class ConnectorfacebookApi {
   private ApiClient apiClient;
 

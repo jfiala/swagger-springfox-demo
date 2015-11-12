@@ -2,9 +2,6 @@ package io.swagger.codegen;
 
 import static org.apache.commons.lang3.StringUtils.capitalize;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
-
-import com.samskivert.mustache.Mustache;
-import com.samskivert.mustache.Template;
 import io.swagger.models.ComposedModel;
 import io.swagger.models.Contact;
 import io.swagger.models.Info;
@@ -17,11 +14,9 @@ import io.swagger.models.Swagger;
 import io.swagger.models.auth.OAuth2Definition;
 import io.swagger.models.auth.SecuritySchemeDefinition;
 import io.swagger.models.parameters.Parameter;
+import io.swagger.models.properties.LongProperty;
+import io.swagger.models.properties.Property;
 import io.swagger.util.Json;
-import org.apache.commons.io.IOUtils;
-import org.joda.time.DateTime;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,7 +24,26 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.Reader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+import org.apache.commons.io.IOUtils;
+import org.joda.time.DateTime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.samskivert.mustache.Mustache;
+import com.samskivert.mustache.Template;
 
 public class DefaultGenerator extends AbstractGenerator implements Generator {
     Logger LOGGER = LoggerFactory.getLogger(DefaultGenerator.class);
@@ -196,6 +210,19 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
                         }
 
                         Model model = definitions.get(name);
+                        
+                        if (model.getProperties()!=null) {
+               		 	 for (String propertyKey : model.getProperties().keySet()) {
+               		 		 System.out.println("property: " + propertyKey);
+               		 		 
+               		 		 if ("id".equals(propertyKey)) {
+               		 			LongProperty myprop = (LongProperty)model.getProperties().get(propertyKey);
+               		 			System.out.println("format: " +myprop.getMinimum());
+               		 		 }
+               		 		 
+               		 	 }
+                        }
+                        
                         Map<String, Model> modelMap = new HashMap<String, Model>();
                         modelMap.put(name, model);
                         Map<String, Object> models = processModels(config, modelMap, definitions);

@@ -6,7 +6,6 @@ import static org.junit.Assert.fail;
 import io.swagger.client.ApiException;
 import io.swagger.client.api.ConnectorfacebookApi;
 import io.swagger.client.model.FacebookUser;
-import io.swagger.client.model.FacebookUser.AttireEnum;
 
 import java.text.ParseException;
 import java.util.logging.Logger;
@@ -54,7 +53,7 @@ public class Facebook_Test extends AbstractTestCase {
 						
 			assertEquals(name, user.getName());
 			
-			assertEquals(AttireEnum.CASUAL_, user.getAttire());
+			//assertEquals(AttireEnum.CASUAL_, user.getAttire());
 			//assertEquals(PriceRangeEnum._0_10_, user.getPriceRange());
 			
 			

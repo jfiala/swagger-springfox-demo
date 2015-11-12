@@ -22,10 +22,14 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 
 public class FacebookGraphApiConverter {
 	
-	private static String ACCESS_TOKEN ="CAACEdEose0cBAJXN30Ae2KBK8nv28w5bbJM53nthni2VrBTZAomHyUZA7rZBBpolGryEx1E7wBBWkjFgDYgcv2OUF8xaC0IDZBKWNibuGaptDfv4fQ9CIhsHEWv4WaxqhOv5742EVp2ZBUrZCZBZAMoh4kwBe2RmGNdoAvqy9fHaUVC5kokLxNjVghINiG1qJRFr5ECfFD8olbZAzUfZCo5TZCh"; 
+	private static String ACCESS_TOKEN ="CAACEdEose0cBAF17jxPsNZBAQjJltqgBDXnu7Oe7TXsJ1DuHV6X24woYoCNkg2Q4XUcIePSBdeny0piIPrKvG8TLVCFoEc5b8w2TAaZA6zKjBwIEGTRi0ZAUS4PGCzeZAte4oKbwX4tR2d9shYZCZCDNPM7Hpt0QrrGjYJFk0Xx8nottTUZBZAkbkRmN2ID9Gj1WOGbakRiBkTuMcGm8ZBF5P"; 
 	
 	// specific api version: https://graph.facebook.com/v2.5/pivotalsoftware?access_token=CAACEdEose0cBAKhO7dPXDpZCELYncZAlZCOSWElLkhooVrP7dNYZCjg6CKS1RibzLSe9M0zfl9WKAWqGcVZAxUdaCyvrv0rujFgtM6YqbVuZANWi2Q8yWOA03CpTeB3FXiADrXDMfRMbZCJtZC7fm72S6k7xyNoxYqvSzjCE0D2Tl705DJFcHZB9DDbfZC6fhwrz5iaWvhZC3uCbf3zXSWtDedX&fields=name,about&metadata=1
-	private static String FACEBOOK_URL = "https://graph.facebook.com/microsoft";
+	// company
+	//private static String FACEBOOK_URL = "https://graph.facebook.com/microsoft";
+	
+	// person
+	private static String FACEBOOK_URL = "https://graph.facebook.com/me";
 	
 	private static boolean CONVERTER_ACTIVE = true;
 	
@@ -185,16 +189,33 @@ public class FacebookGraphApiConverter {
 			virtualProperty = new BooleanProperty();
 		} else if ("unsigned int32".equals(field.getType())){
 			virtualProperty = new IntegerProperty();
+			IntegerProperty integerProperty = (IntegerProperty)virtualProperty;
+			//integerProperty.setMinimum();
+			
 		} else if ("long".equals(field.getType())) {
 			virtualProperty = new LongProperty();
 		} else if ("float".equals(field.getType())) {
 			virtualProperty = new FloatProperty();
+			
+			// e.g. timezone
+		} else if ("float (min: -24) (max: 24)".equals(field.getType())) {
+			virtualProperty = new FloatProperty();
+			FloatProperty floatProperty = (FloatProperty)virtualProperty;
+			
+			String minimum = StringUtils.substringBefore(StringUtils.substringAfter(field.getType(), "min: "), ")");
+			floatProperty.setMinimum(Double.valueOf(minimum));
+			String maximum = StringUtils.substringBefore(StringUtils.substringAfter(field.getType(), "max: "), ")");
+			floatProperty.setMaximum(Double.valueOf(maximum));
+			
 		} else if ("double".equals(field.getType())) {
 			virtualProperty = new DoubleProperty();
 		} else if ("list<string>".equals(field.getType())) {
 			virtualProperty = new ArrayProperty();
 		} else {
 			virtualProperty = new StringProperty();
+			StringProperty myStringProp = (StringProperty)virtualProperty;
+			//myStringProp.setMaxLength(maxLength);
+			//myStringProp.setMinLength(minLength);
 		}
 		return virtualProperty;
 	}

@@ -1,4 +1,4 @@
-package at.fwd.swagger.spring.demo.simple.plugins;
+package at.fwd.swagger.spring.demo.plugins;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;

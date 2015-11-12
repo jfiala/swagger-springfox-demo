@@ -1665,6 +1665,11 @@ public class DefaultCodegen {
         // encountered so far and hopefully make it easier for others to add more special
         // cases in the future.
 
+    	// FIXME quick patch for generating facebook me
+    	if (name==null) {
+    		name = "String";
+    	}
+    	
         // input[] => input
         name = name.replaceAll("\\[\\]", "");
 

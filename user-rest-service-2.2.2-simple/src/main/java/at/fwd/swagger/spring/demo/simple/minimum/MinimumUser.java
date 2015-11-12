@@ -12,13 +12,16 @@ import javax.validation.constraints.NotNull;
  */
 public class MinimumUser {
 
+	@NotNull
+	@Min(value=5)
+	@Max(value=100)
 	private long id;
     
 	@NotNull
     private String firstname;
     
 	@Min(value=5)
-	@Max(value=10)
+	@Max(value=100)
     private String lastname;
    
     private MinimumState state;
