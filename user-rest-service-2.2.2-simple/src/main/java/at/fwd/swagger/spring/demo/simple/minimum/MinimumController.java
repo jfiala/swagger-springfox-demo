@@ -11,6 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 import javax.annotation.PostConstruct;
+import javax.validation.constraints.NotNull;
 
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -44,7 +45,8 @@ public class MinimumController {
 	 
     @RequestMapping(method=RequestMethod.GET, value="/minimum_user")
     @ResponseBody
-    public MinimumUser getUser(@RequestParam(value="id", required=true) Long id) {
+    public MinimumUser getUser(@RequestParam(value="id", required=true) Long id, 
+    		@RequestParam(value="test") String test) {
 		log.debug("getUser"); 
 		MinimumUser user = userMap.get(id); 
 		

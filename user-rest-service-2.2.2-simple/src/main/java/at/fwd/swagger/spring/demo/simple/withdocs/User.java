@@ -3,6 +3,10 @@ package at.fwd.swagger.spring.demo.simple.withdocs;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
@@ -13,8 +17,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  */
 @ApiModel(description="User object")
 public class User {
-
-	@ApiModelProperty(notes = "ID of the user", required = true, position = 2)
+	
+	//@ApiModelProperty(notes = "ID of the user", required = true, position = 2, allowableValues= "range[1, 100]") // infinity)
+	//@ApiModelProperty(notes = "ID of the user", required = true, position = 2, allowableValues= "range[1, infinity]")
+	//@ApiModelProperty(notes = "ID of the user", required = true, position = 2)
+	@NotNull
+	//@Min(value=1)
+	//@Max(value=120)
     private long id;
     
     private String firstname;
@@ -25,8 +34,17 @@ public class User {
     @ApiModelProperty(notes = "Current state")
     private State state;
     
+    private String about;
     
-    @JsonIgnore
+	public String getAbout() {
+		return about;
+	}
+
+	public void setAbout(String about) {
+		this.about = about;
+	}
+
+	@JsonIgnore
 	private String hiddenString;
     
 
