@@ -42,7 +42,7 @@ public class ConnectorUserFacebookController {
 		
 		RestTemplate restTemplate = new RestTemplate();
 		
-		// https://graph.facebook.com/v2.5/pivotalsoftware?access_token=CAACEdEose0cBAKhO7dPXDpZCELYncZAlZCOSWElLkhooVrP7dNYZCjg6CKS1RibzLSe9M0zfl9WKAWqGcVZAxUdaCyvrv0rujFgtM6YqbVuZANWi2Q8yWOA03CpTeB3FXiADrXDMfRMbZCJtZC7fm72S6k7xyNoxYqvSzjCE0D2Tl705DJFcHZB9DDbfZC6fhwrz5iaWvhZC3uCbf3zXSWtDedX&fields=name,about&metadata=1
+		// https://graph.facebook.com/v2.5/pivotalsoftware?access_token=&fields=name,about&metadata=1
 		
 		
     	
@@ -50,7 +50,7 @@ public class ConnectorUserFacebookController {
     	
     	
     	String apiUrl = "https://graph.facebook.com/v2.5/";
-    	String access_token = "CAACEdEose0cBAKhO7dPXDpZCELYncZAlZCOSWElLkhooVrP7dNYZCjg6CKS1RibzLSe9M0zfl9WKAWqGcVZAxUdaCyvrv0rujFgtM6YqbVuZANWi2Q8yWOA03CpTeB3FXiADrXDMfRMbZCJtZC7fm72S6k7xyNoxYqvSzjCE0D2Tl705DJFcHZB9DDbfZC6fhwrz5iaWvhZC3uCbf3zXSWtDedX";
+    	String access_token = "";
     	String fieldlist = "&fields=name,about,mission";
     	
     	String url = apiUrl + name + "?access_token=" + access_token + fieldlist;
