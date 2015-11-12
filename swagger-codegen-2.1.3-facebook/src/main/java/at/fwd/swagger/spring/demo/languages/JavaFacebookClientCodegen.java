@@ -1,6 +1,7 @@
-package io.swagger.codegen.languages;
+package at.fwd.swagger.spring.demo.languages;
 
 import io.swagger.codegen.CodegenConfig;
+import io.swagger.codegen.languages.JavaClientCodegen;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -154,7 +154,7 @@ public class FacebookGraphApiConverter {
 		} else if ("unsigned int32".equals(field.getType())){
 			virtualProperty = new IntegerProperty();
 			IntegerProperty integerProperty = (IntegerProperty)virtualProperty;
-			//integerProperty.setMinimum();
+			// TODO: integerProperty.setMinimum();
 			
 		} else if ("long".equals(field.getType())) {
 			virtualProperty = new LongProperty();
@@ -173,13 +173,15 @@ public class FacebookGraphApiConverter {
 			
 		} else if ("double".equals(field.getType())) {
 			virtualProperty = new DoubleProperty();
+			
 		} else if ("list<string>".equals(field.getType())) {
 			virtualProperty = new ArrayProperty();
+			
 		} else {
 			virtualProperty = new StringProperty();
 			StringProperty myStringProp = (StringProperty)virtualProperty;
-			//myStringProp.setMaxLength(maxLength);
-			//myStringProp.setMinLength(minLength);
+			// TODO: myStringProp.setMaxLength(maxLength);
+			// TODO: myStringProp.setMinLength(minLength);
 		}
 		return virtualProperty;
 	}
