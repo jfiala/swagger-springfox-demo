@@ -10,7 +10,7 @@ import io.swagger.client.model.User;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-07T12:33:00.957+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T11:09:43.855+01:00")
 public class UsercrudApi {
   private ApiClient apiClient;
 
@@ -92,13 +92,13 @@ public class UsercrudApi {
    * @param query query
    * @return List<User>
    */
-  public List<User> searchUsersByStateUsingGET (String query) throws ApiException {
+  public List<User> searchUsersByStateUsingGET1 (String query) throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     
      // verify the required parameter 'query' is set
      if (query == null) {
-        throw new ApiException(400, "Missing the required parameter 'query' when calling searchUsersByStateUsingGET");
+        throw new ApiException(400, "Missing the required parameter 'query' when calling searchUsersByStateUsingGET1");
      }
      
     // create path and map variables

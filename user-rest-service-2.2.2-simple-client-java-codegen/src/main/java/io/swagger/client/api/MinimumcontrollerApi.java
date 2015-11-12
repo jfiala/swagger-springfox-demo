@@ -10,7 +10,7 @@ import io.swagger.client.model.MinimumUser;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-07T12:33:00.957+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T11:09:43.855+01:00")
 public class MinimumcontrollerApi {
   private ApiClient apiClient;
 
@@ -30,6 +30,61 @@ public class MinimumcontrollerApi {
     this.apiClient = apiClient;
   }
 
+  
+  /**
+   * search for users by state
+   * search for users
+   * @param query query
+   * @return List<MinimumUser>
+   */
+  public List<MinimumUser> searchUsersByStateUsingGET (String query) throws ApiException {
+    Object postBody = null;
+    byte[] postBinaryBody = null;
+    
+     // verify the required parameter 'query' is set
+     if (query == null) {
+        throw new ApiException(400, "Missing the required parameter 'query' when calling searchUsersByStateUsingGET");
+     }
+     
+    // create path and map variables
+    String path = "/minimum_search_by_state".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+    queryParams.addAll(apiClient.parameterToPairs("", "query", query));
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "*/*"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    String[] authNames = new String[] {  };
+
+    
+
+    
+    
+    TypeRef returnType = new TypeRef<List<MinimumUser>>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, postBinaryBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+    
+
+
+  }
   
   /**
    * getUser

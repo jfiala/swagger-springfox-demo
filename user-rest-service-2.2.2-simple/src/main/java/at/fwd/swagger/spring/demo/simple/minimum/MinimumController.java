@@ -45,8 +45,7 @@ public class MinimumController {
 	 
     @RequestMapping(method=RequestMethod.GET, value="/minimum_user")
     @ResponseBody
-    public MinimumUser getUser(@RequestParam(value="id", required=true) Long id, 
-    		@RequestParam(value="test") String test) {
+    public MinimumUser getUser(@RequestParam(value="id") Long id) {
 		log.debug("getUser"); 
 		MinimumUser user = userMap.get(id); 
 		

@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import io.swagger.client.api.UsercrudApi;
 import io.swagger.client.model.User;
+import io.swagger.client.model.User.StateEnum;
 
 import java.util.List;
 
@@ -26,6 +27,32 @@ public class SearchApiTest extends AbstractTestCase {
 			
 			for (User user : users) {
 				System.out.println ("user: " + user.toString());	
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+		
+	}
+	
+	@Test
+	public void testFindByState() {
+		
+		try {
+			UsercrudApi api = new UsercrudApi();
+			api.getApiClient().setBasePath("http://localhost:8080/");
+			
+			List<User> users = api.searchUsersByStateUsingGET1(StateEnum.ACTIVE.toString());
+			System.out.println ("response: " + users.toString());
+			
+			assertTrue(users.size()>0);
+			
+			for (User user : users) {
+				System.out.println ("user: " + user.toString());	
+				
+				user.getState().equals(StateEnum.ACTIVE);
 			}
 			
 			

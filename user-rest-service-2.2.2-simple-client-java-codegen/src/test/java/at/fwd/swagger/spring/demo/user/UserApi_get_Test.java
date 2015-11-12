@@ -33,7 +33,7 @@ public class UserApi_get_Test extends AbstractTestCase {
 		user.setId(new Long(4));
 		user.setFirstname("test");
 		user.setLastname(newName);
-		
+		user.setAbout("hello I'm breaking");
 		user = api.saveUserCompleteUsingPOST1( user);
 		
 	}
@@ -48,6 +48,7 @@ public class UserApi_get_Test extends AbstractTestCase {
 			System.out.println ("response: " + user.toString());
 			
 			assertEquals("Test", user.getLastname());
+			assertEquals("test", user.getFirstname());
 			
 		} catch (ApiException e) {
 			e.printStackTrace();
