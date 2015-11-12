@@ -2,6 +2,7 @@ package io.swagger.codegen;
 
 import static org.apache.commons.lang3.StringUtils.capitalize;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
+import io.swagger.codegen.converters.FacebookGraphApiConverter;
 import io.swagger.models.ComposedModel;
 import io.swagger.models.Contact;
 import io.swagger.models.Info;
@@ -14,6 +15,9 @@ import io.swagger.models.Swagger;
 import io.swagger.models.auth.OAuth2Definition;
 import io.swagger.models.auth.SecuritySchemeDefinition;
 import io.swagger.models.parameters.Parameter;
+import io.swagger.models.properties.BooleanProperty;
+import io.swagger.models.properties.IntegerProperty;
+import io.swagger.models.properties.Property;
 import io.swagger.models.properties.StringProperty;
 import io.swagger.util.Json;
 
@@ -68,20 +72,6 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
         return this;
     }
     
-    public static FacebookUser readJsonFromUrl(String url) throws IOException {
-  	  URL jsonUrl = new URL(url);
-
-        com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
-        
-        // jackson 1.9 and before
-        //mapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        // or jackson 2.0
-       mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        
-        FacebookUser object = mapper.readValue(jsonUrl, FacebookUser.class);
-        return object;
-    }
-
     @Override
     public List<File> generate() {
         Boolean generateApis = null;
@@ -221,6 +211,8 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
                     sortedModelKeys = updatedKeys;
                 }
 
+                FacebookGraphApiConverter converter = new FacebookGraphApiConverter();
+                
                 for (String name : sortedModelKeys) {
                     try {
                         //don't generate models that have an import mapping
@@ -230,39 +222,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
 
                         Model model = definitions.get(name);
                         
-                     // TODO read dynamic fields from Facebook
-                    	if (name.equals("FacebookUser")) {
-                    		System.out.println("*** Adding fields for FacebookUser");
-                    		// inject additional properties
-                    		
-                    		StringProperty fakeProperty = new StringProperty();
-                    		String propName = "fakeProperty";
-                    		fakeProperty.setName(propName);
-                    		fakeProperty.setDescription("this has been added from generator");
-                    		//model.getProperties().put(propName, fakeProperty);
-
-                    		// https://graph.facebook.com/v2.5/pivotalsoftware?access_token=CAACEdEose0cBAKhO7dPXDpZCELYncZAlZCOSWElLkhooVrP7dNYZCjg6CKS1RibzLSe9M0zfl9WKAWqGcVZAxUdaCyvrv0rujFgtM6YqbVuZANWi2Q8yWOA03CpTeB3FXiADrXDMfRMbZCJtZC7fm72S6k7xyNoxYqvSzjCE0D2Tl705DJFcHZB9DDbfZC6fhwrz5iaWvhZC3uCbf3zXSWtDedX&fields=name,about&metadata=1
-                        	
-                    		String access_token ="CAACEdEose0cBAMLtLLM83RZBQSsjGQA0lhr8VQoOGcHxK9ixiY0PSK77pbG7dbjvCmvZAwjrd8eOpsXMrSmz9ur0FqNQlNqmYasZArgyxc1wW6g2qoHRp5puPd4X0vpAZA7vpPO3rdyLRsFWyhMYQZBjBhyNn2dHs9GF8shMw6VgQh0iH2IumF3uofLI6SWFJjZBir4rmuGKNWHn7jOjsy"; 
-                    		String url = "https://graph.facebook.com/pivotalsoftware?access_token=" + access_token + "&metadata=1";
-                    		FacebookUser user = readJsonFromUrl(url);
-                    		for (FacebookField field : user.getMetadata().getFields()) {
-                    			propName = field.getName();
-                        		
-                    			System.out.println("*** property: " + propName);
-                        		if (!propName.equals("awards")) {
-                        			fakeProperty = new StringProperty();
-                        			fakeProperty.setName(propName);
-                            		fakeProperty.setDescription(field.getDescription());
-                            		model.getProperties().put(propName, fakeProperty);
-                        		}
-                        		
-                    		}
-                    		
-                    		
-                    		
-                    	}
-                        
+                        converter.injectFieldsIntoModels(name, model);
                         
                         Map<String, Model> modelMap = new HashMap<String, Model>();
                         modelMap.put(name, model);
@@ -488,6 +448,7 @@ public class DefaultGenerator extends AbstractGenerator implements Generator {
 
         return files;
     }
+
 
     private void processMimeTypes(List<String> mimeTypeList, Map<String, Object> operation, String source) {
         if (mimeTypeList != null && mimeTypeList.size() > 0) {
