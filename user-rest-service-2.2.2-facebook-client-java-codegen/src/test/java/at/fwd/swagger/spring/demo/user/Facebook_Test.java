@@ -36,11 +36,12 @@ public class Facebook_Test extends AbstractTestCase {
 		props.load(this.getClass().getResourceAsStream("/config.properties"));
 
 		facebookUrl = props.getProperty("FB_URL");
+		System.out.println(facebookUrl);
 		accessToken = props.getProperty("FB_ACCESS_TOKEN");
 		
 		//api.getApiClient().setBasePath("http://localhost:8080/");
 		api.getApiClient().setBasePath(facebookUrl);
-	    
+		
 	}
 	
 	@Test

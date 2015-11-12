@@ -10,7 +10,7 @@ import io.swagger.client.model.FacebookUser;
 
 import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T16:05:10.959+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T16:32:04.248+01:00")
 public class ConnectorfacebookApi {
   private ApiClient apiClient;
 
@@ -54,15 +54,14 @@ public class ConnectorfacebookApi {
      }
      
     // create path and map variables
-    String path = "/connector-facebook-user".replaceAll("\\{format\\}","json");
+    String path = "/{name}".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()));
 
     // query params
     List<Pair> queryParams = new ArrayList<Pair>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, Object> formParams = new HashMap<String, Object>();
 
-    
-    queryParams.addAll(apiClient.parameterToPairs("", "name", name));
     
     queryParams.addAll(apiClient.parameterToPairs("", "access_token", accessToken));
     
@@ -85,7 +84,7 @@ public class ConnectorfacebookApi {
 
     String[] authNames = new String[] {  };
 
-    path = name + "/";
+    
 
     
     
