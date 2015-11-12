@@ -1,18 +1,16 @@
 package io.swagger.client.api;
 
-import io.swagger.client.ApiClient;
 import io.swagger.client.ApiException;
+import io.swagger.client.ApiClient;
 import io.swagger.client.Configuration;
 import io.swagger.client.Pair;
 import io.swagger.client.TypeRef;
+
 import io.swagger.client.model.FacebookUser;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-10-25T20:06:58.230+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T10:23:44.281+01:00")
 public class ConnectorfacebookApi {
   private ApiClient apiClient;
 
@@ -38,10 +36,10 @@ public class ConnectorfacebookApi {
    * search for users
    * @param name name
    * @param accessToken access_token
-   * @param fieldlist fieldlist
+   * @param fields fields
    * @return FacebookUser
    */
-  public FacebookUser findByNameUsingGET (String name, String accessToken, String fieldlist) throws ApiException {
+  public FacebookUser findByNameUsingGET (String name, String accessToken, String fields) throws ApiException {
     Object postBody = null;
     byte[] postBinaryBody = null;
     
@@ -55,11 +53,6 @@ public class ConnectorfacebookApi {
         throw new ApiException(400, "Missing the required parameter 'accessToken' when calling findByNameUsingGET");
      }
      
-     // verify the required parameter 'fieldlist' is set
-     if (fieldlist == null) {
-        throw new ApiException(400, "Missing the required parameter 'fieldlist' when calling findByNameUsingGET");
-     }
-     
     // create path and map variables
     String path = "/connector-facebook-user".replaceAll("\\{format\\}","json");
 
@@ -69,11 +62,11 @@ public class ConnectorfacebookApi {
     Map<String, Object> formParams = new HashMap<String, Object>();
 
     
-    //queryParams.addAll(apiClient.parameterToPairs("", "name", name));
+    queryParams.addAll(apiClient.parameterToPairs("", "name", name));
     
     queryParams.addAll(apiClient.parameterToPairs("", "access_token", accessToken));
     
-    queryParams.addAll(apiClient.parameterToPairs("", "fields", fieldlist));
+    queryParams.addAll(apiClient.parameterToPairs("", "fields", fields));
     
 
     
@@ -92,10 +85,8 @@ public class ConnectorfacebookApi {
 
     String[] authNames = new String[] {  };
 
-    // TODO replace basepath + path
-    apiClient.setBasePath("https://graph.facebook.com/v2.5/");
     
-    path = name + "/";
+
     
     
     TypeRef returnType = new TypeRef<FacebookUser>() {};

@@ -6,6 +6,7 @@ import static org.junit.Assert.fail;
 import io.swagger.client.ApiException;
 import io.swagger.client.api.ConnectorfacebookApi;
 import io.swagger.client.model.FacebookUser;
+import io.swagger.client.model.FacebookUser.AttireEnum;
 
 import java.text.ParseException;
 import java.util.logging.Logger;
@@ -26,7 +27,9 @@ public class Facebook_Test extends AbstractTestCase {
 	@Before
 	public void setup() {
 		api = new ConnectorfacebookApi();
-		api.getApiClient().setBasePath("http://localhost:8080/");
+		//api.getApiClient().setBasePath("http://localhost:8080/");
+		api.getApiClient().setBasePath("https://graph.facebook.com/v2.5/");
+	    
 		
 	}
 	
@@ -36,20 +39,24 @@ public class Facebook_Test extends AbstractTestCase {
 		try {
 			
 			String name = "Microsoft";
-			String accessToken = "CAACEdEose0cBAEOMv7CkpU2WH2luH2Xv0Bpyvu74Le0LDiWri5teDQ7JGzdQ9AWKvCDneezJxjuQpjMg43ssg5XzyRZA4bjyiZAJ5IRailgevTZB6uVl8ot7y31poZCgrywGQpOzfUC2rZBphEZCB2ZBEq9BsopuyDDuA36VQiVfgoZBYfBswvZAHxyTBdaHitASnwlMWvMyzlXDAioh0SJ8S";
+			String accessToken = "CAACEdEose0cBAMxzHIfk2tZB1nSzUc6a8ZAoXPtCAc2RhxoadtfuynBYcQZBQ7ZC8H7SXE64ukHtINtYMWKN8iLLGQZANXk73QNUZBVIDsF2w4BMXiCgADPPzZAK2QcydjGdMGysccwREEcYZBfoY04KVXUYo06zK74VV42My89XghFYca2JV47KhGYNH37McA5qZCZC4eayqMUmQA77wMHk6H";
 			//String fieldlist = "name,about,mission";
 			
-			String fieldlist = AssembleFieldsUtil.assembleFieldsForFacebookUser();
-			FacebookUser user = api.findByNameUsingGET(name, accessToken, fieldlist);
+			String fields = AssembleFieldsUtil.assembleFieldsForFacebookUser();
+			FacebookUser user = api.findByNameUsingGET(name, accessToken, fields);
 			assertNotNull(user);
 			System.out.println ("user.name: " + user.getName());
-			System.out.println ("user.about: " + user.getAbout());
+			//System.out.println ("user.about: " + user.getAbout());
 			
-			System.out.println ("user.mission: " + user.getMission());
+			//System.out.println ("user.mission: " + user.getMission());
 			
 			System.out.println("user: " + user.toString());
 						
 			assertEquals(name, user.getName());
+			
+			assertEquals(AttireEnum.CASUAL_, user.getAttire());
+			//assertEquals(PriceRangeEnum._0_10_, user.getPriceRange());
+			
 			
 		} catch (ApiException e) {
 			e.printStackTrace();

@@ -1,6 +1,7 @@
 package io.swagger.client.model;
 
 import io.swagger.client.StringUtil;
+import io.swagger.client.model.Location;
 
 
 
@@ -9,21 +10,39 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-10-25T20:06:58.230+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T10:23:44.281+01:00")
 public class FacebookUser   {
   
-  private String about = null;
-  private String description = null;
-  private String founded = null;
-  private String id = null;
+  private Long id = null;
+  private Location location = null;
   private String name = null;
+  private String about = null;
   private String accessToken = null;
   private String adCampaign = null;
   private String affiliation = null;
   private String appId = null;
   private String appLinks = null;
   private String artistsWeLike = null;
-  private String attire = null;
+
+public enum AttireEnum {
+  CASUAL_("Casual,"),
+  DRESSY_("Dressy,"),
+  UNSPECIFIED("Unspecified");
+
+  private String value;
+
+  AttireEnum(String value) {
+    this.value = value;
+  }
+
+  @Override
+  public String toString() {
+    return value;
+  }
+}
+
+  private AttireEnum attire = null;
+  private String awards = null;
   private String bandInterests = null;
   private String bandMembers = null;
   private String bestPage = null;
@@ -32,45 +51,46 @@ public class FacebookUser   {
   private String bookingAgent = null;
   private String built = null;
   private String business = null;
-  private String canCheckin = null;
-  private String canPost = null;
+  private Boolean canCheckin = null;
+  private Boolean canPost = null;
   private String category = null;
   private String categoryList = null;
   private String companyOverview = null;
   private String contactAddress = null;
   private String context = null;
-  private String countryPageLikes = null;
+  private Integer countryPageLikes = null;
   private String cover = null;
   private String culinaryTeam = null;
   private String currentLocation = null;
+  private String description = null;
   private String descriptionHtml = null;
   private String directedBy = null;
   private String displaySubtext = null;
   private String emails = null;
   private String features = null;
   private String foodStyles = null;
+  private String founded = null;
   private String generalInfo = null;
   private String generalManager = null;
   private String genre = null;
   private String globalBrandPageName = null;
   private String globalBrandRootId = null;
-  private String hasAddedApp = null;
-  private String leadgenTosAccepted = null;
+  private Boolean hasAddedApp = null;
+  private Boolean leadgenTosAccepted = null;
   private String hometown = null;
   private String hours = null;
   private String influences = null;
-  private String isCommunityPage = null;
-  private String isPermanentlyClosed = null;
-  private String isPublished = null;
-  private String isUnclaimed = null;
-  private String isVerified = null;
+  private Boolean isCommunityPage = null;
+  private Boolean isPermanentlyClosed = null;
+  private Boolean isPublished = null;
+  private Boolean isUnclaimed = null;
+  private Boolean isVerified = null;
   private String link = null;
-  private String location = null;
   private String mission = null;
   private String mpg = null;
   private String network = null;
-  private String newLikeCount = null;
-  private String offerEligible = null;
+  private Integer newLikeCount = null;
+  private Boolean offerEligible = null;
   private String parentPage = null;
   private String parking = null;
   private String paymentOptions = null;
@@ -83,7 +103,7 @@ public class FacebookUser   {
   private String priceRange = null;
   private String producedBy = null;
   private String products = null;
-  private String promotionEligible = null;
+  private Boolean promotionEligible = null;
   private String promotionIneligibleReason = null;
   private String publicTransit = null;
   private String recordLabel = null;
@@ -94,84 +114,55 @@ public class FacebookUser   {
   private String screenplayBy = null;
   private String season = null;
   private String starring = null;
-  private String storeNumber = null;
+  private Integer storeNumber = null;
   private String studio = null;
-  private String talkingAboutCount = null;
+  private Integer talkingAboutCount = null;
   private String engagement = null;
   private String singleLineAddress = null;
   private String placeType = null;
-  private String unreadMessageCount = null;
-  private String unreadNotifCount = null;
-  private String unseenMessageCount = null;
+  private Integer unreadMessageCount = null;
+  private Integer unreadNotifCount = null;
+  private Integer unseenMessageCount = null;
   private String username = null;
   private String voipInfo = null;
   private String website = null;
-  private String wereHereCount = null;
+  private Integer wereHereCount = null;
   private String writtenBy = null;
   private String ownerBusiness = null;
   private String lastUsedTime = null;
   private String assetScore = null;
-  private String checkins = null;
-  private String likes = null;
+  private Integer checkins = null;
+  private Integer likes = null;
   private String members = null;
 
   
   /**
-   * Information about the Page
    **/
-  @ApiModelProperty(value = "Information about the Page")
-  @JsonProperty("about")
-  public String getAbout() {
-    return about;
-  }
-  public void setAbout(String about) {
-    this.about = about;
-  }
-
-  
-  /**
-   * The description of the Page
-   **/
-  @ApiModelProperty(value = "The description of the Page")
-  @JsonProperty("description")
-  public String getDescription() {
-    return description;
-  }
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  
-  /**
-   * When the company was founded. Applicable to Pages in the Company category
-   **/
-  @ApiModelProperty(value = "When the company was founded. Applicable to Pages in the Company category")
-  @JsonProperty("founded")
-  public String getFounded() {
-    return founded;
-  }
-  public void setFounded(String founded) {
-    this.founded = founded;
-  }
-
-  
-  /**
-   * Page ID. No access token is required to access this field
-   **/
-  @ApiModelProperty(value = "Page ID. No access token is required to access this field")
+  @ApiModelProperty(value = "")
   @JsonProperty("id")
-  public String getId() {
+  public Long getId() {
     return id;
   }
-  public void setId(String id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
   
   /**
-   * The name of the Page
    **/
-  @ApiModelProperty(value = "The name of the Page")
+  @ApiModelProperty(value = "")
+  @JsonProperty("location")
+  public Location getLocation() {
+    return location;
+  }
+  public void setLocation(Location location) {
+    this.location = location;
+  }
+
+  
+  /**
+   **/
+  @ApiModelProperty(value = "")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -182,9 +173,22 @@ public class FacebookUser   {
 
   
   /**
-   * The access token you can use to act as the Page. Only visible to Page Admins
+   * Information about the Page, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The access token you can use to act as the Page. Only visible to Page Admins")
+  @ApiModelProperty(value = "Information about the Page, Facebook datatype: string")
+  @JsonProperty("about")
+  public String getAbout() {
+    return about;
+  }
+  public void setAbout(String about) {
+    this.about = about;
+  }
+
+  
+  /**
+   * The access token you can use to act as the Page. Only visible to Page Admins, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The access token you can use to act as the Page. Only visible to Page Admins, Facebook datatype: string")
   @JsonProperty("access_token")
   public String getAccessToken() {
     return accessToken;
@@ -195,9 +199,9 @@ public class FacebookUser   {
 
   
   /**
-   * The Page's currently running promotion campaign
+   * The Page's currently running promotion campaign, Facebook datatype: adcampaign
    **/
-  @ApiModelProperty(value = "The Page's currently running promotion campaign")
+  @ApiModelProperty(value = "The Page's currently running promotion campaign, Facebook datatype: adcampaign")
   @JsonProperty("ad_campaign")
   public String getAdCampaign() {
     return adCampaign;
@@ -208,9 +212,9 @@ public class FacebookUser   {
 
   
   /**
-   * Affiliation of this person. Applicable to Pages representing people
+   * Affiliation of this person. Applicable to Pages representing people, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Affiliation of this person. Applicable to Pages representing people")
+  @ApiModelProperty(value = "Affiliation of this person. Applicable to Pages representing people, Facebook datatype: string")
   @JsonProperty("affiliation")
   public String getAffiliation() {
     return affiliation;
@@ -221,9 +225,9 @@ public class FacebookUser   {
 
   
   /**
-   * App ID for app-owned Pages and app Pages
+   * App ID for app-owned Pages and app Pages, Facebook datatype: id
    **/
-  @ApiModelProperty(value = "App ID for app-owned Pages and app Pages")
+  @ApiModelProperty(value = "App ID for app-owned Pages and app Pages, Facebook datatype: id")
   @JsonProperty("app_id")
   public String getAppId() {
     return appId;
@@ -234,9 +238,9 @@ public class FacebookUser   {
 
   
   /**
-   * AppLinks data associated with the Page's URL
+   * AppLinks data associated with the Page's URL, Facebook datatype: applinks
    **/
-  @ApiModelProperty(value = "AppLinks data associated with the Page's URL")
+  @ApiModelProperty(value = "AppLinks data associated with the Page's URL, Facebook datatype: applinks")
   @JsonProperty("app_links")
   public String getAppLinks() {
     return appLinks;
@@ -247,9 +251,9 @@ public class FacebookUser   {
 
   
   /**
-   * Artists the band likes. Applicable to Bands
+   * Artists the band likes. Applicable to Bands, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Artists the band likes. Applicable to Bands")
+  @ApiModelProperty(value = "Artists the band likes. Applicable to Bands, Facebook datatype: string")
   @JsonProperty("artists_we_like")
   public String getArtistsWeLike() {
     return artistsWeLike;
@@ -260,22 +264,35 @@ public class FacebookUser   {
 
   
   /**
-   * Dress code of the business. Applicable to Restaurants or Nightlife. Can be one of Casual, Dressy or Unspecified
+   * Dress code of the business. Applicable to Restaurants or Nightlife. Can be one of Casual, Dressy or Unspecified, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Dress code of the business. Applicable to Restaurants or Nightlife. Can be one of Casual, Dressy or Unspecified")
+  @ApiModelProperty(value = "Dress code of the business. Applicable to Restaurants or Nightlife. Can be one of Casual, Dressy or Unspecified, Facebook datatype: string")
   @JsonProperty("attire")
-  public String getAttire() {
+  public AttireEnum getAttire() {
     return attire;
   }
-  public void setAttire(String attire) {
+  public void setAttire(AttireEnum attire) {
     this.attire = attire;
   }
 
   
   /**
-   * Band interests. Applicable to Bands
+   * The awards information of the film. Applicable to Films, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Band interests. Applicable to Bands")
+  @ApiModelProperty(value = "The awards information of the film. Applicable to Films, Facebook datatype: string")
+  @JsonProperty("awards")
+  public String getAwards() {
+    return awards;
+  }
+  public void setAwards(String awards) {
+    this.awards = awards;
+  }
+
+  
+  /**
+   * Band interests. Applicable to Bands, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "Band interests. Applicable to Bands, Facebook datatype: string")
   @JsonProperty("band_interests")
   public String getBandInterests() {
     return bandInterests;
@@ -286,9 +303,9 @@ public class FacebookUser   {
 
   
   /**
-   * Members of the band. Applicable to Bands
+   * Members of the band. Applicable to Bands, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Members of the band. Applicable to Bands")
+  @ApiModelProperty(value = "Members of the band. Applicable to Bands, Facebook datatype: string")
   @JsonProperty("band_members")
   public String getBandMembers() {
     return bandMembers;
@@ -299,9 +316,9 @@ public class FacebookUser   {
 
   
   /**
-   * The best available Page on Facebook for the concept represented by this Page. The best available Page takes into account authenticity and the number of likes
+   * The best available Page on Facebook for the concept represented by this Page. The best available Page takes into account authenticity and the number of likes, Facebook datatype: page
    **/
-  @ApiModelProperty(value = "The best available Page on Facebook for the concept represented by this Page. The best available Page takes into account authenticity and the number of likes")
+  @ApiModelProperty(value = "The best available Page on Facebook for the concept represented by this Page. The best available Page takes into account authenticity and the number of likes, Facebook datatype: page")
   @JsonProperty("best_page")
   public String getBestPage() {
     return bestPage;
@@ -312,9 +329,9 @@ public class FacebookUser   {
 
   
   /**
-   * Biography of the band. Applicable to Bands
+   * Biography of the band. Applicable to Bands, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Biography of the band. Applicable to Bands")
+  @ApiModelProperty(value = "Biography of the band. Applicable to Bands, Facebook datatype: string")
   @JsonProperty("bio")
   public String getBio() {
     return bio;
@@ -325,9 +342,9 @@ public class FacebookUser   {
 
   
   /**
-   * Birthday of this person. Applicable to Pages representing people
+   * Birthday of this person. Applicable to Pages representing people, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Birthday of this person. Applicable to Pages representing people")
+  @ApiModelProperty(value = "Birthday of this person. Applicable to Pages representing people, Facebook datatype: string")
   @JsonProperty("birthday")
   public String getBirthday() {
     return birthday;
@@ -338,9 +355,9 @@ public class FacebookUser   {
 
   
   /**
-   * Booking agent of the band. Applicable to Bands
+   * Booking agent of the band. Applicable to Bands, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Booking agent of the band. Applicable to Bands")
+  @ApiModelProperty(value = "Booking agent of the band. Applicable to Bands, Facebook datatype: string")
   @JsonProperty("booking_agent")
   public String getBookingAgent() {
     return bookingAgent;
@@ -351,9 +368,9 @@ public class FacebookUser   {
 
   
   /**
-   * Year vehicle was built. Applicable to Vehicles
+   * Year vehicle was built. Applicable to Vehicles, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Year vehicle was built. Applicable to Vehicles")
+  @ApiModelProperty(value = "Year vehicle was built. Applicable to Vehicles, Facebook datatype: string")
   @JsonProperty("built")
   public String getBuilt() {
     return built;
@@ -364,9 +381,9 @@ public class FacebookUser   {
 
   
   /**
-   * The Business associated with this Page.  Visible only with a page access token or a user access token that has admin rights on the page
+   * The Business associated with this Page.  Visible only with a page access token or a user access token that has admin rights on the page, Facebook datatype: null
    **/
-  @ApiModelProperty(value = "The Business associated with this Page.  Visible only with a page access token or a user access token that has admin rights on the page")
+  @ApiModelProperty(value = "The Business associated with this Page.  Visible only with a page access token or a user access token that has admin rights on the page, Facebook datatype: null")
   @JsonProperty("business")
   public String getBusiness() {
     return business;
@@ -377,35 +394,35 @@ public class FacebookUser   {
 
   
   /**
-   * Whether this page has checkin functionality enabled
+   * Whether this page has checkin functionality enabled, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "Whether this page has checkin functionality enabled")
+  @ApiModelProperty(value = "Whether this page has checkin functionality enabled, Facebook datatype: bool")
   @JsonProperty("can_checkin")
-  public String getCanCheckin() {
+  public Boolean getCanCheckin() {
     return canCheckin;
   }
-  public void setCanCheckin(String canCheckin) {
+  public void setCanCheckin(Boolean canCheckin) {
     this.canCheckin = canCheckin;
   }
 
   
   /**
-   * Whether the current session user can post on this Page
+   * Whether the current session user can post on this Page, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "Whether the current session user can post on this Page")
+  @ApiModelProperty(value = "Whether the current session user can post on this Page, Facebook datatype: bool")
   @JsonProperty("can_post")
-  public String getCanPost() {
+  public Boolean getCanPost() {
     return canPost;
   }
-  public void setCanPost(String canPost) {
+  public void setCanPost(Boolean canPost) {
     this.canPost = canPost;
   }
 
   
   /**
-   * The Page's category. e.g. Product/Service, Computers/Technology
+   * The Page's category. e.g. Product/Service, Computers/Technology, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The Page's category. e.g. Product/Service, Computers/Technology")
+  @ApiModelProperty(value = "The Page's category. e.g. Product/Service, Computers/Technology, Facebook datatype: string")
   @JsonProperty("category")
   public String getCategory() {
     return category;
@@ -416,9 +433,9 @@ public class FacebookUser   {
 
   
   /**
-   * The Page's sub-categories
+   * The Page's sub-categories, Facebook datatype: list<pagecategory>
    **/
-  @ApiModelProperty(value = "The Page's sub-categories")
+  @ApiModelProperty(value = "The Page's sub-categories, Facebook datatype: list<pagecategory>")
   @JsonProperty("category_list")
   public String getCategoryList() {
     return categoryList;
@@ -429,9 +446,9 @@ public class FacebookUser   {
 
   
   /**
-   * The company overview. Applicable to Companies
+   * The company overview. Applicable to Companies, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The company overview. Applicable to Companies")
+  @ApiModelProperty(value = "The company overview. Applicable to Companies, Facebook datatype: string")
   @JsonProperty("company_overview")
   public String getCompanyOverview() {
     return companyOverview;
@@ -442,9 +459,9 @@ public class FacebookUser   {
 
   
   /**
-   * The mailing or contact address for this page. This field will be blank if the contact address is the same as the physical address
+   * The mailing or contact address for this page. This field will be blank if the contact address is the same as the physical address, Facebook datatype: mailingaddress
    **/
-  @ApiModelProperty(value = "The mailing or contact address for this page. This field will be blank if the contact address is the same as the physical address")
+  @ApiModelProperty(value = "The mailing or contact address for this page. This field will be blank if the contact address is the same as the physical address, Facebook datatype: mailingaddress")
   @JsonProperty("contact_address")
   public String getContactAddress() {
     return contactAddress;
@@ -455,9 +472,9 @@ public class FacebookUser   {
 
   
   /**
-   * Social context for this Page
+   * Social context for this Page, Facebook datatype: opengraphcontext
    **/
-  @ApiModelProperty(value = "Social context for this Page")
+  @ApiModelProperty(value = "Social context for this Page, Facebook datatype: opengraphcontext")
   @JsonProperty("context")
   public String getContext() {
     return context;
@@ -468,22 +485,22 @@ public class FacebookUser   {
 
   
   /**
-   * If this is a Page in a Global Pages hierarchy, the number of people who are being directed to this Page.
+   * If this is a Page in a Global Pages hierarchy, the number of people who are being directed to this Page., Facebook datatype: unsigned int32
    **/
-  @ApiModelProperty(value = "If this is a Page in a Global Pages hierarchy, the number of people who are being directed to this Page.")
+  @ApiModelProperty(value = "If this is a Page in a Global Pages hierarchy, the number of people who are being directed to this Page., Facebook datatype: unsigned int32")
   @JsonProperty("country_page_likes")
-  public String getCountryPageLikes() {
+  public Integer getCountryPageLikes() {
     return countryPageLikes;
   }
-  public void setCountryPageLikes(String countryPageLikes) {
+  public void setCountryPageLikes(Integer countryPageLikes) {
     this.countryPageLikes = countryPageLikes;
   }
 
   
   /**
-   * Information about the page's cover photo
+   * Information about the page's cover photo, Facebook datatype: coverphoto
    **/
-  @ApiModelProperty(value = "Information about the page's cover photo")
+  @ApiModelProperty(value = "Information about the page's cover photo, Facebook datatype: coverphoto")
   @JsonProperty("cover")
   public String getCover() {
     return cover;
@@ -494,9 +511,9 @@ public class FacebookUser   {
 
   
   /**
-   * Culinary team of the business. Applicable to Restaurants or Nightlife
+   * Culinary team of the business. Applicable to Restaurants or Nightlife, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Culinary team of the business. Applicable to Restaurants or Nightlife")
+  @ApiModelProperty(value = "Culinary team of the business. Applicable to Restaurants or Nightlife, Facebook datatype: string")
   @JsonProperty("culinary_team")
   public String getCulinaryTeam() {
     return culinaryTeam;
@@ -507,9 +524,9 @@ public class FacebookUser   {
 
   
   /**
-   * Current location of the Page
+   * Current location of the Page, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Current location of the Page")
+  @ApiModelProperty(value = "Current location of the Page, Facebook datatype: string")
   @JsonProperty("current_location")
   public String getCurrentLocation() {
     return currentLocation;
@@ -520,9 +537,22 @@ public class FacebookUser   {
 
   
   /**
-   * The description of the Page in raw HTML
+   * The description of the Page, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The description of the Page in raw HTML")
+  @ApiModelProperty(value = "The description of the Page, Facebook datatype: string")
+  @JsonProperty("description")
+  public String getDescription() {
+    return description;
+  }
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  
+  /**
+   * The description of the Page in raw HTML, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The description of the Page in raw HTML, Facebook datatype: string")
   @JsonProperty("description_html")
   public String getDescriptionHtml() {
     return descriptionHtml;
@@ -533,9 +563,9 @@ public class FacebookUser   {
 
   
   /**
-   * The director of the film. Applicable to Films
+   * The director of the film. Applicable to Films, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The director of the film. Applicable to Films")
+  @ApiModelProperty(value = "The director of the film. Applicable to Films, Facebook datatype: string")
   @JsonProperty("directed_by")
   public String getDirectedBy() {
     return directedBy;
@@ -546,9 +576,9 @@ public class FacebookUser   {
 
   
   /**
-   * Subtext about the Page being viewed
+   * Subtext about the Page being viewed, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Subtext about the Page being viewed")
+  @ApiModelProperty(value = "Subtext about the Page being viewed, Facebook datatype: string")
   @JsonProperty("display_subtext")
   public String getDisplaySubtext() {
     return displaySubtext;
@@ -559,9 +589,9 @@ public class FacebookUser   {
 
   
   /**
-   * The emails listed in the About section of a Page
+   * The emails listed in the About section of a Page, Facebook datatype: list<string>
    **/
-  @ApiModelProperty(value = "The emails listed in the About section of a Page")
+  @ApiModelProperty(value = "The emails listed in the About section of a Page, Facebook datatype: list<string>")
   @JsonProperty("emails")
   public String getEmails() {
     return emails;
@@ -572,9 +602,9 @@ public class FacebookUser   {
 
   
   /**
-   * Features of the vehicle. Applicable to Vehicles
+   * Features of the vehicle. Applicable to Vehicles, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Features of the vehicle. Applicable to Vehicles")
+  @ApiModelProperty(value = "Features of the vehicle. Applicable to Vehicles, Facebook datatype: string")
   @JsonProperty("features")
   public String getFeatures() {
     return features;
@@ -585,9 +615,9 @@ public class FacebookUser   {
 
   
   /**
-   * The restaurant's food styles. Applicable to Restaurants
+   * The restaurant's food styles. Applicable to Restaurants, Facebook datatype: list<string>
    **/
-  @ApiModelProperty(value = "The restaurant's food styles. Applicable to Restaurants")
+  @ApiModelProperty(value = "The restaurant's food styles. Applicable to Restaurants, Facebook datatype: list<string>")
   @JsonProperty("food_styles")
   public String getFoodStyles() {
     return foodStyles;
@@ -598,9 +628,22 @@ public class FacebookUser   {
 
   
   /**
-   * General information provided by the Page
+   * When the company was founded. Applicable to Pages in the Company category, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "General information provided by the Page")
+  @ApiModelProperty(value = "When the company was founded. Applicable to Pages in the Company category, Facebook datatype: string")
+  @JsonProperty("founded")
+  public String getFounded() {
+    return founded;
+  }
+  public void setFounded(String founded) {
+    this.founded = founded;
+  }
+
+  
+  /**
+   * General information provided by the Page, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "General information provided by the Page, Facebook datatype: string")
   @JsonProperty("general_info")
   public String getGeneralInfo() {
     return generalInfo;
@@ -611,9 +654,9 @@ public class FacebookUser   {
 
   
   /**
-   * General manager of the business. Applicable to Restaurants or Nightlife
+   * General manager of the business. Applicable to Restaurants or Nightlife, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "General manager of the business. Applicable to Restaurants or Nightlife")
+  @ApiModelProperty(value = "General manager of the business. Applicable to Restaurants or Nightlife, Facebook datatype: string")
   @JsonProperty("general_manager")
   public String getGeneralManager() {
     return generalManager;
@@ -624,9 +667,9 @@ public class FacebookUser   {
 
   
   /**
-   * The genre of the film. Applicable to Films
+   * The genre of the film. Applicable to Films, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The genre of the film. Applicable to Films")
+  @ApiModelProperty(value = "The genre of the film. Applicable to Films, Facebook datatype: string")
   @JsonProperty("genre")
   public String getGenre() {
     return genre;
@@ -637,9 +680,9 @@ public class FacebookUser   {
 
   
   /**
-   * The name of the Page with country codes appended for Global Brand Pages. Only visible to the Page admin
+   * The name of the Page with country codes appended for Global Brand Pages. Only visible to the Page admin, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The name of the Page with country codes appended for Global Brand Pages. Only visible to the Page admin")
+  @ApiModelProperty(value = "The name of the Page with country codes appended for Global Brand Pages. Only visible to the Page admin, Facebook datatype: string")
   @JsonProperty("global_brand_page_name")
   public String getGlobalBrandPageName() {
     return globalBrandPageName;
@@ -650,9 +693,9 @@ public class FacebookUser   {
 
   
   /**
-   * This brand's global Root ID
+   * This brand's global Root ID, Facebook datatype: numeric string
    **/
-  @ApiModelProperty(value = "This brand's global Root ID")
+  @ApiModelProperty(value = "This brand's global Root ID, Facebook datatype: numeric string")
   @JsonProperty("global_brand_root_id")
   public String getGlobalBrandRootId() {
     return globalBrandRootId;
@@ -663,35 +706,35 @@ public class FacebookUser   {
 
   
   /**
-   * Indicates whether this Page has added the app making the query in a Page tab
+   * Indicates whether this Page has added the app making the query in a Page tab, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "Indicates whether this Page has added the app making the query in a Page tab")
+  @ApiModelProperty(value = "Indicates whether this Page has added the app making the query in a Page tab, Facebook datatype: bool")
   @JsonProperty("has_added_app")
-  public String getHasAddedApp() {
+  public Boolean getHasAddedApp() {
     return hasAddedApp;
   }
-  public void setHasAddedApp(String hasAddedApp) {
+  public void setHasAddedApp(Boolean hasAddedApp) {
     this.hasAddedApp = hasAddedApp;
   }
 
   
   /**
-   * Indicates whether a user has accepted the TOS for running LeadGen Ads on the Page
+   * Indicates whether a user has accepted the TOS for running LeadGen Ads on the Page, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "Indicates whether a user has accepted the TOS for running LeadGen Ads on the Page")
+  @ApiModelProperty(value = "Indicates whether a user has accepted the TOS for running LeadGen Ads on the Page, Facebook datatype: bool")
   @JsonProperty("leadgen_tos_accepted")
-  public String getLeadgenTosAccepted() {
+  public Boolean getLeadgenTosAccepted() {
     return leadgenTosAccepted;
   }
-  public void setLeadgenTosAccepted(String leadgenTosAccepted) {
+  public void setLeadgenTosAccepted(Boolean leadgenTosAccepted) {
     this.leadgenTosAccepted = leadgenTosAccepted;
   }
 
   
   /**
-   * Hometown of the band. Applicable to Bands
+   * Hometown of the band. Applicable to Bands, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Hometown of the band. Applicable to Bands")
+  @ApiModelProperty(value = "Hometown of the band. Applicable to Bands, Facebook datatype: string")
   @JsonProperty("hometown")
   public String getHometown() {
     return hometown;
@@ -702,9 +745,9 @@ public class FacebookUser   {
 
   
   /**
-   * Indicates a single range of opening hours for a day. Each day can have 2 different hours ranges. The keys in the map are in the form of `{day}_{number}_{status}`.  `{day}` should be the first 3 characters of the day of the week, `{number}` should be either 1 or 2 to allow for the two different hours ranges per day. `{status}` should be either `open` or `close` to delineate the start or end of a time range. An example would be `mon_1_open` with value `17:00` and `mon_1_close` with value `21:15` which would represent a single opening range of 5pm to 9:15pm on Mondays
+   * Indicates a single range of opening hours for a day. Each day can have 2 different hours ranges. The keys in the map are in the form of `{day}_{number}_{status}`.  `{day}` should be the first 3 characters of the day of the week, `{number}` should be either 1 or 2 to allow for the two different hours ranges per day. `{status}` should be either `open` or `close` to delineate the start or end of a time range. An example would be `mon_1_open` with value `17:00` and `mon_1_close` with value `21:15` which would represent a single opening range of 5pm to 9:15pm on Mondays, Facebook datatype: map<string, string>
    **/
-  @ApiModelProperty(value = "Indicates a single range of opening hours for a day. Each day can have 2 different hours ranges. The keys in the map are in the form of `{day}_{number}_{status}`.  `{day}` should be the first 3 characters of the day of the week, `{number}` should be either 1 or 2 to allow for the two different hours ranges per day. `{status}` should be either `open` or `close` to delineate the start or end of a time range. An example would be `mon_1_open` with value `17:00` and `mon_1_close` with value `21:15` which would represent a single opening range of 5pm to 9:15pm on Mondays")
+  @ApiModelProperty(value = "Indicates a single range of opening hours for a day. Each day can have 2 different hours ranges. The keys in the map are in the form of `{day}_{number}_{status}`.  `{day}` should be the first 3 characters of the day of the week, `{number}` should be either 1 or 2 to allow for the two different hours ranges per day. `{status}` should be either `open` or `close` to delineate the start or end of a time range. An example would be `mon_1_open` with value `17:00` and `mon_1_close` with value `21:15` which would represent a single opening range of 5pm to 9:15pm on Mondays, Facebook datatype: map<string, string>")
   @JsonProperty("hours")
   public String getHours() {
     return hours;
@@ -715,9 +758,9 @@ public class FacebookUser   {
 
   
   /**
-   * Influences on the band. Applicable to Bands
+   * Influences on the band. Applicable to Bands, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Influences on the band. Applicable to Bands")
+  @ApiModelProperty(value = "Influences on the band. Applicable to Bands, Facebook datatype: string")
   @JsonProperty("influences")
   public String getInfluences() {
     return influences;
@@ -728,74 +771,74 @@ public class FacebookUser   {
 
   
   /**
-   * Indicates whether the Page is a community Page
+   * Indicates whether the Page is a community Page, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "Indicates whether the Page is a community Page")
+  @ApiModelProperty(value = "Indicates whether the Page is a community Page, Facebook datatype: bool")
   @JsonProperty("is_community_page")
-  public String getIsCommunityPage() {
+  public Boolean getIsCommunityPage() {
     return isCommunityPage;
   }
-  public void setIsCommunityPage(String isCommunityPage) {
+  public void setIsCommunityPage(Boolean isCommunityPage) {
     this.isCommunityPage = isCommunityPage;
   }
 
   
   /**
-   * Whether the business corresponding to this Page is permanently closed
+   * Whether the business corresponding to this Page is permanently closed, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "Whether the business corresponding to this Page is permanently closed")
+  @ApiModelProperty(value = "Whether the business corresponding to this Page is permanently closed, Facebook datatype: bool")
   @JsonProperty("is_permanently_closed")
-  public String getIsPermanentlyClosed() {
+  public Boolean getIsPermanentlyClosed() {
     return isPermanentlyClosed;
   }
-  public void setIsPermanentlyClosed(String isPermanentlyClosed) {
+  public void setIsPermanentlyClosed(Boolean isPermanentlyClosed) {
     this.isPermanentlyClosed = isPermanentlyClosed;
   }
 
   
   /**
-   * Indicates whether the Page is published and visible to non-admins
+   * Indicates whether the Page is published and visible to non-admins, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "Indicates whether the Page is published and visible to non-admins")
+  @ApiModelProperty(value = "Indicates whether the Page is published and visible to non-admins, Facebook datatype: bool")
   @JsonProperty("is_published")
-  public String getIsPublished() {
+  public Boolean getIsPublished() {
     return isPublished;
   }
-  public void setIsPublished(String isPublished) {
+  public void setIsPublished(Boolean isPublished) {
     this.isPublished = isPublished;
   }
 
   
   /**
-   * Indicates whether the Page is unclaimed
+   * Indicates whether the Page is unclaimed, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "Indicates whether the Page is unclaimed")
+  @ApiModelProperty(value = "Indicates whether the Page is unclaimed, Facebook datatype: bool")
   @JsonProperty("is_unclaimed")
-  public String getIsUnclaimed() {
+  public Boolean getIsUnclaimed() {
     return isUnclaimed;
   }
-  public void setIsUnclaimed(String isUnclaimed) {
+  public void setIsUnclaimed(Boolean isUnclaimed) {
     this.isUnclaimed = isUnclaimed;
   }
 
   
   /**
-   * Pages with a large number of followers can be manually verified by Facebook as [having an authentic identity](https://www.facebook.com/help/196050490547892). This field indicates whether the page is verified by this process
+   * Pages with a large number of followers can be manually verified by Facebook as [having an authentic identity](https://www.facebook.com/help/196050490547892). This field indicates whether the page is verified by this process, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "Pages with a large number of followers can be manually verified by Facebook as [having an authentic identity](https://www.facebook.com/help/196050490547892). This field indicates whether the page is verified by this process")
+  @ApiModelProperty(value = "Pages with a large number of followers can be manually verified by Facebook as [having an authentic identity](https://www.facebook.com/help/196050490547892). This field indicates whether the page is verified by this process, Facebook datatype: bool")
   @JsonProperty("is_verified")
-  public String getIsVerified() {
+  public Boolean getIsVerified() {
     return isVerified;
   }
-  public void setIsVerified(String isVerified) {
+  public void setIsVerified(Boolean isVerified) {
     this.isVerified = isVerified;
   }
 
   
   /**
-   * The Page's Facebook URL
+   * The Page's Facebook URL, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The Page's Facebook URL")
+  @ApiModelProperty(value = "The Page's Facebook URL, Facebook datatype: string")
   @JsonProperty("link")
   public String getLink() {
     return link;
@@ -806,22 +849,9 @@ public class FacebookUser   {
 
   
   /**
-   * The location of this place. Applicable to all Places
+   * The company mission. Applicable to Companies, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The location of this place. Applicable to all Places")
-  @JsonProperty("location")
-  public String getLocation() {
-    return location;
-  }
-  public void setLocation(String location) {
-    this.location = location;
-  }
-
-  
-  /**
-   * The company mission. Applicable to Companies
-   **/
-  @ApiModelProperty(value = "The company mission. Applicable to Companies")
+  @ApiModelProperty(value = "The company mission. Applicable to Companies, Facebook datatype: string")
   @JsonProperty("mission")
   public String getMission() {
     return mission;
@@ -832,9 +862,9 @@ public class FacebookUser   {
 
   
   /**
-   * MPG of the vehicle. Applicable to Vehicles
+   * MPG of the vehicle. Applicable to Vehicles, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "MPG of the vehicle. Applicable to Vehicles")
+  @ApiModelProperty(value = "MPG of the vehicle. Applicable to Vehicles, Facebook datatype: string")
   @JsonProperty("mpg")
   public String getMpg() {
     return mpg;
@@ -845,9 +875,9 @@ public class FacebookUser   {
 
   
   /**
-   * The TV network for the TV show. Applicable to TV Shows
+   * The TV network for the TV show. Applicable to TV Shows, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The TV network for the TV show. Applicable to TV Shows")
+  @ApiModelProperty(value = "The TV network for the TV show. Applicable to TV Shows, Facebook datatype: string")
   @JsonProperty("network")
   public String getNetwork() {
     return network;
@@ -858,35 +888,35 @@ public class FacebookUser   {
 
   
   /**
-   * The number of people who have liked the Page, since the last login. Only visible to a page admin
+   * The number of people who have liked the Page, since the last login. Only visible to a page admin, Facebook datatype: unsigned int32
    **/
-  @ApiModelProperty(value = "The number of people who have liked the Page, since the last login. Only visible to a page admin")
+  @ApiModelProperty(value = "The number of people who have liked the Page, since the last login. Only visible to a page admin, Facebook datatype: unsigned int32")
   @JsonProperty("new_like_count")
-  public String getNewLikeCount() {
+  public Integer getNewLikeCount() {
     return newLikeCount;
   }
-  public void setNewLikeCount(String newLikeCount) {
+  public void setNewLikeCount(Integer newLikeCount) {
     this.newLikeCount = newLikeCount;
   }
 
   
   /**
-   * Offer eligibility status. Only visible to a page admin
+   * Offer eligibility status. Only visible to a page admin, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "Offer eligibility status. Only visible to a page admin")
+  @ApiModelProperty(value = "Offer eligibility status. Only visible to a page admin, Facebook datatype: bool")
   @JsonProperty("offer_eligible")
-  public String getOfferEligible() {
+  public Boolean getOfferEligible() {
     return offerEligible;
   }
-  public void setOfferEligible(String offerEligible) {
+  public void setOfferEligible(Boolean offerEligible) {
     this.offerEligible = offerEligible;
   }
 
   
   /**
-   * Parent Page for this Page
+   * Parent Page for this Page, Facebook datatype: page
    **/
-  @ApiModelProperty(value = "Parent Page for this Page")
+  @ApiModelProperty(value = "Parent Page for this Page, Facebook datatype: page")
   @JsonProperty("parent_page")
   public String getParentPage() {
     return parentPage;
@@ -897,9 +927,9 @@ public class FacebookUser   {
 
   
   /**
-   * Parking information. Applicable to Businesses and Places
+   * Parking information. Applicable to Businesses and Places, Facebook datatype: pageparking
    **/
-  @ApiModelProperty(value = "Parking information. Applicable to Businesses and Places")
+  @ApiModelProperty(value = "Parking information. Applicable to Businesses and Places, Facebook datatype: pageparking")
   @JsonProperty("parking")
   public String getParking() {
     return parking;
@@ -910,9 +940,9 @@ public class FacebookUser   {
 
   
   /**
-   * Payment options accepted by the business. Applicable to Restaurants or Nightlife
+   * Payment options accepted by the business. Applicable to Restaurants or Nightlife, Facebook datatype: pagepaymentoptions
    **/
-  @ApiModelProperty(value = "Payment options accepted by the business. Applicable to Restaurants or Nightlife")
+  @ApiModelProperty(value = "Payment options accepted by the business. Applicable to Restaurants or Nightlife, Facebook datatype: pagepaymentoptions")
   @JsonProperty("payment_options")
   public String getPaymentOptions() {
     return paymentOptions;
@@ -923,9 +953,9 @@ public class FacebookUser   {
 
   
   /**
-   * Personal information. Applicable to Pages representing People
+   * Personal information. Applicable to Pages representing People, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Personal information. Applicable to Pages representing People")
+  @ApiModelProperty(value = "Personal information. Applicable to Pages representing People, Facebook datatype: string")
   @JsonProperty("personal_info")
   public String getPersonalInfo() {
     return personalInfo;
@@ -936,9 +966,9 @@ public class FacebookUser   {
 
   
   /**
-   * Personal interests. Applicable to Pages representing People
+   * Personal interests. Applicable to Pages representing People, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Personal interests. Applicable to Pages representing People")
+  @ApiModelProperty(value = "Personal interests. Applicable to Pages representing People, Facebook datatype: string")
   @JsonProperty("personal_interests")
   public String getPersonalInterests() {
     return personalInterests;
@@ -949,9 +979,9 @@ public class FacebookUser   {
 
   
   /**
-   * Pharmacy safety information. Applicable to Pharmaceutical companies
+   * Pharmacy safety information. Applicable to Pharmaceutical companies, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Pharmacy safety information. Applicable to Pharmaceutical companies")
+  @ApiModelProperty(value = "Pharmacy safety information. Applicable to Pharmaceutical companies, Facebook datatype: string")
   @JsonProperty("pharma_safety_info")
   public String getPharmaSafetyInfo() {
     return pharmaSafetyInfo;
@@ -962,9 +992,9 @@ public class FacebookUser   {
 
   
   /**
-   * Phone number provided by a Page
+   * Phone number provided by a Page, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Phone number provided by a Page")
+  @ApiModelProperty(value = "Phone number provided by a Page, Facebook datatype: string")
   @JsonProperty("phone")
   public String getPhone() {
     return phone;
@@ -975,9 +1005,9 @@ public class FacebookUser   {
 
   
   /**
-   * The plot outline of the film. Applicable to Films
+   * The plot outline of the film. Applicable to Films, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The plot outline of the film. Applicable to Films")
+  @ApiModelProperty(value = "The plot outline of the film. Applicable to Films, Facebook datatype: string")
   @JsonProperty("plot_outline")
   public String getPlotOutline() {
     return plotOutline;
@@ -988,9 +1018,9 @@ public class FacebookUser   {
 
   
   /**
-   * Press contact information of the band. Applicable to Bands
+   * Press contact information of the band. Applicable to Bands, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Press contact information of the band. Applicable to Bands")
+  @ApiModelProperty(value = "Press contact information of the band. Applicable to Bands, Facebook datatype: string")
   @JsonProperty("press_contact")
   public String getPressContact() {
     return pressContact;
@@ -1001,9 +1031,9 @@ public class FacebookUser   {
 
   
   /**
-   * Price range of the business. Applicable to Restaurants or Nightlife. Can be one of `$` (0-10), `$$` (10-30), `$$$` (30-50), `$$$$` (50+) or `Unspecified`
+   * Price range of the business. Applicable to Restaurants or Nightlife. Can be one of `$` (0-10), `$$` (10-30), `$$$` (30-50), `$$$$` (50+) or `Unspecified`, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Price range of the business. Applicable to Restaurants or Nightlife. Can be one of `$` (0-10), `$$` (10-30), `$$$` (30-50), `$$$$` (50+) or `Unspecified`")
+  @ApiModelProperty(value = "Price range of the business. Applicable to Restaurants or Nightlife. Can be one of `$` (0-10), `$$` (10-30), `$$$` (30-50), `$$$$` (50+) or `Unspecified`, Facebook datatype: string")
   @JsonProperty("price_range")
   public String getPriceRange() {
     return priceRange;
@@ -1014,9 +1044,9 @@ public class FacebookUser   {
 
   
   /**
-   * The productor of the film. Applicable to Films
+   * The productor of the film. Applicable to Films, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The productor of the film. Applicable to Films")
+  @ApiModelProperty(value = "The productor of the film. Applicable to Films, Facebook datatype: string")
   @JsonProperty("produced_by")
   public String getProducedBy() {
     return producedBy;
@@ -1027,9 +1057,9 @@ public class FacebookUser   {
 
   
   /**
-   * The products of this company. Applicable to Companies
+   * The products of this company. Applicable to Companies, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The products of this company. Applicable to Companies")
+  @ApiModelProperty(value = "The products of this company. Applicable to Companies, Facebook datatype: string")
   @JsonProperty("products")
   public String getProducts() {
     return products;
@@ -1040,22 +1070,22 @@ public class FacebookUser   {
 
   
   /**
-   * Reason why a post isn't eligible for boosting. Only visible to Page Admins
+   * Reason why a post isn't eligible for boosting. Only visible to Page Admins, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "Reason why a post isn't eligible for boosting. Only visible to Page Admins")
+  @ApiModelProperty(value = "Reason why a post isn't eligible for boosting. Only visible to Page Admins, Facebook datatype: bool")
   @JsonProperty("promotion_eligible")
-  public String getPromotionEligible() {
+  public Boolean getPromotionEligible() {
     return promotionEligible;
   }
-  public void setPromotionEligible(String promotionEligible) {
+  public void setPromotionEligible(Boolean promotionEligible) {
     this.promotionEligible = promotionEligible;
   }
 
   
   /**
-   * Reason, for which boosted posts are not eligible. Only visible to a page admin
+   * Reason, for which boosted posts are not eligible. Only visible to a page admin, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Reason, for which boosted posts are not eligible. Only visible to a page admin")
+  @ApiModelProperty(value = "Reason, for which boosted posts are not eligible. Only visible to a page admin, Facebook datatype: string")
   @JsonProperty("promotion_ineligible_reason")
   public String getPromotionIneligibleReason() {
     return promotionIneligibleReason;
@@ -1066,9 +1096,9 @@ public class FacebookUser   {
 
   
   /**
-   * Public transit to the business. Applicable to Restaurants or Nightlife
+   * Public transit to the business. Applicable to Restaurants or Nightlife, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Public transit to the business. Applicable to Restaurants or Nightlife")
+  @ApiModelProperty(value = "Public transit to the business. Applicable to Restaurants or Nightlife, Facebook datatype: string")
   @JsonProperty("public_transit")
   public String getPublicTransit() {
     return publicTransit;
@@ -1079,9 +1109,9 @@ public class FacebookUser   {
 
   
   /**
-   * Record label of the band. Applicable to Bands
+   * Record label of the band. Applicable to Bands, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Record label of the band. Applicable to Bands")
+  @ApiModelProperty(value = "Record label of the band. Applicable to Bands, Facebook datatype: string")
   @JsonProperty("record_label")
   public String getRecordLabel() {
     return recordLabel;
@@ -1092,9 +1122,9 @@ public class FacebookUser   {
 
   
   /**
-   * The film's release date. Applicable to Films
+   * The film's release date. Applicable to Films, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The film's release date. Applicable to Films")
+  @ApiModelProperty(value = "The film's release date. Applicable to Films, Facebook datatype: string")
   @JsonProperty("release_date")
   public String getReleaseDate() {
     return releaseDate;
@@ -1105,9 +1135,9 @@ public class FacebookUser   {
 
   
   /**
-   * Services the restaurant provides. Applicable to Restaurants
+   * Services the restaurant provides. Applicable to Restaurants, Facebook datatype: pagerestaurantservices
    **/
-  @ApiModelProperty(value = "Services the restaurant provides. Applicable to Restaurants")
+  @ApiModelProperty(value = "Services the restaurant provides. Applicable to Restaurants, Facebook datatype: pagerestaurantservices")
   @JsonProperty("restaurant_services")
   public String getRestaurantServices() {
     return restaurantServices;
@@ -1118,9 +1148,9 @@ public class FacebookUser   {
 
   
   /**
-   * The restaurant's specialties. Applicable to Restaurants
+   * The restaurant's specialties. Applicable to Restaurants, Facebook datatype: pagerestaurantspecialties
    **/
-  @ApiModelProperty(value = "The restaurant's specialties. Applicable to Restaurants")
+  @ApiModelProperty(value = "The restaurant's specialties. Applicable to Restaurants, Facebook datatype: pagerestaurantspecialties")
   @JsonProperty("restaurant_specialties")
   public String getRestaurantSpecialties() {
     return restaurantSpecialties;
@@ -1131,9 +1161,9 @@ public class FacebookUser   {
 
   
   /**
-   * The air schedule of the TV show. Applicable to TV Shows
+   * The air schedule of the TV show. Applicable to TV Shows, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The air schedule of the TV show. Applicable to TV Shows")
+  @ApiModelProperty(value = "The air schedule of the TV show. Applicable to TV Shows, Facebook datatype: string")
   @JsonProperty("schedule")
   public String getSchedule() {
     return schedule;
@@ -1144,9 +1174,9 @@ public class FacebookUser   {
 
   
   /**
-   * The screenwriter of the film. Applicable to Films
+   * The screenwriter of the film. Applicable to Films, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The screenwriter of the film. Applicable to Films")
+  @ApiModelProperty(value = "The screenwriter of the film. Applicable to Films, Facebook datatype: string")
   @JsonProperty("screenplay_by")
   public String getScreenplayBy() {
     return screenplayBy;
@@ -1157,9 +1187,9 @@ public class FacebookUser   {
 
   
   /**
-   * The season information of the TV Show. Applicable to TV Shows
+   * The season information of the TV Show. Applicable to TV Shows, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The season information of the TV Show. Applicable to TV Shows")
+  @ApiModelProperty(value = "The season information of the TV Show. Applicable to TV Shows, Facebook datatype: string")
   @JsonProperty("season")
   public String getSeason() {
     return season;
@@ -1170,9 +1200,9 @@ public class FacebookUser   {
 
   
   /**
-   * The cast of the film. Applicable to Films
+   * The cast of the film. Applicable to Films, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The cast of the film. Applicable to Films")
+  @ApiModelProperty(value = "The cast of the film. Applicable to Films, Facebook datatype: string")
   @JsonProperty("starring")
   public String getStarring() {
     return starring;
@@ -1183,22 +1213,22 @@ public class FacebookUser   {
 
   
   /**
-   * Unique store number for this location Page
+   * Unique store number for this location Page, Facebook datatype: unsigned int32
    **/
-  @ApiModelProperty(value = "Unique store number for this location Page")
+  @ApiModelProperty(value = "Unique store number for this location Page, Facebook datatype: unsigned int32")
   @JsonProperty("store_number")
-  public String getStoreNumber() {
+  public Integer getStoreNumber() {
     return storeNumber;
   }
-  public void setStoreNumber(String storeNumber) {
+  public void setStoreNumber(Integer storeNumber) {
     this.storeNumber = storeNumber;
   }
 
   
   /**
-   * The studio for the film production. Applicable to Films
+   * The studio for the film production. Applicable to Films, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The studio for the film production. Applicable to Films")
+  @ApiModelProperty(value = "The studio for the film production. Applicable to Films, Facebook datatype: string")
   @JsonProperty("studio")
   public String getStudio() {
     return studio;
@@ -1209,22 +1239,22 @@ public class FacebookUser   {
 
   
   /**
-   * The number of people talking about this Page
+   * The number of people talking about this Page, Facebook datatype: unsigned int32
    **/
-  @ApiModelProperty(value = "The number of people talking about this Page")
+  @ApiModelProperty(value = "The number of people talking about this Page, Facebook datatype: unsigned int32")
   @JsonProperty("talking_about_count")
-  public String getTalkingAboutCount() {
+  public Integer getTalkingAboutCount() {
     return talkingAboutCount;
   }
-  public void setTalkingAboutCount(String talkingAboutCount) {
+  public void setTalkingAboutCount(Integer talkingAboutCount) {
     this.talkingAboutCount = talkingAboutCount;
   }
 
   
   /**
-   * The social sentence and like count information for this Page. This is the same info used for the like button
+   * The social sentence and like count information for this Page. This is the same info used for the like button, Facebook datatype: engagement
    **/
-  @ApiModelProperty(value = "The social sentence and like count information for this Page. This is the same info used for the like button")
+  @ApiModelProperty(value = "The social sentence and like count information for this Page. This is the same info used for the like button, Facebook datatype: engagement")
   @JsonProperty("engagement")
   public String getEngagement() {
     return engagement;
@@ -1235,9 +1265,9 @@ public class FacebookUser   {
 
   
   /**
-   * The page address, if any, in a simple single line format.
+   * The page address, if any, in a simple single line format., Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The page address, if any, in a simple single line format.")
+  @ApiModelProperty(value = "The page address, if any, in a simple single line format., Facebook datatype: string")
   @JsonProperty("single_line_address")
   public String getSingleLineAddress() {
     return singleLineAddress;
@@ -1248,9 +1278,9 @@ public class FacebookUser   {
 
   
   /**
-   * For places, the category of the place
+   * For places, the category of the place, Facebook datatype: enum
    **/
-  @ApiModelProperty(value = "For places, the category of the place")
+  @ApiModelProperty(value = "For places, the category of the place, Facebook datatype: enum")
   @JsonProperty("place_type")
   public String getPlaceType() {
     return placeType;
@@ -1261,48 +1291,48 @@ public class FacebookUser   {
 
   
   /**
-   * Unread message count for the Page. Only visible to a page admin
+   * Unread message count for the Page. Only visible to a page admin, Facebook datatype: unsigned int32
    **/
-  @ApiModelProperty(value = "Unread message count for the Page. Only visible to a page admin")
+  @ApiModelProperty(value = "Unread message count for the Page. Only visible to a page admin, Facebook datatype: unsigned int32")
   @JsonProperty("unread_message_count")
-  public String getUnreadMessageCount() {
+  public Integer getUnreadMessageCount() {
     return unreadMessageCount;
   }
-  public void setUnreadMessageCount(String unreadMessageCount) {
+  public void setUnreadMessageCount(Integer unreadMessageCount) {
     this.unreadMessageCount = unreadMessageCount;
   }
 
   
   /**
-   * Number of unread notifications. Only visible to a page admin
+   * Number of unread notifications. Only visible to a page admin, Facebook datatype: unsigned int32
    **/
-  @ApiModelProperty(value = "Number of unread notifications. Only visible to a page admin")
+  @ApiModelProperty(value = "Number of unread notifications. Only visible to a page admin, Facebook datatype: unsigned int32")
   @JsonProperty("unread_notif_count")
-  public String getUnreadNotifCount() {
+  public Integer getUnreadNotifCount() {
     return unreadNotifCount;
   }
-  public void setUnreadNotifCount(String unreadNotifCount) {
+  public void setUnreadNotifCount(Integer unreadNotifCount) {
     this.unreadNotifCount = unreadNotifCount;
   }
 
   
   /**
-   * Unseen message count for the Page. Only visible to a page admin
+   * Unseen message count for the Page. Only visible to a page admin, Facebook datatype: unsigned int32
    **/
-  @ApiModelProperty(value = "Unseen message count for the Page. Only visible to a page admin")
+  @ApiModelProperty(value = "Unseen message count for the Page. Only visible to a page admin, Facebook datatype: unsigned int32")
   @JsonProperty("unseen_message_count")
-  public String getUnseenMessageCount() {
+  public Integer getUnseenMessageCount() {
     return unseenMessageCount;
   }
-  public void setUnseenMessageCount(String unseenMessageCount) {
+  public void setUnseenMessageCount(Integer unseenMessageCount) {
     this.unseenMessageCount = unseenMessageCount;
   }
 
   
   /**
-   * The alias of the Page. For example, for www.facebook.com/platform the username is 'platform'
+   * The alias of the Page. For example, for www.facebook.com/platform the username is 'platform', Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The alias of the Page. For example, for www.facebook.com/platform the username is 'platform'")
+  @ApiModelProperty(value = "The alias of the Page. For example, for www.facebook.com/platform the username is 'platform', Facebook datatype: string")
   @JsonProperty("username")
   public String getUsername() {
     return username;
@@ -1313,9 +1343,9 @@ public class FacebookUser   {
 
   
   /**
-   * Voip info
+   * Voip info, Facebook datatype: voipinfo
    **/
-  @ApiModelProperty(value = "Voip info")
+  @ApiModelProperty(value = "Voip info, Facebook datatype: voipinfo")
   @JsonProperty("voip_info")
   public String getVoipInfo() {
     return voipInfo;
@@ -1326,9 +1356,9 @@ public class FacebookUser   {
 
   
   /**
-   * The URL of the Page's website
+   * The URL of the Page's website, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The URL of the Page's website")
+  @ApiModelProperty(value = "The URL of the Page's website, Facebook datatype: string")
   @JsonProperty("website")
   public String getWebsite() {
     return website;
@@ -1339,22 +1369,22 @@ public class FacebookUser   {
 
   
   /**
-   * The number of visits to this Page's location. If the Page setting *Show map, check-ins and star ratings on the Page* (under *Page Settings > Page Info > Address*) is disabled, then this value will also be disabled
+   * The number of visits to this Page's location. If the Page setting *Show map, check-ins and star ratings on the Page* (under *Page Settings > Page Info > Address*) is disabled, then this value will also be disabled, Facebook datatype: unsigned int32
    **/
-  @ApiModelProperty(value = "The number of visits to this Page's location. If the Page setting *Show map, check-ins and star ratings on the Page* (under *Page Settings > Page Info > Address*) is disabled, then this value will also be disabled")
+  @ApiModelProperty(value = "The number of visits to this Page's location. If the Page setting *Show map, check-ins and star ratings on the Page* (under *Page Settings > Page Info > Address*) is disabled, then this value will also be disabled, Facebook datatype: unsigned int32")
   @JsonProperty("were_here_count")
-  public String getWereHereCount() {
+  public Integer getWereHereCount() {
     return wereHereCount;
   }
-  public void setWereHereCount(String wereHereCount) {
+  public void setWereHereCount(Integer wereHereCount) {
     this.wereHereCount = wereHereCount;
   }
 
   
   /**
-   * The writer of the TV show. Applicable to TV Shows
+   * The writer of the TV show. Applicable to TV Shows, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The writer of the TV show. Applicable to TV Shows")
+  @ApiModelProperty(value = "The writer of the TV show. Applicable to TV Shows, Facebook datatype: string")
   @JsonProperty("written_by")
   public String getWrittenBy() {
     return writtenBy;
@@ -1365,9 +1395,9 @@ public class FacebookUser   {
 
   
   /**
-   * owner business of this object
+   * owner business of this object, Facebook datatype: business
    **/
-  @ApiModelProperty(value = "owner business of this object")
+  @ApiModelProperty(value = "owner business of this object, Facebook datatype: business")
   @JsonProperty("owner_business")
   public String getOwnerBusiness() {
     return ownerBusiness;
@@ -1378,9 +1408,9 @@ public class FacebookUser   {
 
   
   /**
-   * last used time of this object by the current viewer
+   * last used time of this object by the current viewer, Facebook datatype: datetime
    **/
-  @ApiModelProperty(value = "last used time of this object by the current viewer")
+  @ApiModelProperty(value = "last used time of this object by the current viewer, Facebook datatype: datetime")
   @JsonProperty("last_used_time")
   public String getLastUsedTime() {
     return lastUsedTime;
@@ -1391,9 +1421,9 @@ public class FacebookUser   {
 
   
   /**
-   * relevance score of an asset
+   * relevance score of an asset, Facebook datatype: float
    **/
-  @ApiModelProperty(value = "relevance score of an asset")
+  @ApiModelProperty(value = "relevance score of an asset, Facebook datatype: float")
   @JsonProperty("asset_score")
   public String getAssetScore() {
     return assetScore;
@@ -1404,35 +1434,35 @@ public class FacebookUser   {
 
   
   /**
-   * Number of checkins at a place represented by a Page
+   * Number of checkins at a place represented by a Page, Facebook datatype: unsigned int32
    **/
-  @ApiModelProperty(value = "Number of checkins at a place represented by a Page")
+  @ApiModelProperty(value = "Number of checkins at a place represented by a Page, Facebook datatype: unsigned int32")
   @JsonProperty("checkins")
-  public String getCheckins() {
+  public Integer getCheckins() {
     return checkins;
   }
-  public void setCheckins(String checkins) {
+  public void setCheckins(Integer checkins) {
     this.checkins = checkins;
   }
 
   
   /**
-   * The number of users who like the Page. For Global Brand Pages this is the count for all pages across the brand
+   * The number of users who like the Page. For Global Brand Pages this is the count for all pages across the brand, Facebook datatype: unsigned int32
    **/
-  @ApiModelProperty(value = "The number of users who like the Page. For Global Brand Pages this is the count for all pages across the brand")
+  @ApiModelProperty(value = "The number of users who like the Page. For Global Brand Pages this is the count for all pages across the brand, Facebook datatype: unsigned int32")
   @JsonProperty("likes")
-  public String getLikes() {
+  public Integer getLikes() {
     return likes;
   }
-  public void setLikes(String likes) {
+  public void setLikes(Integer likes) {
     this.likes = likes;
   }
 
   
   /**
-   * Members of this org. Applicable to Pages representing Team Orgs
+   * Members of this org. Applicable to Pages representing Team Orgs, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Members of this org. Applicable to Pages representing Team Orgs")
+  @ApiModelProperty(value = "Members of this org. Applicable to Pages representing Team Orgs, Facebook datatype: string")
   @JsonProperty("members")
   public String getMembers() {
     return members;
@@ -1448,11 +1478,10 @@ public class FacebookUser   {
     StringBuilder sb = new StringBuilder();
     sb.append("class FacebookUser {\n");
     
-    sb.append("    about: ").append(StringUtil.toIndentedString(about)).append("\n");
-    sb.append("    description: ").append(StringUtil.toIndentedString(description)).append("\n");
-    sb.append("    founded: ").append(StringUtil.toIndentedString(founded)).append("\n");
     sb.append("    id: ").append(StringUtil.toIndentedString(id)).append("\n");
+    sb.append("    location: ").append(StringUtil.toIndentedString(location)).append("\n");
     sb.append("    name: ").append(StringUtil.toIndentedString(name)).append("\n");
+    sb.append("    about: ").append(StringUtil.toIndentedString(about)).append("\n");
     sb.append("    accessToken: ").append(StringUtil.toIndentedString(accessToken)).append("\n");
     sb.append("    adCampaign: ").append(StringUtil.toIndentedString(adCampaign)).append("\n");
     sb.append("    affiliation: ").append(StringUtil.toIndentedString(affiliation)).append("\n");
@@ -1460,6 +1489,7 @@ public class FacebookUser   {
     sb.append("    appLinks: ").append(StringUtil.toIndentedString(appLinks)).append("\n");
     sb.append("    artistsWeLike: ").append(StringUtil.toIndentedString(artistsWeLike)).append("\n");
     sb.append("    attire: ").append(StringUtil.toIndentedString(attire)).append("\n");
+    sb.append("    awards: ").append(StringUtil.toIndentedString(awards)).append("\n");
     sb.append("    bandInterests: ").append(StringUtil.toIndentedString(bandInterests)).append("\n");
     sb.append("    bandMembers: ").append(StringUtil.toIndentedString(bandMembers)).append("\n");
     sb.append("    bestPage: ").append(StringUtil.toIndentedString(bestPage)).append("\n");
@@ -1479,12 +1509,14 @@ public class FacebookUser   {
     sb.append("    cover: ").append(StringUtil.toIndentedString(cover)).append("\n");
     sb.append("    culinaryTeam: ").append(StringUtil.toIndentedString(culinaryTeam)).append("\n");
     sb.append("    currentLocation: ").append(StringUtil.toIndentedString(currentLocation)).append("\n");
+    sb.append("    description: ").append(StringUtil.toIndentedString(description)).append("\n");
     sb.append("    descriptionHtml: ").append(StringUtil.toIndentedString(descriptionHtml)).append("\n");
     sb.append("    directedBy: ").append(StringUtil.toIndentedString(directedBy)).append("\n");
     sb.append("    displaySubtext: ").append(StringUtil.toIndentedString(displaySubtext)).append("\n");
     sb.append("    emails: ").append(StringUtil.toIndentedString(emails)).append("\n");
     sb.append("    features: ").append(StringUtil.toIndentedString(features)).append("\n");
     sb.append("    foodStyles: ").append(StringUtil.toIndentedString(foodStyles)).append("\n");
+    sb.append("    founded: ").append(StringUtil.toIndentedString(founded)).append("\n");
     sb.append("    generalInfo: ").append(StringUtil.toIndentedString(generalInfo)).append("\n");
     sb.append("    generalManager: ").append(StringUtil.toIndentedString(generalManager)).append("\n");
     sb.append("    genre: ").append(StringUtil.toIndentedString(genre)).append("\n");
@@ -1501,7 +1533,6 @@ public class FacebookUser   {
     sb.append("    isUnclaimed: ").append(StringUtil.toIndentedString(isUnclaimed)).append("\n");
     sb.append("    isVerified: ").append(StringUtil.toIndentedString(isVerified)).append("\n");
     sb.append("    link: ").append(StringUtil.toIndentedString(link)).append("\n");
-    sb.append("    location: ").append(StringUtil.toIndentedString(location)).append("\n");
     sb.append("    mission: ").append(StringUtil.toIndentedString(mission)).append("\n");
     sb.append("    mpg: ").append(StringUtil.toIndentedString(mpg)).append("\n");
     sb.append("    network: ").append(StringUtil.toIndentedString(network)).append("\n");

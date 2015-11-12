@@ -1,0 +1,663 @@
+{
+
+	"swagger": "2.0",
+	"info": {
+
+		"description": "Demo Swagger Spring 2 API Description",
+		"version": "1.0",
+		"title": "My Apps API Title",
+		"termsOfService": "My Apps API terms of service",
+		"contact": {
+
+			"name": "My Apps API Contact Email"
+		},
+		"license": {
+			"name": "My Apps API Licence Type",
+			"url": "My Apps API License URL"
+		}
+	},
+	"host": "localhost:8080",
+	"basePath": "/",
+	"tags": [
+
+		{
+			"name": "connector-facebook",
+			"description": "Facebook connector"
+		}
+	],
+	"paths": {
+
+		"/connector-facebook-user": {
+
+			"get": {
+
+				"tags": ["connector-facebook"],
+				"summary": "search for users by name-part",
+				"description": "search for users",
+				"operationId": "findByNameUsingGET",
+				"consumes": ["application/json"],
+				"produces": ["*/*"],
+				"parameters": [
+
+					{
+
+						"name": "name",
+						"in": "query",
+						"description": "name",
+						"required": true,
+						"type": "string"
+					}, {
+
+						"name": "access_token",
+						"in": "query",
+						"description": "access_token",
+						"required": true,
+						"type": "string"
+					}, {
+						"name": "fields",
+						"in": "query",
+						"description": "fields",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+
+					"200": {
+
+						"description": "SUCCESS",
+						"schema": {
+							"$ref": "#/definitions/FacebookUser"
+						}
+					},
+					"401": {
+
+						"description": "Unauthorized"
+					},
+					"403": {
+
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+
+		"Location": {
+
+			"properties": {
+
+				"city": {
+
+					"type": "string"
+				},
+				"country": {
+
+					"type": "string"
+				},
+				"latitude": {
+
+					"type": "number",
+					"format": "float"
+				},
+				"longitude": {
+
+					"type": "number",
+					"format": "float"
+				},
+				"name": {
+
+					"type": "string"
+				},
+				"region": {
+
+					"type": "string"
+				},
+				"state": {
+
+					"type": "string"
+				},
+				"street": {
+
+					"type": "string"
+				},
+				"zip": {
+					"type": "string"
+				}
+			}
+		},
+		"FacebookUser": {
+
+			"properties": {
+
+				"about": {
+
+					"type": "string",
+					"description": "Information about the Page, Facebook datatype: string"
+				},
+				"access_token": {
+
+					"type": "string",
+					"description": "The access token you can use to act as the Page. Only visible to Page Admins, Facebook datatype: string"
+				},
+				"ad_campaign": {
+
+					"type": "string",
+					"description": "The Page's currently running promotion campaign, Facebook datatype: adcampaign"
+				},
+				"affiliation": {
+
+					"type": "string",
+					"description": "Affiliation of this person. Applicable to Pages representing people, Facebook datatype: string"
+				},
+				"app_id": {
+
+					"type": "string",
+					"description": "App ID for app-owned Pages and app Pages, Facebook datatype: id"
+				},
+				"app_links": {
+
+					"type": "string",
+					"description": "AppLinks data associated with the Page's URL, Facebook datatype: applinks"
+				},
+				"artists_we_like": {
+
+					"type": "string",
+					"description": "Artists the band likes. Applicable to Bands, Facebook datatype: string"
+				},
+				"asset_score": {
+
+					"type": "string",
+					"description": "relevance score of an asset, Facebook datatype: float"
+				},
+				"attire": {
+
+					"type": "string",
+					"description": "Dress code of the business. Applicable to Restaurants or Nightlife. Can be one of Casual, Dressy or Unspecified, Facebook datatype: string",
+					"enum": ["Casual,", "Dressy,", "Unspecified"]
+				},
+				"awards": {
+
+					"type": "string",
+					"description": "The awards information of the film. Applicable to Films, Facebook datatype: string"
+				},
+				"band_interests": {
+
+					"type": "string",
+					"description": "Band interests. Applicable to Bands, Facebook datatype: string"
+				},
+				"band_members": {
+
+					"type": "string",
+					"description": "Members of the band. Applicable to Bands, Facebook datatype: string"
+				},
+				"best_page": {
+
+					"type": "string",
+					"description": "The best available Page on Facebook for the concept represented by this Page. The best available Page takes into account authenticity and the number of likes, Facebook datatype: page"
+				},
+				"bio": {
+
+					"type": "string",
+					"description": "Biography of the band. Applicable to Bands, Facebook datatype: string"
+				},
+				"birthday": {
+
+					"type": "string",
+					"description": "Birthday of this person. Applicable to Pages representing people, Facebook datatype: string"
+				},
+				"booking_agent": {
+
+					"type": "string",
+					"description": "Booking agent of the band. Applicable to Bands, Facebook datatype: string"
+				},
+				"built": {
+
+					"type": "string",
+					"description": "Year vehicle was built. Applicable to Vehicles, Facebook datatype: string"
+				},
+				"business": {
+
+					"type": "string",
+					"description": "The Business associated with this Page.  Visible only with a page access token or a user access token that has admin rights on the page, Facebook datatype: null"
+				},
+				"can_checkin": {
+
+					"type": "boolean",
+					"description": "Whether this page has checkin functionality enabled, Facebook datatype: bool"
+				},
+				"can_post": {
+
+					"type": "boolean",
+					"description": "Whether the current session user can post on this Page, Facebook datatype: bool"
+				},
+				"category": {
+
+					"type": "string",
+					"description": "The Page's category. e.g. Product/Service, Computers/Technology, Facebook datatype: string"
+				},
+				"category_list": {
+
+					"type": "string",
+					"description": "The Page's sub-categories, Facebook datatype: list<pagecategory>"
+				},
+				"checkins": {
+
+					"type": "integer",
+					"format": "int32",
+					"description": "Number of checkins at a place represented by a Page, Facebook datatype: unsigned int32"
+				},
+				"company_overview": {
+
+					"type": "string",
+					"description": "The company overview. Applicable to Companies, Facebook datatype: string"
+				},
+				"contact_address": {
+
+					"type": "string",
+					"description": "The mailing or contact address for this page. This field will be blank if the contact address is the same as the physical address, Facebook datatype: mailingaddress"
+				},
+				"context": {
+
+					"type": "string",
+					"description": "Social context for this Page, Facebook datatype: opengraphcontext"
+				},
+				"country_page_likes": {
+
+					"type": "integer",
+					"format": "int32",
+					"description": "If this is a Page in a Global Pages hierarchy, the number of people who are being directed to this Page., Facebook datatype: unsigned int32"
+				},
+				"cover": {
+
+					"type": "string",
+					"description": "Information about the page's cover photo, Facebook datatype: coverphoto"
+				},
+				"culinary_team": {
+
+					"type": "string",
+					"description": "Culinary team of the business. Applicable to Restaurants or Nightlife, Facebook datatype: string"
+				},
+				"current_location": {
+
+					"type": "string",
+					"description": "Current location of the Page, Facebook datatype: string"
+				},
+				"description": {
+
+					"type": "string",
+					"description": "The description of the Page, Facebook datatype: string"
+				},
+				"description_html": {
+
+					"type": "string",
+					"description": "The description of the Page in raw HTML, Facebook datatype: string"
+				},
+				"directed_by": {
+
+					"type": "string",
+					"description": "The director of the film. Applicable to Films, Facebook datatype: string"
+				},
+				"display_subtext": {
+
+					"type": "string",
+					"description": "Subtext about the Page being viewed, Facebook datatype: string"
+				},
+				"emails": {
+
+					"type": "string",
+					"description": "The emails listed in the About section of a Page, Facebook datatype: list<string>"
+				},
+				"engagement": {
+
+					"type": "string",
+					"description": "The social sentence and like count information for this Page. This is the same info used for the like button, Facebook datatype: engagement"
+				},
+				"features": {
+
+					"type": "string",
+					"description": "Features of the vehicle. Applicable to Vehicles, Facebook datatype: string"
+				},
+				"food_styles": {
+
+					"type": "string",
+					"description": "The restaurant's food styles. Applicable to Restaurants, Facebook datatype: list<string>"
+				},
+				"founded": {
+
+					"type": "string",
+					"description": "When the company was founded. Applicable to Pages in the Company category, Facebook datatype: string"
+				},
+				"general_info": {
+
+					"type": "string",
+					"description": "General information provided by the Page, Facebook datatype: string"
+				},
+				"general_manager": {
+
+					"type": "string",
+					"description": "General manager of the business. Applicable to Restaurants or Nightlife, Facebook datatype: string"
+				},
+				"genre": {
+
+					"type": "string",
+					"description": "The genre of the film. Applicable to Films, Facebook datatype: string"
+				},
+				"global_brand_page_name": {
+
+					"type": "string",
+					"description": "The name of the Page with country codes appended for Global Brand Pages. Only visible to the Page admin, Facebook datatype: string"
+				},
+				"global_brand_root_id": {
+
+					"type": "string",
+					"description": "This brand's global Root ID, Facebook datatype: numeric string"
+				},
+				"has_added_app": {
+
+					"type": "boolean",
+					"description": "Indicates whether this Page has added the app making the query in a Page tab, Facebook datatype: bool"
+				},
+				"hometown": {
+
+					"type": "string",
+					"description": "Hometown of the band. Applicable to Bands, Facebook datatype: string"
+				},
+				"hours": {
+
+					"type": "string",
+					"description": "Indicates a single range of opening hours for a day. Each day can have 2 different hours ranges. The keys in the map are in the form of `{day}_{number}_{status}`.  `{day}` should be the first 3 characters of the day of the week, `{number}` should be either 1 or 2 to allow for the two different hours ranges per day. `{status}` should be either `open` or `close` to delineate the start or end of a time range. An example would be `mon_1_open` with value `17:00` and `mon_1_close` with value `21:15` which would represent a single opening range of 5pm to 9:15pm on Mondays, Facebook datatype: map<string, string>"
+				},
+				"id": {
+
+					"type": "integer",
+					"format": "int64"
+				},
+				"influences": {
+
+					"type": "string",
+					"description": "Influences on the band. Applicable to Bands, Facebook datatype: string"
+				},
+				"is_community_page": {
+
+					"type": "boolean",
+					"description": "Indicates whether the Page is a community Page, Facebook datatype: bool"
+				},
+				"is_permanently_closed": {
+
+					"type": "boolean",
+					"description": "Whether the business corresponding to this Page is permanently closed, Facebook datatype: bool"
+				},
+				"is_published": {
+
+					"type": "boolean",
+					"description": "Indicates whether the Page is published and visible to non-admins, Facebook datatype: bool"
+				},
+				"is_unclaimed": {
+
+					"type": "boolean",
+					"description": "Indicates whether the Page is unclaimed, Facebook datatype: bool"
+				},
+				"is_verified": {
+
+					"type": "boolean",
+					"description": "Pages with a large number of followers can be manually verified by Facebook as [having an authentic identity](https://www.facebook.com/help/196050490547892). This field indicates whether the page is verified by this process, Facebook datatype: bool"
+				},
+				"last_used_time": {
+
+					"type": "string",
+					"description": "last used time of this object by the current viewer, Facebook datatype: datetime"
+				},
+				"leadgen_tos_accepted": {
+
+					"type": "boolean",
+					"description": "Indicates whether a user has accepted the TOS for running LeadGen Ads on the Page, Facebook datatype: bool"
+				},
+				"likes": {
+
+					"type": "integer",
+					"format": "int32",
+					"description": "The number of users who like the Page. For Global Brand Pages this is the count for all pages across the brand, Facebook datatype: unsigned int32"
+				},
+				"link": {
+
+					"type": "string",
+					"description": "The Page's Facebook URL, Facebook datatype: string"
+				},
+				"location": {
+
+					"$ref": "#/definitions/Location"
+				},
+				"members": {
+
+					"type": "string",
+					"description": "Members of this org. Applicable to Pages representing Team Orgs, Facebook datatype: string"
+				},
+				"mission": {
+
+					"type": "string",
+					"description": "The company mission. Applicable to Companies, Facebook datatype: string"
+				},
+				"mpg": {
+
+					"type": "string",
+					"description": "MPG of the vehicle. Applicable to Vehicles, Facebook datatype: string"
+				},
+				"name": {
+
+					"type": "string"
+				},
+				"network": {
+
+					"type": "string",
+					"description": "The TV network for the TV show. Applicable to TV Shows, Facebook datatype: string"
+				},
+				"new_like_count": {
+
+					"type": "integer",
+					"format": "int32",
+					"description": "The number of people who have liked the Page, since the last login. Only visible to a page admin, Facebook datatype: unsigned int32"
+				},
+				"offer_eligible": {
+
+					"type": "boolean",
+					"description": "Offer eligibility status. Only visible to a page admin, Facebook datatype: bool"
+				},
+				"owner_business": {
+
+					"type": "string",
+					"description": "owner business of this object, Facebook datatype: business"
+				},
+				"parent_page": {
+
+					"type": "string",
+					"description": "Parent Page for this Page, Facebook datatype: page"
+				},
+				"parking": {
+
+					"type": "string",
+					"description": "Parking information. Applicable to Businesses and Places, Facebook datatype: pageparking"
+				},
+				"payment_options": {
+
+					"type": "string",
+					"description": "Payment options accepted by the business. Applicable to Restaurants or Nightlife, Facebook datatype: pagepaymentoptions"
+				},
+				"personal_info": {
+
+					"type": "string",
+					"description": "Personal information. Applicable to Pages representing People, Facebook datatype: string"
+				},
+				"personal_interests": {
+
+					"type": "string",
+					"description": "Personal interests. Applicable to Pages representing People, Facebook datatype: string"
+				},
+				"pharma_safety_info": {
+
+					"type": "string",
+					"description": "Pharmacy safety information. Applicable to Pharmaceutical companies, Facebook datatype: string"
+				},
+				"phone": {
+
+					"type": "string",
+					"description": "Phone number provided by a Page, Facebook datatype: string"
+				},
+				"place_type": {
+
+					"type": "string",
+					"description": "For places, the category of the place, Facebook datatype: enum"
+				},
+				"plot_outline": {
+
+					"type": "string",
+					"description": "The plot outline of the film. Applicable to Films, Facebook datatype: string"
+				},
+				"press_contact": {
+
+					"type": "string",
+					"description": "Press contact information of the band. Applicable to Bands, Facebook datatype: string"
+				},
+				"price_range": {
+
+					"type": "string",
+					"description": "Price range of the business. Applicable to Restaurants or Nightlife. Can be one of `$` (0-10), `$$` (10-30), `$$$` (30-50), `$$$$` (50+) or `Unspecified`, Facebook datatype: string"
+				},
+				"produced_by": {
+
+					"type": "string",
+					"description": "The productor of the film. Applicable to Films, Facebook datatype: string"
+				},
+				"products": {
+
+					"type": "string",
+					"description": "The products of this company. Applicable to Companies, Facebook datatype: string"
+				},
+				"promotion_eligible": {
+
+					"type": "boolean",
+					"description": "Reason why a post isn't eligible for boosting. Only visible to Page Admins, Facebook datatype: bool"
+				},
+				"promotion_ineligible_reason": {
+
+					"type": "string",
+					"description": "Reason, for which boosted posts are not eligible. Only visible to a page admin, Facebook datatype: string"
+				},
+				"public_transit": {
+
+					"type": "string",
+					"description": "Public transit to the business. Applicable to Restaurants or Nightlife, Facebook datatype: string"
+				},
+				"record_label": {
+
+					"type": "string",
+					"description": "Record label of the band. Applicable to Bands, Facebook datatype: string"
+				},
+				"release_date": {
+
+					"type": "string",
+					"description": "The film's release date. Applicable to Films, Facebook datatype: string"
+				},
+				"restaurant_services": {
+
+					"type": "string",
+					"description": "Services the restaurant provides. Applicable to Restaurants, Facebook datatype: pagerestaurantservices"
+				},
+				"restaurant_specialties": {
+
+					"type": "string",
+					"description": "The restaurant's specialties. Applicable to Restaurants, Facebook datatype: pagerestaurantspecialties"
+				},
+				"schedule": {
+
+					"type": "string",
+					"description": "The air schedule of the TV show. Applicable to TV Shows, Facebook datatype: string"
+				},
+				"screenplay_by": {
+
+					"type": "string",
+					"description": "The screenwriter of the film. Applicable to Films, Facebook datatype: string"
+				},
+				"season": {
+
+					"type": "string",
+					"description": "The season information of the TV Show. Applicable to TV Shows, Facebook datatype: string"
+				},
+				"single_line_address": {
+
+					"type": "string",
+					"description": "The page address, if any, in a simple single line format., Facebook datatype: string"
+				},
+				"starring": {
+
+					"type": "string",
+					"description": "The cast of the film. Applicable to Films, Facebook datatype: string"
+				},
+				"store_number": {
+
+					"type": "integer",
+					"format": "int32",
+					"description": "Unique store number for this location Page, Facebook datatype: unsigned int32"
+				},
+				"studio": {
+
+					"type": "string",
+					"description": "The studio for the film production. Applicable to Films, Facebook datatype: string"
+				},
+				"talking_about_count": {
+
+					"type": "integer",
+					"format": "int32",
+					"description": "The number of people talking about this Page, Facebook datatype: unsigned int32"
+				},
+				"unread_message_count": {
+
+					"type": "integer",
+					"format": "int32",
+					"description": "Unread message count for the Page. Only visible to a page admin, Facebook datatype: unsigned int32"
+				},
+				"unread_notif_count": {
+
+					"type": "integer",
+					"format": "int32",
+					"description": "Number of unread notifications. Only visible to a page admin, Facebook datatype: unsigned int32"
+				},
+				"unseen_message_count": {
+
+					"type": "integer",
+					"format": "int32",
+					"description": "Unseen message count for the Page. Only visible to a page admin, Facebook datatype: unsigned int32"
+				},
+				"username": {
+
+					"type": "string",
+					"description": "The alias of the Page. For example, for www.facebook.com/platform the username is 'platform', Facebook datatype: string"
+				},
+				"voip_info": {
+
+					"type": "string",
+					"description": "Voip info, Facebook datatype: voipinfo"
+				},
+				"website": {
+
+					"type": "string",
+					"description": "The URL of the Page's website, Facebook datatype: string"
+				},
+				"were_here_count": {
+
+					"type": "integer",
+					"format": "int32",
+					"description": "The number of visits to this Page's location. If the Page setting *Show map, check-ins and star ratings on the Page* (under *Page Settings > Page Info > Address*) is disabled, then this value will also be disabled, Facebook datatype: unsigned int32"
+				},
+				"written_by": {
+					"type": "string",
+					"description": "The writer of the TV show. Applicable to TV Shows, Facebook datatype: string"
+				}
+			}
+		}
+	}
+}
