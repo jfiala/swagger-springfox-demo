@@ -10,3 +10,7 @@ Currently maven configuration files are supplied for all projects.
 
 ### Features 
 * Demo of Facebook integration
+
+* get code completion for all attributes including description
+* use standardized data types (e.g. bool -> boolean)
+* use Enums (e.g. attribute "attire")

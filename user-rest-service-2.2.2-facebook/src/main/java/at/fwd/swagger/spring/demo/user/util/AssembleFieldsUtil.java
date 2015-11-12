@@ -12,23 +12,14 @@ public class AssembleFieldsUtil {
 
 	
 	public static String assembleFieldsForFacebookUser() {
-		List<String> allowedFieldnames = new ArrayList<String>();
-    	allowedFieldnames.add("access_token");
-    	allowedFieldnames.add("id");
-    	allowedFieldnames.add("name");
-    	allowedFieldnames.add("about");
-    	allowedFieldnames.add("mission");
-    	allowedFieldnames.add("description");
-    	allowedFieldnames.add("app_id");
-    	allowedFieldnames.add("attire");
-    	
+		
     	List<String> fieldsWithHigherPermission = new ArrayList<String>();
     	fieldsWithHigherPermission.add("promotion_eligible");
     	fieldsWithHigherPermission.add("owner_business");
     	fieldsWithHigherPermission.add("ad_campaign");
     	
     	List<String> nestedDatatypes = new ArrayList<String>();
-    	nestedDatatypes.add("location");
+    	//nestedDatatypes.add("location");
     	nestedDatatypes.add("context");
     	nestedDatatypes.add("cover");
     	nestedDatatypes.add("app_links");

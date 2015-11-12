@@ -2,22 +2,27 @@ package at.fwd.swagger.spring.demo.user.model.facebook;
 
 import io.swagger.annotations.ApiModelProperty;
 
-/**
- * TODO: complete api
- * 
- * @author johannes.fiala@fwd.at
- *
- */
-public class FacebookUserSimple {
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-	@ApiModelProperty(notes="Page ID. No access token is required to access this field")
+
+public class FacebookUserSimple   {
+
 	Long id;
 	
-	@ApiModelProperty(notes="Information about the Page")
 	String name;
+
+	Location location;
 	
-	String about;
 	
+	
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -32,34 +37,6 @@ public class FacebookUserSimple {
 
 	public void setName(String name) {
 		this.name = name;
-	}
+	}	  
 
-	public String getAbout() {
-		return about;
-	}
-
-	public void setAbout(String about) {
-		this.about = about;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getFounded() {
-		return founded;
-	}
-
-	public void setFounded(String founded) {
-		this.founded = founded;
-	}
-
-	String description;
-	
-	String founded;
-		
 }
