@@ -44,13 +44,6 @@ public class FacebookGraphApiConverter {
 			
 			// inject additional properties
 			if (CONVERTER_ACTIVE) {
-
-				//StringProperty fakeProperty = new StringProperty();
-				//String propName = "fakeProperty";
-				//fakeProperty.setName(propName);
-				//fakeProperty.setDescription("this has been added from generator");
-				//model.getProperties().put(propName, fakeProperty);
-
 				
 				String propName = null;
 				Property virtualProperty = null;
@@ -65,16 +58,7 @@ public class FacebookGraphApiConverter {
 						
 						virtualProperty = createPropertyWithDatatype(field);
 						
-						// TODO: add Enum support: price_range
-						if ("price_range".equals(propName)) {
-							System.out.println("enhancing property: " + propName);
-							//enhancePriceRangeEnum(field, virtualProperty);
-	      					
-						} else if ("attire".equals(propName)) {
-							enhanceAttireEnum(field, virtualProperty);
-						}
-						
-						
+						enhanceWithEnums(propName, virtualProperty, field.getDescription());
 						
 						virtualProperty.setName(propName);
 			    		virtualProperty.setDescription( field.getDescription() + ", Facebook datatype: " + field.getType() );
@@ -91,15 +75,27 @@ public class FacebookGraphApiConverter {
 		}
 	}
 
+	private static void enhanceWithEnums(String propName,
+			Property virtualProperty, String description) {
+		// TODO: add Enum support: price_range
+		if (false && "price_range".equals(propName)) {
+			System.out.println("enhancing property: " + propName);
+			enhancePriceRangeEnum(description, virtualProperty);
+			
+		} else if ("attire".equals(propName)) {
+			enhanceAttireEnum(description, virtualProperty);
+		}
+	}
+
 	/**
 	 * "Price range of the business. Applicable to Restaurants or Nightlife. Can be one of `$` (0-10), `$$` (10-30), `$$$` (30-50), `$$$$` (50+) or `Unspecified`"
 	
 	 * @param virtualProperty
 	 */
-	private static void enhancePriceRangeEnum(FacebookField field, Property virtualProperty) {
+	private static void enhancePriceRangeEnum(String description, Property virtualProperty) {
 		StringProperty myStringProperty = (StringProperty)virtualProperty;
-		System.out.println("description: " + field.getDescription());
-		String myEnumValues = StringUtils.substringAfter(field.getDescription(), "Can be one of");
+		System.out.println("description: " + description);
+		String myEnumValues = StringUtils.substringAfter(description, "Can be one of");
 		myEnumValues = StringUtils.replace(myEnumValues, " or ", ", ");
 		System.out.println("enum values: " + myEnumValues);
 		
@@ -121,10 +117,10 @@ public class FacebookGraphApiConverter {
 	
 	 * @param virtualProperty
 	 */
-	private static void enhanceAttireEnum(FacebookField field, Property virtualProperty) {
+	private static void enhanceAttireEnum(String description, Property virtualProperty) {
 		StringProperty myStringProperty = (StringProperty)virtualProperty;
-		System.out.println("description: " + field.getDescription());
-		String myEnumValues = StringUtils.substringAfter(field.getDescription(), "Can be one of");
+		System.out.println("description: " + description);
+		String myEnumValues = StringUtils.substringAfter(description, "Can be one of");
 		myEnumValues = StringUtils.replace(myEnumValues, " or ", ", ");
 		System.out.println("enum values: " + myEnumValues);
 		
@@ -141,36 +137,6 @@ public class FacebookGraphApiConverter {
 		
 	}
 
-
-	private static void enhanceExistingFields(Model model) {
-		if (model.getProperties()!=null) {
-		 	 for (String propertyKey : model.getProperties().keySet()) {
-		 		 
-		 		 System.out.println("name: " + propertyKey);
-				if ("price_range".equals(propertyKey)) {
-					System.out.println("checking for enum " + propertyKey);
-					
-					Property myprop = model.getProperties().get(propertyKey);
-					System.out.println("checking for enum " + propertyKey);
-					// add stuff to enum
-					StringProperty myStringProp = (StringProperty)myprop;
-					
-					// "Price range of the business. Applicable to Restaurants or Nightlife. Can be one of `$` (0-10), `$$` (10-30), `$$$` (30-50), `$$$$` (50+) or `Unspecified`"
-					String myEnumValues = StringUtils.substringAfter(myStringProp.getDescription(), "Can be one of");
-					myEnumValues = StringUtils.replace(myEnumValues, " or ", ", ");
-					System.out.println("enum values: " + myEnumValues);
-					
-					String[] enumValues = StringUtils.split(myEnumValues);
-					for (String myEnum : enumValues) {
-						myStringProp._enum(myEnum);
-					}
-					
-					
-				}
-						
-			}
-		 }
-	}
 
 
 	/**
@@ -238,6 +204,18 @@ public class FacebookGraphApiConverter {
         FacebookUser object = mapper.readValue(jsonUrl, FacebookUser.class);
         return object;
     }
+
+
+	private static void enhanceExistingFields(Model model) {
+		if (model.getProperties()!=null) {
+			
+		 	 for (String propertyKey : model.getProperties().keySet()) {
+		 		Property myProperty = model.getProperties().get(propertyKey);
+		 		enhanceWithEnums(propertyKey, myProperty, myProperty.getDescription());
+		 				
+			}
+		 }
+	}
 
 	
 }
