@@ -10,25 +10,34 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T12:42:47.529+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T12:51:40.668+01:00")
 public class Location   {
   
 
+
   private String city = null;
+
 
   private String country = null;
 
+
   private Float latitude = null;
+
 
   private Float longitude = null;
 
+
   private String name = null;
+
 
   private String region = null;
 
+
   private String state = null;
 
+
   private String street = null;
+
 
   private String zip = null;
 

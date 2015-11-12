@@ -12,110 +12,161 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T12:42:47.529+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T12:51:40.668+01:00")
 public class FacebookUser   {
   
-
+ // TODO: @Min(value= 1.0)
+ // TODO: @Max(value= 9.223372036854776E18)
   private Long id = null;
+
 
   private Location location = null;
 
+
   private String name = null;
+
 
   private String about = null;
 
+
   private String ageRange = null;
+
 
   private String bio = null;
 
+
   private String birthday = null;
+
 
   private String context = null;
 
+
   private String currency = null;
+
 
   private String devices = null;
 
+
   private String education = null;
+
 
   private String email = null;
 
+
   private String favoriteAthletes = null;
+
 
   private String favoriteTeams = null;
 
+
   private String firstName = null;
+
 
   private String gender = null;
 
+
   private String hometown = null;
+
 
   private String inspirationalPeople = null;
 
+
   private String installType = null;
+
 
   private Boolean installed = null;
 
+
   private List<String> interestedIn = new ArrayList<String>();
+
 
   private Boolean isVerified = null;
 
+
   private String languages = null;
+
 
   private String lastName = null;
 
+
   private String link = null;
+
 
   private String locale = null;
 
+
   private List<String> meetingFor = new ArrayList<String>();
+
 
   private String middleName = null;
 
+
   private String nameFormat = null;
+
 
   private String paymentPricepoints = null;
 
+
   private Integer testGroup = null;
+
 
   private String political = null;
 
+
   private String relationshipStatus = null;
+
 
   private String religion = null;
 
+
   private String securitySettings = null;
+
 
   private String significantOther = null;
 
+
   private String sports = null;
+
 
   private String quotes = null;
 
+
   private String thirdPartyId = null;
  // TODO: @Min(value= -24.0)
+ // TODO: @Max(value= 24.0)
   private Float timezone = null;
+
 
   private String tokenForBusiness = null;
 
+
   private String updatedTime = null;
+
 
   private Boolean verified = null;
 
+
   private String videoUploadLimits = null;
+
 
   private Boolean viewerCanSendGift = null;
 
+
   private String website = null;
+
 
   private String work = null;
 
+
   private String publicKey = null;
+
 
   private String cover = null;
 
   
   /**
+   * minimum: 1.0
+   * maximum: 9.223372036854776E18
    **/
   @ApiModelProperty(required = true, value = "")
   @JsonProperty("id")
