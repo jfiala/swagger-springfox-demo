@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T12:51:40.668+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T16:05:10.959+01:00")
 public class FacebookUser   {
   
  // TODO: @Min(value= 1.0)
@@ -29,7 +29,55 @@ public class FacebookUser   {
   private String about = null;
 
 
-  private String ageRange = null;
+  private String accessToken = null;
+
+
+  private String adCampaign = null;
+
+
+  private String affiliation = null;
+
+
+  private String appId = null;
+
+
+  private String appLinks = null;
+
+
+  private String artistsWeLike = null;
+
+public enum AttireEnum {
+  CASUAL_("Casual,"),
+  DRESSY_("Dressy,"),
+  UNSPECIFIED("Unspecified");
+
+  private String value;
+
+  AttireEnum(String value) {
+    this.value = value;
+  }
+
+  @Override
+  public String toString() {
+    return value;
+  }
+}
+
+
+
+  private AttireEnum attire = null;
+
+
+  private String awards = null;
+
+
+  private String bandInterests = null;
+
+
+  private String bandMembers = null;
+
+
+  private String bestPage = null;
 
 
   private String bio = null;
@@ -38,130 +86,262 @@ public class FacebookUser   {
   private String birthday = null;
 
 
+  private String bookingAgent = null;
+
+
+  private String built = null;
+
+
+  private String business = null;
+
+
+  private Boolean canCheckin = null;
+
+
+  private Boolean canPost = null;
+
+
+  private String category = null;
+
+
+  private String categoryList = null;
+
+
+  private String companyOverview = null;
+
+
+  private String contactAddress = null;
+
+
   private String context = null;
 
 
-  private String currency = null;
+  private Integer countryPageLikes = null;
 
 
-  private String devices = null;
+  private String cover = null;
 
 
-  private String education = null;
+  private String culinaryTeam = null;
 
 
-  private String email = null;
+  private String currentLocation = null;
 
 
-  private String favoriteAthletes = null;
+  private String description = null;
 
 
-  private String favoriteTeams = null;
+  private String descriptionHtml = null;
 
 
-  private String firstName = null;
+  private String directedBy = null;
 
 
-  private String gender = null;
+  private String displaySubtext = null;
+
+
+  private List<String> emails = new ArrayList<String>();
+
+
+  private String features = null;
+
+
+  private List<String> foodStyles = new ArrayList<String>();
+
+
+  private String founded = null;
+
+
+  private String generalInfo = null;
+
+
+  private String generalManager = null;
+
+
+  private String genre = null;
+
+
+  private String globalBrandPageName = null;
+
+
+  private String globalBrandRootId = null;
+
+
+  private Boolean hasAddedApp = null;
+
+
+  private Boolean leadgenTosAccepted = null;
 
 
   private String hometown = null;
 
 
-  private String inspirationalPeople = null;
+  private String hours = null;
 
 
-  private String installType = null;
+  private String influences = null;
 
 
-  private Boolean installed = null;
+  private Boolean isCommunityPage = null;
 
 
-  private List<String> interestedIn = new ArrayList<String>();
+  private Boolean isPermanentlyClosed = null;
+
+
+  private Boolean isPublished = null;
+
+
+  private Boolean isUnclaimed = null;
 
 
   private Boolean isVerified = null;
 
 
-  private String languages = null;
-
-
-  private String lastName = null;
-
-
   private String link = null;
 
 
-  private String locale = null;
+  private String mission = null;
 
 
-  private List<String> meetingFor = new ArrayList<String>();
+  private String mpg = null;
 
 
-  private String middleName = null;
+  private String network = null;
 
 
-  private String nameFormat = null;
+  private Integer newLikeCount = null;
 
 
-  private String paymentPricepoints = null;
+  private Boolean offerEligible = null;
 
 
-  private Integer testGroup = null;
+  private String parentPage = null;
 
 
-  private String political = null;
+  private String parking = null;
 
 
-  private String relationshipStatus = null;
+  private String paymentOptions = null;
 
 
-  private String religion = null;
+  private String personalInfo = null;
 
 
-  private String securitySettings = null;
+  private String personalInterests = null;
 
 
-  private String significantOther = null;
+  private String pharmaSafetyInfo = null;
 
 
-  private String sports = null;
+  private String phone = null;
 
 
-  private String quotes = null;
+  private String plotOutline = null;
 
 
-  private String thirdPartyId = null;
- // TODO: @Min(value= -24.0)
- // TODO: @Max(value= 24.0)
-  private Float timezone = null;
+  private String pressContact = null;
 
 
-  private String tokenForBusiness = null;
+  private String priceRange = null;
 
 
-  private String updatedTime = null;
+  private String producedBy = null;
 
 
-  private Boolean verified = null;
+  private String products = null;
 
 
-  private String videoUploadLimits = null;
+  private Boolean promotionEligible = null;
 
 
-  private Boolean viewerCanSendGift = null;
+  private String promotionIneligibleReason = null;
+
+
+  private String publicTransit = null;
+
+
+  private String recordLabel = null;
+
+
+  private String releaseDate = null;
+
+
+  private String restaurantServices = null;
+
+
+  private String restaurantSpecialties = null;
+
+
+  private String schedule = null;
+
+
+  private String screenplayBy = null;
+
+
+  private String season = null;
+
+
+  private String starring = null;
+
+
+  private Integer storeNumber = null;
+
+
+  private String studio = null;
+
+
+  private Integer talkingAboutCount = null;
+
+
+  private String engagement = null;
+
+
+  private String singleLineAddress = null;
+
+
+  private String placeType = null;
+
+
+  private Integer unreadMessageCount = null;
+
+
+  private Integer unreadNotifCount = null;
+
+
+  private Integer unseenMessageCount = null;
+
+
+  private String username = null;
+
+
+  private String voipInfo = null;
 
 
   private String website = null;
 
 
-  private String work = null;
+  private Integer wereHereCount = null;
 
 
-  private String publicKey = null;
+  private String writtenBy = null;
 
 
-  private String cover = null;
+  private String ownerBusiness = null;
+
+
+  private String lastUsedTime = null;
+
+
+  private Float assetScore = null;
+
+
+  private Integer checkins = null;
+
+
+  private Integer likes = null;
+
+
+  private String members = null;
 
   
   /**
@@ -207,9 +387,9 @@ public class FacebookUser   {
 
   
   /**
-   * The About Me section of this person's profile, Facebook datatype: string
+   * Information about the Page, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The About Me section of this person's profile, Facebook datatype: string")
+  @ApiModelProperty(value = "Information about the Page, Facebook datatype: string")
   @JsonProperty("about")
   
   public String getAbout() {
@@ -221,23 +401,163 @@ public class FacebookUser   {
 
   
   /**
-   * The age segment for this person expressed as a minimum and maximum age. For example, more than 18, less than 21., Facebook datatype: agerange
+   * The access token you can use to act as the Page. Only visible to Page Admins, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The age segment for this person expressed as a minimum and maximum age. For example, more than 18, less than 21., Facebook datatype: agerange")
-  @JsonProperty("age_range")
+  @ApiModelProperty(value = "The access token you can use to act as the Page. Only visible to Page Admins, Facebook datatype: string")
+  @JsonProperty("access_token")
   
-  public String getAgeRange() {
-    return ageRange;
+  public String getAccessToken() {
+    return accessToken;
   }
-  public void setAgeRange(String ageRange) {
-    this.ageRange = ageRange;
+  public void setAccessToken(String accessToken) {
+    this.accessToken = accessToken;
   }
 
   
   /**
-   * The person's bio, Facebook datatype: string
+   * The Page's currently running promotion campaign, Facebook datatype: adcampaign
    **/
-  @ApiModelProperty(value = "The person's bio, Facebook datatype: string")
+  @ApiModelProperty(value = "The Page's currently running promotion campaign, Facebook datatype: adcampaign")
+  @JsonProperty("ad_campaign")
+  
+  public String getAdCampaign() {
+    return adCampaign;
+  }
+  public void setAdCampaign(String adCampaign) {
+    this.adCampaign = adCampaign;
+  }
+
+  
+  /**
+   * Affiliation of this person. Applicable to Pages representing people, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "Affiliation of this person. Applicable to Pages representing people, Facebook datatype: string")
+  @JsonProperty("affiliation")
+  
+  public String getAffiliation() {
+    return affiliation;
+  }
+  public void setAffiliation(String affiliation) {
+    this.affiliation = affiliation;
+  }
+
+  
+  /**
+   * App ID for app-owned Pages and app Pages, Facebook datatype: id
+   **/
+  @ApiModelProperty(value = "App ID for app-owned Pages and app Pages, Facebook datatype: id")
+  @JsonProperty("app_id")
+  
+  public String getAppId() {
+    return appId;
+  }
+  public void setAppId(String appId) {
+    this.appId = appId;
+  }
+
+  
+  /**
+   * AppLinks data associated with the Page's URL, Facebook datatype: applinks
+   **/
+  @ApiModelProperty(value = "AppLinks data associated with the Page's URL, Facebook datatype: applinks")
+  @JsonProperty("app_links")
+  
+  public String getAppLinks() {
+    return appLinks;
+  }
+  public void setAppLinks(String appLinks) {
+    this.appLinks = appLinks;
+  }
+
+  
+  /**
+   * Artists the band likes. Applicable to Bands, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "Artists the band likes. Applicable to Bands, Facebook datatype: string")
+  @JsonProperty("artists_we_like")
+  
+  public String getArtistsWeLike() {
+    return artistsWeLike;
+  }
+  public void setArtistsWeLike(String artistsWeLike) {
+    this.artistsWeLike = artistsWeLike;
+  }
+
+  
+  /**
+   * Dress code of the business. Applicable to Restaurants or Nightlife. Can be one of Casual, Dressy or Unspecified, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "Dress code of the business. Applicable to Restaurants or Nightlife. Can be one of Casual, Dressy or Unspecified, Facebook datatype: string")
+  @JsonProperty("attire")
+  
+  public AttireEnum getAttire() {
+    return attire;
+  }
+  public void setAttire(AttireEnum attire) {
+    this.attire = attire;
+  }
+
+  
+  /**
+   * The awards information of the film. Applicable to Films, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The awards information of the film. Applicable to Films, Facebook datatype: string")
+  @JsonProperty("awards")
+  
+  public String getAwards() {
+    return awards;
+  }
+  public void setAwards(String awards) {
+    this.awards = awards;
+  }
+
+  
+  /**
+   * Band interests. Applicable to Bands, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "Band interests. Applicable to Bands, Facebook datatype: string")
+  @JsonProperty("band_interests")
+  
+  public String getBandInterests() {
+    return bandInterests;
+  }
+  public void setBandInterests(String bandInterests) {
+    this.bandInterests = bandInterests;
+  }
+
+  
+  /**
+   * Members of the band. Applicable to Bands, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "Members of the band. Applicable to Bands, Facebook datatype: string")
+  @JsonProperty("band_members")
+  
+  public String getBandMembers() {
+    return bandMembers;
+  }
+  public void setBandMembers(String bandMembers) {
+    this.bandMembers = bandMembers;
+  }
+
+  
+  /**
+   * The best available Page on Facebook for the concept represented by this Page. The best available Page takes into account authenticity and the number of likes, Facebook datatype: page
+   **/
+  @ApiModelProperty(value = "The best available Page on Facebook for the concept represented by this Page. The best available Page takes into account authenticity and the number of likes, Facebook datatype: page")
+  @JsonProperty("best_page")
+  
+  public String getBestPage() {
+    return bestPage;
+  }
+  public void setBestPage(String bestPage) {
+    this.bestPage = bestPage;
+  }
+
+  
+  /**
+   * Biography of the band. Applicable to Bands, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "Biography of the band. Applicable to Bands, Facebook datatype: string")
   @JsonProperty("bio")
   
   public String getBio() {
@@ -249,9 +569,9 @@ public class FacebookUser   {
 
   
   /**
-   * The person's birthday.  This is a fixed format string, like `MM/DD/YYYY`.  However, people can control who can see the year they were born separately from the month and day so this string can be only the year (YYYY) or the month + day (MM/DD), Facebook datatype: string
+   * Birthday of this person. Applicable to Pages representing people, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The person's birthday.  This is a fixed format string, like `MM/DD/YYYY`.  However, people can control who can see the year they were born separately from the month and day so this string can be only the year (YYYY) or the month + day (MM/DD), Facebook datatype: string")
+  @ApiModelProperty(value = "Birthday of this person. Applicable to Pages representing people, Facebook datatype: string")
   @JsonProperty("birthday")
   
   public String getBirthday() {
@@ -263,9 +583,135 @@ public class FacebookUser   {
 
   
   /**
-   * Social context for this person, Facebook datatype: usercontext
+   * Booking agent of the band. Applicable to Bands, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Social context for this person, Facebook datatype: usercontext")
+  @ApiModelProperty(value = "Booking agent of the band. Applicable to Bands, Facebook datatype: string")
+  @JsonProperty("booking_agent")
+  
+  public String getBookingAgent() {
+    return bookingAgent;
+  }
+  public void setBookingAgent(String bookingAgent) {
+    this.bookingAgent = bookingAgent;
+  }
+
+  
+  /**
+   * Year vehicle was built. Applicable to Vehicles, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "Year vehicle was built. Applicable to Vehicles, Facebook datatype: string")
+  @JsonProperty("built")
+  
+  public String getBuilt() {
+    return built;
+  }
+  public void setBuilt(String built) {
+    this.built = built;
+  }
+
+  
+  /**
+   * The Business associated with this Page.  Visible only with a page access token or a user access token that has admin rights on the page, Facebook datatype: null
+   **/
+  @ApiModelProperty(value = "The Business associated with this Page.  Visible only with a page access token or a user access token that has admin rights on the page, Facebook datatype: null")
+  @JsonProperty("business")
+  
+  public String getBusiness() {
+    return business;
+  }
+  public void setBusiness(String business) {
+    this.business = business;
+  }
+
+  
+  /**
+   * Whether this page has checkin functionality enabled, Facebook datatype: bool
+   **/
+  @ApiModelProperty(value = "Whether this page has checkin functionality enabled, Facebook datatype: bool")
+  @JsonProperty("can_checkin")
+  
+  public Boolean getCanCheckin() {
+    return canCheckin;
+  }
+  public void setCanCheckin(Boolean canCheckin) {
+    this.canCheckin = canCheckin;
+  }
+
+  
+  /**
+   * Whether the current session user can post on this Page, Facebook datatype: bool
+   **/
+  @ApiModelProperty(value = "Whether the current session user can post on this Page, Facebook datatype: bool")
+  @JsonProperty("can_post")
+  
+  public Boolean getCanPost() {
+    return canPost;
+  }
+  public void setCanPost(Boolean canPost) {
+    this.canPost = canPost;
+  }
+
+  
+  /**
+   * The Page's category. e.g. Product/Service, Computers/Technology, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The Page's category. e.g. Product/Service, Computers/Technology, Facebook datatype: string")
+  @JsonProperty("category")
+  
+  public String getCategory() {
+    return category;
+  }
+  public void setCategory(String category) {
+    this.category = category;
+  }
+
+  
+  /**
+   * The Page's sub-categories, Facebook datatype: list<pagecategory>
+   **/
+  @ApiModelProperty(value = "The Page's sub-categories, Facebook datatype: list<pagecategory>")
+  @JsonProperty("category_list")
+  
+  public String getCategoryList() {
+    return categoryList;
+  }
+  public void setCategoryList(String categoryList) {
+    this.categoryList = categoryList;
+  }
+
+  
+  /**
+   * The company overview. Applicable to Companies, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The company overview. Applicable to Companies, Facebook datatype: string")
+  @JsonProperty("company_overview")
+  
+  public String getCompanyOverview() {
+    return companyOverview;
+  }
+  public void setCompanyOverview(String companyOverview) {
+    this.companyOverview = companyOverview;
+  }
+
+  
+  /**
+   * The mailing or contact address for this page. This field will be blank if the contact address is the same as the physical address, Facebook datatype: mailingaddress
+   **/
+  @ApiModelProperty(value = "The mailing or contact address for this page. This field will be blank if the contact address is the same as the physical address, Facebook datatype: mailingaddress")
+  @JsonProperty("contact_address")
+  
+  public String getContactAddress() {
+    return contactAddress;
+  }
+  public void setContactAddress(String contactAddress) {
+    this.contactAddress = contactAddress;
+  }
+
+  
+  /**
+   * Social context for this Page, Facebook datatype: opengraphcontext
+   **/
+  @ApiModelProperty(value = "Social context for this Page, Facebook datatype: opengraphcontext")
   @JsonProperty("context")
   
   public String getContext() {
@@ -277,121 +723,275 @@ public class FacebookUser   {
 
   
   /**
-   * The person's local currency information, Facebook datatype: currency
+   * If this is a Page in a Global Pages hierarchy, the number of people who are being directed to this Page., Facebook datatype: unsigned int32
    **/
-  @ApiModelProperty(value = "The person's local currency information, Facebook datatype: currency")
-  @JsonProperty("currency")
+  @ApiModelProperty(value = "If this is a Page in a Global Pages hierarchy, the number of people who are being directed to this Page., Facebook datatype: unsigned int32")
+  @JsonProperty("country_page_likes")
   
-  public String getCurrency() {
-    return currency;
+  public Integer getCountryPageLikes() {
+    return countryPageLikes;
   }
-  public void setCurrency(String currency) {
-    this.currency = currency;
+  public void setCountryPageLikes(Integer countryPageLikes) {
+    this.countryPageLikes = countryPageLikes;
   }
 
   
   /**
-   * The list of devices the person is using. This will return only iOS and Android devices, Facebook datatype: list<userdevice>
+   * Information about the page's cover photo, Facebook datatype: coverphoto
    **/
-  @ApiModelProperty(value = "The list of devices the person is using. This will return only iOS and Android devices, Facebook datatype: list<userdevice>")
-  @JsonProperty("devices")
+  @ApiModelProperty(value = "Information about the page's cover photo, Facebook datatype: coverphoto")
+  @JsonProperty("cover")
   
-  public String getDevices() {
-    return devices;
+  public String getCover() {
+    return cover;
   }
-  public void setDevices(String devices) {
-    this.devices = devices;
+  public void setCover(String cover) {
+    this.cover = cover;
   }
 
   
   /**
-   * The person's education, Facebook datatype: list<educationexperience>
+   * Culinary team of the business. Applicable to Restaurants or Nightlife, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The person's education, Facebook datatype: list<educationexperience>")
-  @JsonProperty("education")
+  @ApiModelProperty(value = "Culinary team of the business. Applicable to Restaurants or Nightlife, Facebook datatype: string")
+  @JsonProperty("culinary_team")
   
-  public String getEducation() {
-    return education;
+  public String getCulinaryTeam() {
+    return culinaryTeam;
   }
-  public void setEducation(String education) {
-    this.education = education;
+  public void setCulinaryTeam(String culinaryTeam) {
+    this.culinaryTeam = culinaryTeam;
   }
 
   
   /**
-   * The person's primary email address listed on their profile. This field will not be returned if no valid email address is available, Facebook datatype: string
+   * Current location of the Page, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The person's primary email address listed on their profile. This field will not be returned if no valid email address is available, Facebook datatype: string")
-  @JsonProperty("email")
+  @ApiModelProperty(value = "Current location of the Page, Facebook datatype: string")
+  @JsonProperty("current_location")
   
-  public String getEmail() {
-    return email;
+  public String getCurrentLocation() {
+    return currentLocation;
   }
-  public void setEmail(String email) {
-    this.email = email;
+  public void setCurrentLocation(String currentLocation) {
+    this.currentLocation = currentLocation;
   }
 
   
   /**
-   * Athletes the person likes, Facebook datatype: list<experience>
+   * The description of the Page, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Athletes the person likes, Facebook datatype: list<experience>")
-  @JsonProperty("favorite_athletes")
+  @ApiModelProperty(value = "The description of the Page, Facebook datatype: string")
+  @JsonProperty("description")
   
-  public String getFavoriteAthletes() {
-    return favoriteAthletes;
+  public String getDescription() {
+    return description;
   }
-  public void setFavoriteAthletes(String favoriteAthletes) {
-    this.favoriteAthletes = favoriteAthletes;
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   
   /**
-   * Sports teams the person likes, Facebook datatype: list<experience>
+   * The description of the Page in raw HTML, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Sports teams the person likes, Facebook datatype: list<experience>")
-  @JsonProperty("favorite_teams")
+  @ApiModelProperty(value = "The description of the Page in raw HTML, Facebook datatype: string")
+  @JsonProperty("description_html")
   
-  public String getFavoriteTeams() {
-    return favoriteTeams;
+  public String getDescriptionHtml() {
+    return descriptionHtml;
   }
-  public void setFavoriteTeams(String favoriteTeams) {
-    this.favoriteTeams = favoriteTeams;
+  public void setDescriptionHtml(String descriptionHtml) {
+    this.descriptionHtml = descriptionHtml;
   }
 
   
   /**
-   * The person's first name, Facebook datatype: string
+   * The director of the film. Applicable to Films, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The person's first name, Facebook datatype: string")
-  @JsonProperty("first_name")
+  @ApiModelProperty(value = "The director of the film. Applicable to Films, Facebook datatype: string")
+  @JsonProperty("directed_by")
   
-  public String getFirstName() {
-    return firstName;
+  public String getDirectedBy() {
+    return directedBy;
   }
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
+  public void setDirectedBy(String directedBy) {
+    this.directedBy = directedBy;
   }
 
   
   /**
-   * The gender selected by this person, `male` or `female`. This value will be omitted if the gender is set to a custom value, Facebook datatype: string
+   * Subtext about the Page being viewed, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The gender selected by this person, `male` or `female`. This value will be omitted if the gender is set to a custom value, Facebook datatype: string")
-  @JsonProperty("gender")
+  @ApiModelProperty(value = "Subtext about the Page being viewed, Facebook datatype: string")
+  @JsonProperty("display_subtext")
   
-  public String getGender() {
-    return gender;
+  public String getDisplaySubtext() {
+    return displaySubtext;
   }
-  public void setGender(String gender) {
-    this.gender = gender;
+  public void setDisplaySubtext(String displaySubtext) {
+    this.displaySubtext = displaySubtext;
   }
 
   
   /**
-   * The person's hometown, Facebook datatype: page
+   * The emails listed in the About section of a Page, Facebook datatype: list<string>
    **/
-  @ApiModelProperty(value = "The person's hometown, Facebook datatype: page")
+  @ApiModelProperty(value = "The emails listed in the About section of a Page, Facebook datatype: list<string>")
+  @JsonProperty("emails")
+  
+  public List<String> getEmails() {
+    return emails;
+  }
+  public void setEmails(List<String> emails) {
+    this.emails = emails;
+  }
+
+  
+  /**
+   * Features of the vehicle. Applicable to Vehicles, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "Features of the vehicle. Applicable to Vehicles, Facebook datatype: string")
+  @JsonProperty("features")
+  
+  public String getFeatures() {
+    return features;
+  }
+  public void setFeatures(String features) {
+    this.features = features;
+  }
+
+  
+  /**
+   * The restaurant's food styles. Applicable to Restaurants, Facebook datatype: list<string>
+   **/
+  @ApiModelProperty(value = "The restaurant's food styles. Applicable to Restaurants, Facebook datatype: list<string>")
+  @JsonProperty("food_styles")
+  
+  public List<String> getFoodStyles() {
+    return foodStyles;
+  }
+  public void setFoodStyles(List<String> foodStyles) {
+    this.foodStyles = foodStyles;
+  }
+
+  
+  /**
+   * When the company was founded. Applicable to Pages in the Company category, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "When the company was founded. Applicable to Pages in the Company category, Facebook datatype: string")
+  @JsonProperty("founded")
+  
+  public String getFounded() {
+    return founded;
+  }
+  public void setFounded(String founded) {
+    this.founded = founded;
+  }
+
+  
+  /**
+   * General information provided by the Page, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "General information provided by the Page, Facebook datatype: string")
+  @JsonProperty("general_info")
+  
+  public String getGeneralInfo() {
+    return generalInfo;
+  }
+  public void setGeneralInfo(String generalInfo) {
+    this.generalInfo = generalInfo;
+  }
+
+  
+  /**
+   * General manager of the business. Applicable to Restaurants or Nightlife, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "General manager of the business. Applicable to Restaurants or Nightlife, Facebook datatype: string")
+  @JsonProperty("general_manager")
+  
+  public String getGeneralManager() {
+    return generalManager;
+  }
+  public void setGeneralManager(String generalManager) {
+    this.generalManager = generalManager;
+  }
+
+  
+  /**
+   * The genre of the film. Applicable to Films, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The genre of the film. Applicable to Films, Facebook datatype: string")
+  @JsonProperty("genre")
+  
+  public String getGenre() {
+    return genre;
+  }
+  public void setGenre(String genre) {
+    this.genre = genre;
+  }
+
+  
+  /**
+   * The name of the Page with country codes appended for Global Brand Pages. Only visible to the Page admin, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The name of the Page with country codes appended for Global Brand Pages. Only visible to the Page admin, Facebook datatype: string")
+  @JsonProperty("global_brand_page_name")
+  
+  public String getGlobalBrandPageName() {
+    return globalBrandPageName;
+  }
+  public void setGlobalBrandPageName(String globalBrandPageName) {
+    this.globalBrandPageName = globalBrandPageName;
+  }
+
+  
+  /**
+   * This brand's global Root ID, Facebook datatype: numeric string
+   **/
+  @ApiModelProperty(value = "This brand's global Root ID, Facebook datatype: numeric string")
+  @JsonProperty("global_brand_root_id")
+  
+  public String getGlobalBrandRootId() {
+    return globalBrandRootId;
+  }
+  public void setGlobalBrandRootId(String globalBrandRootId) {
+    this.globalBrandRootId = globalBrandRootId;
+  }
+
+  
+  /**
+   * Indicates whether this Page has added the app making the query in a Page tab, Facebook datatype: bool
+   **/
+  @ApiModelProperty(value = "Indicates whether this Page has added the app making the query in a Page tab, Facebook datatype: bool")
+  @JsonProperty("has_added_app")
+  
+  public Boolean getHasAddedApp() {
+    return hasAddedApp;
+  }
+  public void setHasAddedApp(Boolean hasAddedApp) {
+    this.hasAddedApp = hasAddedApp;
+  }
+
+  
+  /**
+   * Indicates whether a user has accepted the TOS for running LeadGen Ads on the Page, Facebook datatype: bool
+   **/
+  @ApiModelProperty(value = "Indicates whether a user has accepted the TOS for running LeadGen Ads on the Page, Facebook datatype: bool")
+  @JsonProperty("leadgen_tos_accepted")
+  
+  public Boolean getLeadgenTosAccepted() {
+    return leadgenTosAccepted;
+  }
+  public void setLeadgenTosAccepted(Boolean leadgenTosAccepted) {
+    this.leadgenTosAccepted = leadgenTosAccepted;
+  }
+
+  
+  /**
+   * Hometown of the band. Applicable to Bands, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "Hometown of the band. Applicable to Bands, Facebook datatype: string")
   @JsonProperty("hometown")
   
   public String getHometown() {
@@ -403,65 +1003,93 @@ public class FacebookUser   {
 
   
   /**
-   * The person's inspirational people, Facebook datatype: list<experience>
+   * Indicates a single range of opening hours for a day. Each day can have 2 different hours ranges. The keys in the map are in the form of `{day}_{number}_{status}`.  `{day}` should be the first 3 characters of the day of the week, `{number}` should be either 1 or 2 to allow for the two different hours ranges per day. `{status}` should be either `open` or `close` to delineate the start or end of a time range. An example would be `mon_1_open` with value `17:00` and `mon_1_close` with value `21:15` which would represent a single opening range of 5pm to 9:15pm on Mondays, Facebook datatype: map<string, string>
    **/
-  @ApiModelProperty(value = "The person's inspirational people, Facebook datatype: list<experience>")
-  @JsonProperty("inspirational_people")
+  @ApiModelProperty(value = "Indicates a single range of opening hours for a day. Each day can have 2 different hours ranges. The keys in the map are in the form of `{day}_{number}_{status}`.  `{day}` should be the first 3 characters of the day of the week, `{number}` should be either 1 or 2 to allow for the two different hours ranges per day. `{status}` should be either `open` or `close` to delineate the start or end of a time range. An example would be `mon_1_open` with value `17:00` and `mon_1_close` with value `21:15` which would represent a single opening range of 5pm to 9:15pm on Mondays, Facebook datatype: map<string, string>")
+  @JsonProperty("hours")
   
-  public String getInspirationalPeople() {
-    return inspirationalPeople;
+  public String getHours() {
+    return hours;
   }
-  public void setInspirationalPeople(String inspirationalPeople) {
-    this.inspirationalPeople = inspirationalPeople;
+  public void setHours(String hours) {
+    this.hours = hours;
   }
 
   
   /**
-   * Install type, Facebook datatype: enum
+   * Influences on the band. Applicable to Bands, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Install type, Facebook datatype: enum")
-  @JsonProperty("install_type")
+  @ApiModelProperty(value = "Influences on the band. Applicable to Bands, Facebook datatype: string")
+  @JsonProperty("influences")
   
-  public String getInstallType() {
-    return installType;
+  public String getInfluences() {
+    return influences;
   }
-  public void setInstallType(String installType) {
-    this.installType = installType;
+  public void setInfluences(String influences) {
+    this.influences = influences;
   }
 
   
   /**
-   * Is the app making the request installed?, Facebook datatype: bool
+   * Indicates whether the Page is a community Page, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "Is the app making the request installed?, Facebook datatype: bool")
-  @JsonProperty("installed")
+  @ApiModelProperty(value = "Indicates whether the Page is a community Page, Facebook datatype: bool")
+  @JsonProperty("is_community_page")
   
-  public Boolean getInstalled() {
-    return installed;
+  public Boolean getIsCommunityPage() {
+    return isCommunityPage;
   }
-  public void setInstalled(Boolean installed) {
-    this.installed = installed;
+  public void setIsCommunityPage(Boolean isCommunityPage) {
+    this.isCommunityPage = isCommunityPage;
   }
 
   
   /**
-   * Genders the person is interested in, Facebook datatype: list<string>
+   * Whether the business corresponding to this Page is permanently closed, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "Genders the person is interested in, Facebook datatype: list<string>")
-  @JsonProperty("interested_in")
+  @ApiModelProperty(value = "Whether the business corresponding to this Page is permanently closed, Facebook datatype: bool")
+  @JsonProperty("is_permanently_closed")
   
-  public List<String> getInterestedIn() {
-    return interestedIn;
+  public Boolean getIsPermanentlyClosed() {
+    return isPermanentlyClosed;
   }
-  public void setInterestedIn(List<String> interestedIn) {
-    this.interestedIn = interestedIn;
+  public void setIsPermanentlyClosed(Boolean isPermanentlyClosed) {
+    this.isPermanentlyClosed = isPermanentlyClosed;
   }
 
   
   /**
-   * People with large numbers of followers can have the authenticity of their identity [manually verified by Facebook](https://www.facebook.com/help/196050490547892). This field indicates whether the person's profile is verified in this way. This is distinct from the `verified` field, Facebook datatype: bool
+   * Indicates whether the Page is published and visible to non-admins, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "People with large numbers of followers can have the authenticity of their identity [manually verified by Facebook](https://www.facebook.com/help/196050490547892). This field indicates whether the person's profile is verified in this way. This is distinct from the `verified` field, Facebook datatype: bool")
+  @ApiModelProperty(value = "Indicates whether the Page is published and visible to non-admins, Facebook datatype: bool")
+  @JsonProperty("is_published")
+  
+  public Boolean getIsPublished() {
+    return isPublished;
+  }
+  public void setIsPublished(Boolean isPublished) {
+    this.isPublished = isPublished;
+  }
+
+  
+  /**
+   * Indicates whether the Page is unclaimed, Facebook datatype: bool
+   **/
+  @ApiModelProperty(value = "Indicates whether the Page is unclaimed, Facebook datatype: bool")
+  @JsonProperty("is_unclaimed")
+  
+  public Boolean getIsUnclaimed() {
+    return isUnclaimed;
+  }
+  public void setIsUnclaimed(Boolean isUnclaimed) {
+    this.isUnclaimed = isUnclaimed;
+  }
+
+  
+  /**
+   * Pages with a large number of followers can be manually verified by Facebook as [having an authentic identity](https://www.facebook.com/help/196050490547892). This field indicates whether the page is verified by this process, Facebook datatype: bool
+   **/
+  @ApiModelProperty(value = "Pages with a large number of followers can be manually verified by Facebook as [having an authentic identity](https://www.facebook.com/help/196050490547892). This field indicates whether the page is verified by this process, Facebook datatype: bool")
   @JsonProperty("is_verified")
   
   public Boolean getIsVerified() {
@@ -473,37 +1101,9 @@ public class FacebookUser   {
 
   
   /**
-   * Facebook Pages representing the languages this person knows, Facebook datatype: list<experience>
+   * The Page's Facebook URL, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Facebook Pages representing the languages this person knows, Facebook datatype: list<experience>")
-  @JsonProperty("languages")
-  
-  public String getLanguages() {
-    return languages;
-  }
-  public void setLanguages(String languages) {
-    this.languages = languages;
-  }
-
-  
-  /**
-   * The person's last name, Facebook datatype: string
-   **/
-  @ApiModelProperty(value = "The person's last name, Facebook datatype: string")
-  @JsonProperty("last_name")
-  
-  public String getLastName() {
-    return lastName;
-  }
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  
-  /**
-   * A link to the person's Timeline, Facebook datatype: string
-   **/
-  @ApiModelProperty(value = "A link to the person's Timeline, Facebook datatype: string")
+  @ApiModelProperty(value = "The Page's Facebook URL, Facebook datatype: string")
   @JsonProperty("link")
   
   public String getLink() {
@@ -515,291 +1115,555 @@ public class FacebookUser   {
 
   
   /**
-   * The person's locale, Facebook datatype: string
+   * The company mission. Applicable to Companies, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The person's locale, Facebook datatype: string")
-  @JsonProperty("locale")
+  @ApiModelProperty(value = "The company mission. Applicable to Companies, Facebook datatype: string")
+  @JsonProperty("mission")
   
-  public String getLocale() {
-    return locale;
+  public String getMission() {
+    return mission;
   }
-  public void setLocale(String locale) {
-    this.locale = locale;
+  public void setMission(String mission) {
+    this.mission = mission;
   }
 
   
   /**
-   * What the person is interested in meeting for, Facebook datatype: list<string>
+   * MPG of the vehicle. Applicable to Vehicles, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "What the person is interested in meeting for, Facebook datatype: list<string>")
-  @JsonProperty("meeting_for")
+  @ApiModelProperty(value = "MPG of the vehicle. Applicable to Vehicles, Facebook datatype: string")
+  @JsonProperty("mpg")
   
-  public List<String> getMeetingFor() {
-    return meetingFor;
+  public String getMpg() {
+    return mpg;
   }
-  public void setMeetingFor(List<String> meetingFor) {
-    this.meetingFor = meetingFor;
+  public void setMpg(String mpg) {
+    this.mpg = mpg;
   }
 
   
   /**
-   * The person's middle name, Facebook datatype: string
+   * The TV network for the TV show. Applicable to TV Shows, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The person's middle name, Facebook datatype: string")
-  @JsonProperty("middle_name")
+  @ApiModelProperty(value = "The TV network for the TV show. Applicable to TV Shows, Facebook datatype: string")
+  @JsonProperty("network")
   
-  public String getMiddleName() {
-    return middleName;
+  public String getNetwork() {
+    return network;
   }
-  public void setMiddleName(String middleName) {
-    this.middleName = middleName;
+  public void setNetwork(String network) {
+    this.network = network;
   }
 
   
   /**
-   * The person's name formatted to correctly handle Chinese, Japanese, or Korean ordering, Facebook datatype: string
+   * The number of people who have liked the Page, since the last login. Only visible to a page admin, Facebook datatype: unsigned int32
    **/
-  @ApiModelProperty(value = "The person's name formatted to correctly handle Chinese, Japanese, or Korean ordering, Facebook datatype: string")
-  @JsonProperty("name_format")
+  @ApiModelProperty(value = "The number of people who have liked the Page, since the last login. Only visible to a page admin, Facebook datatype: unsigned int32")
+  @JsonProperty("new_like_count")
   
-  public String getNameFormat() {
-    return nameFormat;
+  public Integer getNewLikeCount() {
+    return newLikeCount;
   }
-  public void setNameFormat(String nameFormat) {
-    this.nameFormat = nameFormat;
+  public void setNewLikeCount(Integer newLikeCount) {
+    this.newLikeCount = newLikeCount;
   }
 
   
   /**
-   * The person's payment pricepoints, Facebook datatype: paymentpricepoints
+   * Offer eligibility status. Only visible to a page admin, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "The person's payment pricepoints, Facebook datatype: paymentpricepoints")
-  @JsonProperty("payment_pricepoints")
+  @ApiModelProperty(value = "Offer eligibility status. Only visible to a page admin, Facebook datatype: bool")
+  @JsonProperty("offer_eligible")
   
-  public String getPaymentPricepoints() {
-    return paymentPricepoints;
+  public Boolean getOfferEligible() {
+    return offerEligible;
   }
-  public void setPaymentPricepoints(String paymentPricepoints) {
-    this.paymentPricepoints = paymentPricepoints;
+  public void setOfferEligible(Boolean offerEligible) {
+    this.offerEligible = offerEligible;
   }
 
   
   /**
-   * Platform test group, Facebook datatype: unsigned int32
+   * Parent Page for this Page, Facebook datatype: page
    **/
-  @ApiModelProperty(value = "Platform test group, Facebook datatype: unsigned int32")
-  @JsonProperty("test_group")
+  @ApiModelProperty(value = "Parent Page for this Page, Facebook datatype: page")
+  @JsonProperty("parent_page")
   
-  public Integer getTestGroup() {
-    return testGroup;
+  public String getParentPage() {
+    return parentPage;
   }
-  public void setTestGroup(Integer testGroup) {
-    this.testGroup = testGroup;
+  public void setParentPage(String parentPage) {
+    this.parentPage = parentPage;
   }
 
   
   /**
-   * The person's political views, Facebook datatype: string
+   * Parking information. Applicable to Businesses and Places, Facebook datatype: pageparking
    **/
-  @ApiModelProperty(value = "The person's political views, Facebook datatype: string")
-  @JsonProperty("political")
+  @ApiModelProperty(value = "Parking information. Applicable to Businesses and Places, Facebook datatype: pageparking")
+  @JsonProperty("parking")
   
-  public String getPolitical() {
-    return political;
+  public String getParking() {
+    return parking;
   }
-  public void setPolitical(String political) {
-    this.political = political;
+  public void setParking(String parking) {
+    this.parking = parking;
   }
 
   
   /**
-   * The person's relationship status, Facebook datatype: string
+   * Payment options accepted by the business. Applicable to Restaurants or Nightlife, Facebook datatype: pagepaymentoptions
    **/
-  @ApiModelProperty(value = "The person's relationship status, Facebook datatype: string")
-  @JsonProperty("relationship_status")
+  @ApiModelProperty(value = "Payment options accepted by the business. Applicable to Restaurants or Nightlife, Facebook datatype: pagepaymentoptions")
+  @JsonProperty("payment_options")
   
-  public String getRelationshipStatus() {
-    return relationshipStatus;
+  public String getPaymentOptions() {
+    return paymentOptions;
   }
-  public void setRelationshipStatus(String relationshipStatus) {
-    this.relationshipStatus = relationshipStatus;
+  public void setPaymentOptions(String paymentOptions) {
+    this.paymentOptions = paymentOptions;
   }
 
   
   /**
-   * The person's religion, Facebook datatype: string
+   * Personal information. Applicable to Pages representing People, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The person's religion, Facebook datatype: string")
-  @JsonProperty("religion")
+  @ApiModelProperty(value = "Personal information. Applicable to Pages representing People, Facebook datatype: string")
+  @JsonProperty("personal_info")
   
-  public String getReligion() {
-    return religion;
+  public String getPersonalInfo() {
+    return personalInfo;
   }
-  public void setReligion(String religion) {
-    this.religion = religion;
+  public void setPersonalInfo(String personalInfo) {
+    this.personalInfo = personalInfo;
   }
 
   
   /**
-   * Security settings, Facebook datatype: securitysettings
+   * Personal interests. Applicable to Pages representing People, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Security settings, Facebook datatype: securitysettings")
-  @JsonProperty("security_settings")
+  @ApiModelProperty(value = "Personal interests. Applicable to Pages representing People, Facebook datatype: string")
+  @JsonProperty("personal_interests")
   
-  public String getSecuritySettings() {
-    return securitySettings;
+  public String getPersonalInterests() {
+    return personalInterests;
   }
-  public void setSecuritySettings(String securitySettings) {
-    this.securitySettings = securitySettings;
+  public void setPersonalInterests(String personalInterests) {
+    this.personalInterests = personalInterests;
   }
 
   
   /**
-   * The person's significant other, Facebook datatype: user
+   * Pharmacy safety information. Applicable to Pharmaceutical companies, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The person's significant other, Facebook datatype: user")
-  @JsonProperty("significant_other")
+  @ApiModelProperty(value = "Pharmacy safety information. Applicable to Pharmaceutical companies, Facebook datatype: string")
+  @JsonProperty("pharma_safety_info")
   
-  public String getSignificantOther() {
-    return significantOther;
+  public String getPharmaSafetyInfo() {
+    return pharmaSafetyInfo;
   }
-  public void setSignificantOther(String significantOther) {
-    this.significantOther = significantOther;
+  public void setPharmaSafetyInfo(String pharmaSafetyInfo) {
+    this.pharmaSafetyInfo = pharmaSafetyInfo;
   }
 
   
   /**
-   * Sports this person likes, Facebook datatype: list<experience>
+   * Phone number provided by a Page, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Sports this person likes, Facebook datatype: list<experience>")
-  @JsonProperty("sports")
+  @ApiModelProperty(value = "Phone number provided by a Page, Facebook datatype: string")
+  @JsonProperty("phone")
   
-  public String getSports() {
-    return sports;
+  public String getPhone() {
+    return phone;
   }
-  public void setSports(String sports) {
-    this.sports = sports;
+  public void setPhone(String phone) {
+    this.phone = phone;
   }
 
   
   /**
-   * The person's favorite quotes, Facebook datatype: string
+   * The plot outline of the film. Applicable to Films, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The person's favorite quotes, Facebook datatype: string")
-  @JsonProperty("quotes")
+  @ApiModelProperty(value = "The plot outline of the film. Applicable to Films, Facebook datatype: string")
+  @JsonProperty("plot_outline")
   
-  public String getQuotes() {
-    return quotes;
+  public String getPlotOutline() {
+    return plotOutline;
   }
-  public void setQuotes(String quotes) {
-    this.quotes = quotes;
+  public void setPlotOutline(String plotOutline) {
+    this.plotOutline = plotOutline;
   }
 
   
   /**
-   * A string containing an anonymous, but unique identifier for the person. You can use this identifier with third parties, Facebook datatype: string
+   * Press contact information of the band. Applicable to Bands, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "A string containing an anonymous, but unique identifier for the person. You can use this identifier with third parties, Facebook datatype: string")
-  @JsonProperty("third_party_id")
+  @ApiModelProperty(value = "Press contact information of the band. Applicable to Bands, Facebook datatype: string")
+  @JsonProperty("press_contact")
   
-  public String getThirdPartyId() {
-    return thirdPartyId;
+  public String getPressContact() {
+    return pressContact;
   }
-  public void setThirdPartyId(String thirdPartyId) {
-    this.thirdPartyId = thirdPartyId;
+  public void setPressContact(String pressContact) {
+    this.pressContact = pressContact;
   }
 
   
   /**
-   * The person's current timezone offset from UTC, Facebook datatype: float (min: -24) (max: 24)
-   * minimum: -24.0
-   * maximum: 24.0
+   * Price range of the business. Applicable to Restaurants or Nightlife. Can be one of `$` (0-10), `$$` (10-30), `$$$` (30-50), `$$$$` (50+) or `Unspecified`, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The person's current timezone offset from UTC, Facebook datatype: float (min: -24) (max: 24)")
-  @JsonProperty("timezone")
+  @ApiModelProperty(value = "Price range of the business. Applicable to Restaurants or Nightlife. Can be one of `$` (0-10), `$$` (10-30), `$$$` (30-50), `$$$$` (50+) or `Unspecified`, Facebook datatype: string")
+  @JsonProperty("price_range")
   
-  public Float getTimezone() {
-    return timezone;
+  public String getPriceRange() {
+    return priceRange;
   }
-  public void setTimezone(Float timezone) {
-    this.timezone = timezone;
+  public void setPriceRange(String priceRange) {
+    this.priceRange = priceRange;
   }
 
   
   /**
-   * A token that is the same across a business's apps. Access to this token requires that the person be logged into your app. This token will change if the business owning the app changes, Facebook datatype: string
+   * The productor of the film. Applicable to Films, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "A token that is the same across a business's apps. Access to this token requires that the person be logged into your app. This token will change if the business owning the app changes, Facebook datatype: string")
-  @JsonProperty("token_for_business")
+  @ApiModelProperty(value = "The productor of the film. Applicable to Films, Facebook datatype: string")
+  @JsonProperty("produced_by")
   
-  public String getTokenForBusiness() {
-    return tokenForBusiness;
+  public String getProducedBy() {
+    return producedBy;
   }
-  public void setTokenForBusiness(String tokenForBusiness) {
-    this.tokenForBusiness = tokenForBusiness;
+  public void setProducedBy(String producedBy) {
+    this.producedBy = producedBy;
   }
 
   
   /**
-   * Updated time, Facebook datatype: datetime
+   * The products of this company. Applicable to Companies, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Updated time, Facebook datatype: datetime")
-  @JsonProperty("updated_time")
+  @ApiModelProperty(value = "The products of this company. Applicable to Companies, Facebook datatype: string")
+  @JsonProperty("products")
   
-  public String getUpdatedTime() {
-    return updatedTime;
+  public String getProducts() {
+    return products;
   }
-  public void setUpdatedTime(String updatedTime) {
-    this.updatedTime = updatedTime;
+  public void setProducts(String products) {
+    this.products = products;
   }
 
   
   /**
-   * Indicates whether the account has been verified. This is distinct from the `is_verified` field. Someone is considered verified if they take any of the following actions:\n\n* Register for mobile\n* Confirm their account via SMS\n* Enter a valid credit card\n, Facebook datatype: bool
+   * Reason why a post isn't eligible for boosting. Only visible to Page Admins, Facebook datatype: bool
    **/
-  @ApiModelProperty(value = "Indicates whether the account has been verified. This is distinct from the `is_verified` field. Someone is considered verified if they take any of the following actions:\n\n* Register for mobile\n* Confirm their account via SMS\n* Enter a valid credit card\n, Facebook datatype: bool")
-  @JsonProperty("verified")
+  @ApiModelProperty(value = "Reason why a post isn't eligible for boosting. Only visible to Page Admins, Facebook datatype: bool")
+  @JsonProperty("promotion_eligible")
   
-  public Boolean getVerified() {
-    return verified;
+  public Boolean getPromotionEligible() {
+    return promotionEligible;
   }
-  public void setVerified(Boolean verified) {
-    this.verified = verified;
+  public void setPromotionEligible(Boolean promotionEligible) {
+    this.promotionEligible = promotionEligible;
   }
 
   
   /**
-   * Video upload limits, Facebook datatype: videouploadlimits
+   * Reason, for which boosted posts are not eligible. Only visible to a page admin, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Video upload limits, Facebook datatype: videouploadlimits")
-  @JsonProperty("video_upload_limits")
+  @ApiModelProperty(value = "Reason, for which boosted posts are not eligible. Only visible to a page admin, Facebook datatype: string")
+  @JsonProperty("promotion_ineligible_reason")
   
-  public String getVideoUploadLimits() {
-    return videoUploadLimits;
+  public String getPromotionIneligibleReason() {
+    return promotionIneligibleReason;
   }
-  public void setVideoUploadLimits(String videoUploadLimits) {
-    this.videoUploadLimits = videoUploadLimits;
+  public void setPromotionIneligibleReason(String promotionIneligibleReason) {
+    this.promotionIneligibleReason = promotionIneligibleReason;
   }
 
   
   /**
-   * Can the viewer send a gift to this person?, Facebook datatype: bool
+   * Public transit to the business. Applicable to Restaurants or Nightlife, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "Can the viewer send a gift to this person?, Facebook datatype: bool")
-  @JsonProperty("viewer_can_send_gift")
+  @ApiModelProperty(value = "Public transit to the business. Applicable to Restaurants or Nightlife, Facebook datatype: string")
+  @JsonProperty("public_transit")
   
-  public Boolean getViewerCanSendGift() {
-    return viewerCanSendGift;
+  public String getPublicTransit() {
+    return publicTransit;
   }
-  public void setViewerCanSendGift(Boolean viewerCanSendGift) {
-    this.viewerCanSendGift = viewerCanSendGift;
+  public void setPublicTransit(String publicTransit) {
+    this.publicTransit = publicTransit;
   }
 
   
   /**
-   * The person's website, Facebook datatype: string
+   * Record label of the band. Applicable to Bands, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The person's website, Facebook datatype: string")
+  @ApiModelProperty(value = "Record label of the band. Applicable to Bands, Facebook datatype: string")
+  @JsonProperty("record_label")
+  
+  public String getRecordLabel() {
+    return recordLabel;
+  }
+  public void setRecordLabel(String recordLabel) {
+    this.recordLabel = recordLabel;
+  }
+
+  
+  /**
+   * The film's release date. Applicable to Films, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The film's release date. Applicable to Films, Facebook datatype: string")
+  @JsonProperty("release_date")
+  
+  public String getReleaseDate() {
+    return releaseDate;
+  }
+  public void setReleaseDate(String releaseDate) {
+    this.releaseDate = releaseDate;
+  }
+
+  
+  /**
+   * Services the restaurant provides. Applicable to Restaurants, Facebook datatype: pagerestaurantservices
+   **/
+  @ApiModelProperty(value = "Services the restaurant provides. Applicable to Restaurants, Facebook datatype: pagerestaurantservices")
+  @JsonProperty("restaurant_services")
+  
+  public String getRestaurantServices() {
+    return restaurantServices;
+  }
+  public void setRestaurantServices(String restaurantServices) {
+    this.restaurantServices = restaurantServices;
+  }
+
+  
+  /**
+   * The restaurant's specialties. Applicable to Restaurants, Facebook datatype: pagerestaurantspecialties
+   **/
+  @ApiModelProperty(value = "The restaurant's specialties. Applicable to Restaurants, Facebook datatype: pagerestaurantspecialties")
+  @JsonProperty("restaurant_specialties")
+  
+  public String getRestaurantSpecialties() {
+    return restaurantSpecialties;
+  }
+  public void setRestaurantSpecialties(String restaurantSpecialties) {
+    this.restaurantSpecialties = restaurantSpecialties;
+  }
+
+  
+  /**
+   * The air schedule of the TV show. Applicable to TV Shows, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The air schedule of the TV show. Applicable to TV Shows, Facebook datatype: string")
+  @JsonProperty("schedule")
+  
+  public String getSchedule() {
+    return schedule;
+  }
+  public void setSchedule(String schedule) {
+    this.schedule = schedule;
+  }
+
+  
+  /**
+   * The screenwriter of the film. Applicable to Films, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The screenwriter of the film. Applicable to Films, Facebook datatype: string")
+  @JsonProperty("screenplay_by")
+  
+  public String getScreenplayBy() {
+    return screenplayBy;
+  }
+  public void setScreenplayBy(String screenplayBy) {
+    this.screenplayBy = screenplayBy;
+  }
+
+  
+  /**
+   * The season information of the TV Show. Applicable to TV Shows, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The season information of the TV Show. Applicable to TV Shows, Facebook datatype: string")
+  @JsonProperty("season")
+  
+  public String getSeason() {
+    return season;
+  }
+  public void setSeason(String season) {
+    this.season = season;
+  }
+
+  
+  /**
+   * The cast of the film. Applicable to Films, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The cast of the film. Applicable to Films, Facebook datatype: string")
+  @JsonProperty("starring")
+  
+  public String getStarring() {
+    return starring;
+  }
+  public void setStarring(String starring) {
+    this.starring = starring;
+  }
+
+  
+  /**
+   * Unique store number for this location Page, Facebook datatype: unsigned int32
+   **/
+  @ApiModelProperty(value = "Unique store number for this location Page, Facebook datatype: unsigned int32")
+  @JsonProperty("store_number")
+  
+  public Integer getStoreNumber() {
+    return storeNumber;
+  }
+  public void setStoreNumber(Integer storeNumber) {
+    this.storeNumber = storeNumber;
+  }
+
+  
+  /**
+   * The studio for the film production. Applicable to Films, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The studio for the film production. Applicable to Films, Facebook datatype: string")
+  @JsonProperty("studio")
+  
+  public String getStudio() {
+    return studio;
+  }
+  public void setStudio(String studio) {
+    this.studio = studio;
+  }
+
+  
+  /**
+   * The number of people talking about this Page, Facebook datatype: unsigned int32
+   **/
+  @ApiModelProperty(value = "The number of people talking about this Page, Facebook datatype: unsigned int32")
+  @JsonProperty("talking_about_count")
+  
+  public Integer getTalkingAboutCount() {
+    return talkingAboutCount;
+  }
+  public void setTalkingAboutCount(Integer talkingAboutCount) {
+    this.talkingAboutCount = talkingAboutCount;
+  }
+
+  
+  /**
+   * The social sentence and like count information for this Page. This is the same info used for the like button, Facebook datatype: engagement
+   **/
+  @ApiModelProperty(value = "The social sentence and like count information for this Page. This is the same info used for the like button, Facebook datatype: engagement")
+  @JsonProperty("engagement")
+  
+  public String getEngagement() {
+    return engagement;
+  }
+  public void setEngagement(String engagement) {
+    this.engagement = engagement;
+  }
+
+  
+  /**
+   * The page address, if any, in a simple single line format., Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The page address, if any, in a simple single line format., Facebook datatype: string")
+  @JsonProperty("single_line_address")
+  
+  public String getSingleLineAddress() {
+    return singleLineAddress;
+  }
+  public void setSingleLineAddress(String singleLineAddress) {
+    this.singleLineAddress = singleLineAddress;
+  }
+
+  
+  /**
+   * For places, the category of the place, Facebook datatype: enum
+   **/
+  @ApiModelProperty(value = "For places, the category of the place, Facebook datatype: enum")
+  @JsonProperty("place_type")
+  
+  public String getPlaceType() {
+    return placeType;
+  }
+  public void setPlaceType(String placeType) {
+    this.placeType = placeType;
+  }
+
+  
+  /**
+   * Unread message count for the Page. Only visible to a page admin, Facebook datatype: unsigned int32
+   **/
+  @ApiModelProperty(value = "Unread message count for the Page. Only visible to a page admin, Facebook datatype: unsigned int32")
+  @JsonProperty("unread_message_count")
+  
+  public Integer getUnreadMessageCount() {
+    return unreadMessageCount;
+  }
+  public void setUnreadMessageCount(Integer unreadMessageCount) {
+    this.unreadMessageCount = unreadMessageCount;
+  }
+
+  
+  /**
+   * Number of unread notifications. Only visible to a page admin, Facebook datatype: unsigned int32
+   **/
+  @ApiModelProperty(value = "Number of unread notifications. Only visible to a page admin, Facebook datatype: unsigned int32")
+  @JsonProperty("unread_notif_count")
+  
+  public Integer getUnreadNotifCount() {
+    return unreadNotifCount;
+  }
+  public void setUnreadNotifCount(Integer unreadNotifCount) {
+    this.unreadNotifCount = unreadNotifCount;
+  }
+
+  
+  /**
+   * Unseen message count for the Page. Only visible to a page admin, Facebook datatype: unsigned int32
+   **/
+  @ApiModelProperty(value = "Unseen message count for the Page. Only visible to a page admin, Facebook datatype: unsigned int32")
+  @JsonProperty("unseen_message_count")
+  
+  public Integer getUnseenMessageCount() {
+    return unseenMessageCount;
+  }
+  public void setUnseenMessageCount(Integer unseenMessageCount) {
+    this.unseenMessageCount = unseenMessageCount;
+  }
+
+  
+  /**
+   * The alias of the Page. For example, for www.facebook.com/platform the username is 'platform', Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The alias of the Page. For example, for www.facebook.com/platform the username is 'platform', Facebook datatype: string")
+  @JsonProperty("username")
+  
+  public String getUsername() {
+    return username;
+  }
+  public void setUsername(String username) {
+    this.username = username;
+  }
+
+  
+  /**
+   * Voip info, Facebook datatype: voipinfo
+   **/
+  @ApiModelProperty(value = "Voip info, Facebook datatype: voipinfo")
+  @JsonProperty("voip_info")
+  
+  public String getVoipInfo() {
+    return voipInfo;
+  }
+  public void setVoipInfo(String voipInfo) {
+    this.voipInfo = voipInfo;
+  }
+
+  
+  /**
+   * The URL of the Page's website, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "The URL of the Page's website, Facebook datatype: string")
   @JsonProperty("website")
   
   public String getWebsite() {
@@ -811,44 +1675,114 @@ public class FacebookUser   {
 
   
   /**
-   * Details of a person`s work experience, Facebook datatype: list<workexperience>
+   * The number of visits to this Page's location. If the Page setting *Show map, check-ins and star ratings on the Page* (under *Page Settings > Page Info > Address*) is disabled, then this value will also be disabled, Facebook datatype: unsigned int32
    **/
-  @ApiModelProperty(value = "Details of a person`s work experience, Facebook datatype: list<workexperience>")
-  @JsonProperty("work")
+  @ApiModelProperty(value = "The number of visits to this Page's location. If the Page setting *Show map, check-ins and star ratings on the Page* (under *Page Settings > Page Info > Address*) is disabled, then this value will also be disabled, Facebook datatype: unsigned int32")
+  @JsonProperty("were_here_count")
   
-  public String getWork() {
-    return work;
+  public Integer getWereHereCount() {
+    return wereHereCount;
   }
-  public void setWork(String work) {
-    this.work = work;
+  public void setWereHereCount(Integer wereHereCount) {
+    this.wereHereCount = wereHereCount;
   }
 
   
   /**
-   * The person's PGP public key, Facebook datatype: string
+   * The writer of the TV show. Applicable to TV Shows, Facebook datatype: string
    **/
-  @ApiModelProperty(value = "The person's PGP public key, Facebook datatype: string")
-  @JsonProperty("public_key")
+  @ApiModelProperty(value = "The writer of the TV show. Applicable to TV Shows, Facebook datatype: string")
+  @JsonProperty("written_by")
   
-  public String getPublicKey() {
-    return publicKey;
+  public String getWrittenBy() {
+    return writtenBy;
   }
-  public void setPublicKey(String publicKey) {
-    this.publicKey = publicKey;
+  public void setWrittenBy(String writtenBy) {
+    this.writtenBy = writtenBy;
   }
 
   
   /**
-   * The person's cover photo, Facebook datatype: coverphoto
+   * owner business of this object, Facebook datatype: business
    **/
-  @ApiModelProperty(value = "The person's cover photo, Facebook datatype: coverphoto")
-  @JsonProperty("cover")
+  @ApiModelProperty(value = "owner business of this object, Facebook datatype: business")
+  @JsonProperty("owner_business")
   
-  public String getCover() {
-    return cover;
+  public String getOwnerBusiness() {
+    return ownerBusiness;
   }
-  public void setCover(String cover) {
-    this.cover = cover;
+  public void setOwnerBusiness(String ownerBusiness) {
+    this.ownerBusiness = ownerBusiness;
+  }
+
+  
+  /**
+   * last used time of this object by the current viewer, Facebook datatype: datetime
+   **/
+  @ApiModelProperty(value = "last used time of this object by the current viewer, Facebook datatype: datetime")
+  @JsonProperty("last_used_time")
+  
+  public String getLastUsedTime() {
+    return lastUsedTime;
+  }
+  public void setLastUsedTime(String lastUsedTime) {
+    this.lastUsedTime = lastUsedTime;
+  }
+
+  
+  /**
+   * relevance score of an asset, Facebook datatype: float
+   **/
+  @ApiModelProperty(value = "relevance score of an asset, Facebook datatype: float")
+  @JsonProperty("asset_score")
+  
+  public Float getAssetScore() {
+    return assetScore;
+  }
+  public void setAssetScore(Float assetScore) {
+    this.assetScore = assetScore;
+  }
+
+  
+  /**
+   * Number of checkins at a place represented by a Page, Facebook datatype: unsigned int32
+   **/
+  @ApiModelProperty(value = "Number of checkins at a place represented by a Page, Facebook datatype: unsigned int32")
+  @JsonProperty("checkins")
+  
+  public Integer getCheckins() {
+    return checkins;
+  }
+  public void setCheckins(Integer checkins) {
+    this.checkins = checkins;
+  }
+
+  
+  /**
+   * The number of users who like the Page. For Global Brand Pages this is the count for all pages across the brand, Facebook datatype: unsigned int32
+   **/
+  @ApiModelProperty(value = "The number of users who like the Page. For Global Brand Pages this is the count for all pages across the brand, Facebook datatype: unsigned int32")
+  @JsonProperty("likes")
+  
+  public Integer getLikes() {
+    return likes;
+  }
+  public void setLikes(Integer likes) {
+    this.likes = likes;
+  }
+
+  
+  /**
+   * Members of this org. Applicable to Pages representing Team Orgs, Facebook datatype: string
+   **/
+  @ApiModelProperty(value = "Members of this org. Applicable to Pages representing Team Orgs, Facebook datatype: string")
+  @JsonProperty("members")
+  
+  public String getMembers() {
+    return members;
+  }
+  public void setMembers(String members) {
+    this.members = members;
   }
 
   
@@ -862,51 +1796,105 @@ public class FacebookUser   {
     sb.append("    location: ").append(StringUtil.toIndentedString(location)).append("\n");
     sb.append("    name: ").append(StringUtil.toIndentedString(name)).append("\n");
     sb.append("    about: ").append(StringUtil.toIndentedString(about)).append("\n");
-    sb.append("    ageRange: ").append(StringUtil.toIndentedString(ageRange)).append("\n");
+    sb.append("    accessToken: ").append(StringUtil.toIndentedString(accessToken)).append("\n");
+    sb.append("    adCampaign: ").append(StringUtil.toIndentedString(adCampaign)).append("\n");
+    sb.append("    affiliation: ").append(StringUtil.toIndentedString(affiliation)).append("\n");
+    sb.append("    appId: ").append(StringUtil.toIndentedString(appId)).append("\n");
+    sb.append("    appLinks: ").append(StringUtil.toIndentedString(appLinks)).append("\n");
+    sb.append("    artistsWeLike: ").append(StringUtil.toIndentedString(artistsWeLike)).append("\n");
+    sb.append("    attire: ").append(StringUtil.toIndentedString(attire)).append("\n");
+    sb.append("    awards: ").append(StringUtil.toIndentedString(awards)).append("\n");
+    sb.append("    bandInterests: ").append(StringUtil.toIndentedString(bandInterests)).append("\n");
+    sb.append("    bandMembers: ").append(StringUtil.toIndentedString(bandMembers)).append("\n");
+    sb.append("    bestPage: ").append(StringUtil.toIndentedString(bestPage)).append("\n");
     sb.append("    bio: ").append(StringUtil.toIndentedString(bio)).append("\n");
     sb.append("    birthday: ").append(StringUtil.toIndentedString(birthday)).append("\n");
+    sb.append("    bookingAgent: ").append(StringUtil.toIndentedString(bookingAgent)).append("\n");
+    sb.append("    built: ").append(StringUtil.toIndentedString(built)).append("\n");
+    sb.append("    business: ").append(StringUtil.toIndentedString(business)).append("\n");
+    sb.append("    canCheckin: ").append(StringUtil.toIndentedString(canCheckin)).append("\n");
+    sb.append("    canPost: ").append(StringUtil.toIndentedString(canPost)).append("\n");
+    sb.append("    category: ").append(StringUtil.toIndentedString(category)).append("\n");
+    sb.append("    categoryList: ").append(StringUtil.toIndentedString(categoryList)).append("\n");
+    sb.append("    companyOverview: ").append(StringUtil.toIndentedString(companyOverview)).append("\n");
+    sb.append("    contactAddress: ").append(StringUtil.toIndentedString(contactAddress)).append("\n");
     sb.append("    context: ").append(StringUtil.toIndentedString(context)).append("\n");
-    sb.append("    currency: ").append(StringUtil.toIndentedString(currency)).append("\n");
-    sb.append("    devices: ").append(StringUtil.toIndentedString(devices)).append("\n");
-    sb.append("    education: ").append(StringUtil.toIndentedString(education)).append("\n");
-    sb.append("    email: ").append(StringUtil.toIndentedString(email)).append("\n");
-    sb.append("    favoriteAthletes: ").append(StringUtil.toIndentedString(favoriteAthletes)).append("\n");
-    sb.append("    favoriteTeams: ").append(StringUtil.toIndentedString(favoriteTeams)).append("\n");
-    sb.append("    firstName: ").append(StringUtil.toIndentedString(firstName)).append("\n");
-    sb.append("    gender: ").append(StringUtil.toIndentedString(gender)).append("\n");
-    sb.append("    hometown: ").append(StringUtil.toIndentedString(hometown)).append("\n");
-    sb.append("    inspirationalPeople: ").append(StringUtil.toIndentedString(inspirationalPeople)).append("\n");
-    sb.append("    installType: ").append(StringUtil.toIndentedString(installType)).append("\n");
-    sb.append("    installed: ").append(StringUtil.toIndentedString(installed)).append("\n");
-    sb.append("    interestedIn: ").append(StringUtil.toIndentedString(interestedIn)).append("\n");
-    sb.append("    isVerified: ").append(StringUtil.toIndentedString(isVerified)).append("\n");
-    sb.append("    languages: ").append(StringUtil.toIndentedString(languages)).append("\n");
-    sb.append("    lastName: ").append(StringUtil.toIndentedString(lastName)).append("\n");
-    sb.append("    link: ").append(StringUtil.toIndentedString(link)).append("\n");
-    sb.append("    locale: ").append(StringUtil.toIndentedString(locale)).append("\n");
-    sb.append("    meetingFor: ").append(StringUtil.toIndentedString(meetingFor)).append("\n");
-    sb.append("    middleName: ").append(StringUtil.toIndentedString(middleName)).append("\n");
-    sb.append("    nameFormat: ").append(StringUtil.toIndentedString(nameFormat)).append("\n");
-    sb.append("    paymentPricepoints: ").append(StringUtil.toIndentedString(paymentPricepoints)).append("\n");
-    sb.append("    testGroup: ").append(StringUtil.toIndentedString(testGroup)).append("\n");
-    sb.append("    political: ").append(StringUtil.toIndentedString(political)).append("\n");
-    sb.append("    relationshipStatus: ").append(StringUtil.toIndentedString(relationshipStatus)).append("\n");
-    sb.append("    religion: ").append(StringUtil.toIndentedString(religion)).append("\n");
-    sb.append("    securitySettings: ").append(StringUtil.toIndentedString(securitySettings)).append("\n");
-    sb.append("    significantOther: ").append(StringUtil.toIndentedString(significantOther)).append("\n");
-    sb.append("    sports: ").append(StringUtil.toIndentedString(sports)).append("\n");
-    sb.append("    quotes: ").append(StringUtil.toIndentedString(quotes)).append("\n");
-    sb.append("    thirdPartyId: ").append(StringUtil.toIndentedString(thirdPartyId)).append("\n");
-    sb.append("    timezone: ").append(StringUtil.toIndentedString(timezone)).append("\n");
-    sb.append("    tokenForBusiness: ").append(StringUtil.toIndentedString(tokenForBusiness)).append("\n");
-    sb.append("    updatedTime: ").append(StringUtil.toIndentedString(updatedTime)).append("\n");
-    sb.append("    verified: ").append(StringUtil.toIndentedString(verified)).append("\n");
-    sb.append("    videoUploadLimits: ").append(StringUtil.toIndentedString(videoUploadLimits)).append("\n");
-    sb.append("    viewerCanSendGift: ").append(StringUtil.toIndentedString(viewerCanSendGift)).append("\n");
-    sb.append("    website: ").append(StringUtil.toIndentedString(website)).append("\n");
-    sb.append("    work: ").append(StringUtil.toIndentedString(work)).append("\n");
-    sb.append("    publicKey: ").append(StringUtil.toIndentedString(publicKey)).append("\n");
+    sb.append("    countryPageLikes: ").append(StringUtil.toIndentedString(countryPageLikes)).append("\n");
     sb.append("    cover: ").append(StringUtil.toIndentedString(cover)).append("\n");
+    sb.append("    culinaryTeam: ").append(StringUtil.toIndentedString(culinaryTeam)).append("\n");
+    sb.append("    currentLocation: ").append(StringUtil.toIndentedString(currentLocation)).append("\n");
+    sb.append("    description: ").append(StringUtil.toIndentedString(description)).append("\n");
+    sb.append("    descriptionHtml: ").append(StringUtil.toIndentedString(descriptionHtml)).append("\n");
+    sb.append("    directedBy: ").append(StringUtil.toIndentedString(directedBy)).append("\n");
+    sb.append("    displaySubtext: ").append(StringUtil.toIndentedString(displaySubtext)).append("\n");
+    sb.append("    emails: ").append(StringUtil.toIndentedString(emails)).append("\n");
+    sb.append("    features: ").append(StringUtil.toIndentedString(features)).append("\n");
+    sb.append("    foodStyles: ").append(StringUtil.toIndentedString(foodStyles)).append("\n");
+    sb.append("    founded: ").append(StringUtil.toIndentedString(founded)).append("\n");
+    sb.append("    generalInfo: ").append(StringUtil.toIndentedString(generalInfo)).append("\n");
+    sb.append("    generalManager: ").append(StringUtil.toIndentedString(generalManager)).append("\n");
+    sb.append("    genre: ").append(StringUtil.toIndentedString(genre)).append("\n");
+    sb.append("    globalBrandPageName: ").append(StringUtil.toIndentedString(globalBrandPageName)).append("\n");
+    sb.append("    globalBrandRootId: ").append(StringUtil.toIndentedString(globalBrandRootId)).append("\n");
+    sb.append("    hasAddedApp: ").append(StringUtil.toIndentedString(hasAddedApp)).append("\n");
+    sb.append("    leadgenTosAccepted: ").append(StringUtil.toIndentedString(leadgenTosAccepted)).append("\n");
+    sb.append("    hometown: ").append(StringUtil.toIndentedString(hometown)).append("\n");
+    sb.append("    hours: ").append(StringUtil.toIndentedString(hours)).append("\n");
+    sb.append("    influences: ").append(StringUtil.toIndentedString(influences)).append("\n");
+    sb.append("    isCommunityPage: ").append(StringUtil.toIndentedString(isCommunityPage)).append("\n");
+    sb.append("    isPermanentlyClosed: ").append(StringUtil.toIndentedString(isPermanentlyClosed)).append("\n");
+    sb.append("    isPublished: ").append(StringUtil.toIndentedString(isPublished)).append("\n");
+    sb.append("    isUnclaimed: ").append(StringUtil.toIndentedString(isUnclaimed)).append("\n");
+    sb.append("    isVerified: ").append(StringUtil.toIndentedString(isVerified)).append("\n");
+    sb.append("    link: ").append(StringUtil.toIndentedString(link)).append("\n");
+    sb.append("    mission: ").append(StringUtil.toIndentedString(mission)).append("\n");
+    sb.append("    mpg: ").append(StringUtil.toIndentedString(mpg)).append("\n");
+    sb.append("    network: ").append(StringUtil.toIndentedString(network)).append("\n");
+    sb.append("    newLikeCount: ").append(StringUtil.toIndentedString(newLikeCount)).append("\n");
+    sb.append("    offerEligible: ").append(StringUtil.toIndentedString(offerEligible)).append("\n");
+    sb.append("    parentPage: ").append(StringUtil.toIndentedString(parentPage)).append("\n");
+    sb.append("    parking: ").append(StringUtil.toIndentedString(parking)).append("\n");
+    sb.append("    paymentOptions: ").append(StringUtil.toIndentedString(paymentOptions)).append("\n");
+    sb.append("    personalInfo: ").append(StringUtil.toIndentedString(personalInfo)).append("\n");
+    sb.append("    personalInterests: ").append(StringUtil.toIndentedString(personalInterests)).append("\n");
+    sb.append("    pharmaSafetyInfo: ").append(StringUtil.toIndentedString(pharmaSafetyInfo)).append("\n");
+    sb.append("    phone: ").append(StringUtil.toIndentedString(phone)).append("\n");
+    sb.append("    plotOutline: ").append(StringUtil.toIndentedString(plotOutline)).append("\n");
+    sb.append("    pressContact: ").append(StringUtil.toIndentedString(pressContact)).append("\n");
+    sb.append("    priceRange: ").append(StringUtil.toIndentedString(priceRange)).append("\n");
+    sb.append("    producedBy: ").append(StringUtil.toIndentedString(producedBy)).append("\n");
+    sb.append("    products: ").append(StringUtil.toIndentedString(products)).append("\n");
+    sb.append("    promotionEligible: ").append(StringUtil.toIndentedString(promotionEligible)).append("\n");
+    sb.append("    promotionIneligibleReason: ").append(StringUtil.toIndentedString(promotionIneligibleReason)).append("\n");
+    sb.append("    publicTransit: ").append(StringUtil.toIndentedString(publicTransit)).append("\n");
+    sb.append("    recordLabel: ").append(StringUtil.toIndentedString(recordLabel)).append("\n");
+    sb.append("    releaseDate: ").append(StringUtil.toIndentedString(releaseDate)).append("\n");
+    sb.append("    restaurantServices: ").append(StringUtil.toIndentedString(restaurantServices)).append("\n");
+    sb.append("    restaurantSpecialties: ").append(StringUtil.toIndentedString(restaurantSpecialties)).append("\n");
+    sb.append("    schedule: ").append(StringUtil.toIndentedString(schedule)).append("\n");
+    sb.append("    screenplayBy: ").append(StringUtil.toIndentedString(screenplayBy)).append("\n");
+    sb.append("    season: ").append(StringUtil.toIndentedString(season)).append("\n");
+    sb.append("    starring: ").append(StringUtil.toIndentedString(starring)).append("\n");
+    sb.append("    storeNumber: ").append(StringUtil.toIndentedString(storeNumber)).append("\n");
+    sb.append("    studio: ").append(StringUtil.toIndentedString(studio)).append("\n");
+    sb.append("    talkingAboutCount: ").append(StringUtil.toIndentedString(talkingAboutCount)).append("\n");
+    sb.append("    engagement: ").append(StringUtil.toIndentedString(engagement)).append("\n");
+    sb.append("    singleLineAddress: ").append(StringUtil.toIndentedString(singleLineAddress)).append("\n");
+    sb.append("    placeType: ").append(StringUtil.toIndentedString(placeType)).append("\n");
+    sb.append("    unreadMessageCount: ").append(StringUtil.toIndentedString(unreadMessageCount)).append("\n");
+    sb.append("    unreadNotifCount: ").append(StringUtil.toIndentedString(unreadNotifCount)).append("\n");
+    sb.append("    unseenMessageCount: ").append(StringUtil.toIndentedString(unseenMessageCount)).append("\n");
+    sb.append("    username: ").append(StringUtil.toIndentedString(username)).append("\n");
+    sb.append("    voipInfo: ").append(StringUtil.toIndentedString(voipInfo)).append("\n");
+    sb.append("    website: ").append(StringUtil.toIndentedString(website)).append("\n");
+    sb.append("    wereHereCount: ").append(StringUtil.toIndentedString(wereHereCount)).append("\n");
+    sb.append("    writtenBy: ").append(StringUtil.toIndentedString(writtenBy)).append("\n");
+    sb.append("    ownerBusiness: ").append(StringUtil.toIndentedString(ownerBusiness)).append("\n");
+    sb.append("    lastUsedTime: ").append(StringUtil.toIndentedString(lastUsedTime)).append("\n");
+    sb.append("    assetScore: ").append(StringUtil.toIndentedString(assetScore)).append("\n");
+    sb.append("    checkins: ").append(StringUtil.toIndentedString(checkins)).append("\n");
+    sb.append("    likes: ").append(StringUtil.toIndentedString(likes)).append("\n");
+    sb.append("    members: ").append(StringUtil.toIndentedString(members)).append("\n");
     sb.append("}");
     return sb.toString();
   }
