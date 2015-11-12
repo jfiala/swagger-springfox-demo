@@ -12,9 +12,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * User object
  **/
 @ApiModel(description = "User object")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-07T12:33:00.957+01:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T11:09:43.855+01:00")
 public class User   {
   
+  private String about = null;
   private String firstname = null;
   private Long id = null;
   private String lastname = null;
@@ -41,6 +42,18 @@ public enum StateEnum {
   /**
    **/
   @ApiModelProperty(value = "")
+  @JsonProperty("about")
+  public String getAbout() {
+    return about;
+  }
+  public void setAbout(String about) {
+    this.about = about;
+  }
+
+  
+  /**
+   **/
+  @ApiModelProperty(value = "")
   @JsonProperty("firstname")
   public String getFirstname() {
     return firstname;
@@ -51,9 +64,8 @@ public enum StateEnum {
 
   
   /**
-   * ID of the user
    **/
-  @ApiModelProperty(required = true, value = "ID of the user")
+  @ApiModelProperty(required = true, value = "")
   @JsonProperty("id")
   public Long getId() {
     return id;
@@ -95,6 +107,7 @@ public enum StateEnum {
     StringBuilder sb = new StringBuilder();
     sb.append("class User {\n");
     
+    sb.append("    about: ").append(StringUtil.toIndentedString(about)).append("\n");
     sb.append("    firstname: ").append(StringUtil.toIndentedString(firstname)).append("\n");
     sb.append("    id: ").append(StringUtil.toIndentedString(id)).append("\n");
     sb.append("    lastname: ").append(StringUtil.toIndentedString(lastname)).append("\n");

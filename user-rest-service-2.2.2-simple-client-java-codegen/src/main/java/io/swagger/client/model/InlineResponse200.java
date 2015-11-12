@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 @ApiModel(description = "")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-12T11:09:43.855+01:00")
-public class ModelMap extends HashMap<String, Object>  {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2015-11-10T16:59:17.550+01:00")
+public class InlineResponse200 extends HashMap<String, Object>  {
   
 
   
@@ -20,7 +20,7 @@ public class ModelMap extends HashMap<String, Object>  {
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ModelMap {\n");
+    sb.append("class InlineResponse200 {\n");
     sb.append("    ").append(StringUtil.toIndentedString(super.toString())).append("\n");
     sb.append("}");
     return sb.toString();

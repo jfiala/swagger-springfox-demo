@@ -2,10 +2,10 @@ package at.fwd.swagger.spring.demo.user;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import io.swagger.client.ApiException;
-import io.swagger.client.api.UsercrudApi;
+import io.swagger.client.api.MinimumcontrollerApi;
+import io.swagger.client.model.MinimumUser;
 import io.swagger.client.model.User;
 
 import java.text.ParseException;
@@ -14,27 +14,26 @@ import java.util.logging.Logger;
 import org.junit.Before;
 import org.junit.Test;
 
-public class UserApi_get_Test extends AbstractTestCase {
+public class MinimumUserApi_get_Test extends AbstractTestCase {
 	/**
 	 * Logger for this class
 	 */
-	private static final Logger log = Logger.getLogger(UserApi_get_Test.class.getName());
+	private static final Logger log = Logger.getLogger(MinimumUserApi_get_Test.class.getName());
 	
-	UsercrudApi api;
+	MinimumcontrollerApi api;
 	
 	@Before
 	public void setup() throws ApiException {
-		api = new UsercrudApi();
+		api = new MinimumcontrollerApi();
 		api.getApiClient().setBasePath("http://localhost:8080/");
 		
 
 		String newName =  "Test";
-		User user = new User();
+		MinimumUser user = new MinimumUser();
 		user.setId(new Long(4));
 		user.setFirstname("test");
 		user.setLastname(newName);
-		user.setAbout("hello I'm breaking");
-		user = api.saveUserCompleteUsingPOST1( user);
+		user = api.saveUserCompleteUsingPOST(user);
 		
 	}
 	
@@ -43,7 +42,7 @@ public class UserApi_get_Test extends AbstractTestCase {
 		
 		try {
 			
-			User user = api.getUserUsingGET1(new Long(4));
+			MinimumUser user = api.getUserUsingGET(new Long(4));
 			assertNotNull(user);
 			System.out.println ("response: " + user.toString());
 			
@@ -61,7 +60,7 @@ public class UserApi_get_Test extends AbstractTestCase {
 	public void testNotFound() {
 		
 		try {
-			api.getUserUsingGET1(new Long(3));
+			api.getUserUsingGET(new Long(3));
 			fail("should fail");
 			
 		} catch (ApiException e) {
