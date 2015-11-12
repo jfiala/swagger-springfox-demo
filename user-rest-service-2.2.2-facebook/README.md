@@ -25,3 +25,9 @@ After: [see Swagger API doc](xdocs/api_before_after/facebook_graph_api_after_imp
 * use Enums (e.g. attribute "attire")
   * before: only text: "description": "Dress code of the business. Applicable to Restaurants or Nightlife. Can be one of Casual, Dressy or Unspecified, Facebook datatype: string"
   * after: Enums are extracted: "attire": {"type": "string","description": "...", "enum": ["Casual,", "Dressy,", "Unspecified"]}
+
+* add JSR-303 annotations to client code
+  * @NotNull can be added to all required fields
+  * @Min/@Max can be added to integers
+  
+  

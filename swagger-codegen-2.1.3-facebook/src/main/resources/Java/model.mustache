@@ -25,6 +25,7 @@ public class {{classname}} {{#parent}}extends {{{parent}}}{{/parent}} {{#seriali
 
 {{>enumClass}}{{/items}}{{/items.isEnum}}
 {{#minimum}} // TODO: @Min(value= {{minimum}}){{/minimum}}
+{{#maximum}} // TODO: @Max(value= {{maximum}}){{/maximum}}
   private {{{datatypeWithEnum}}} {{name}} = {{{defaultValue}}};{{/vars}}
 
   {{#vars}}

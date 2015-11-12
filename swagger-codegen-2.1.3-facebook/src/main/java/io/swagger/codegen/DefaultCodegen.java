@@ -670,10 +670,10 @@ public class DefaultCodegen {
             // legacy support
             Map<String, Object> allowableValues = new HashMap<String, Object>();
             if (np.getMinimum() != null) {
-                allowableValues.put("min", np.getMinimum());
+                allowableValues.put("min", np.getMinimum().longValue());
             }
             if (np.getMaximum() != null) {
-                allowableValues.put("max", np.getMaximum());
+                allowableValues.put("max", np.getMaximum().longValue());
             }
             if(allowableValues.size() > 0) {
               property.allowableValues = allowableValues;

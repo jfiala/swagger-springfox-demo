@@ -2,6 +2,8 @@ package at.fwd.swagger.spring.demo.user.model.facebook;
 
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -10,6 +12,8 @@ import javax.validation.constraints.Size;
 public class FacebookUser   {
 
 	@NotNull
+	@Min(value=1)
+	@Max(value=Long.MAX_VALUE)
 	Long id;
 	
 	@NotNull
