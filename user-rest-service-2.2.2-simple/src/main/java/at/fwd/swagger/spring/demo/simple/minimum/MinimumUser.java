@@ -1,9 +1,8 @@
 package at.fwd.swagger.spring.demo.simple.minimum;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 /**
  * User object (shows long, String, enum, Byte[])
@@ -13,16 +12,31 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  */
 public class MinimumUser {
 
-	 private long id;
+	private long id;
     
+	@NotNull
     private String firstname;
     
+	@Min(value=5)
+	@Max(value=10)
     private String lastname;
    
     private MinimumState state;
+   
+    private String location;
     
     
-    public MinimumUser() {
+   
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public MinimumUser() {
     	
     }
     

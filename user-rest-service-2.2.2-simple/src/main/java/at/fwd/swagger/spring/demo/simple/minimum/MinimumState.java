@@ -1,5 +1,6 @@
 package at.fwd.swagger.spring.demo.simple.minimum;
 
+
 /**
  * Demo for enum State
  * 
@@ -7,5 +8,7 @@ package at.fwd.swagger.spring.demo.simple.minimum;
  *
  */
 public enum MinimumState {
-	ACTIVE, DISABLED;
+	
+	ACTIVE, 
+	DISABLED;
 }
